@@ -1,4 +1,4 @@
-# 🧬 NK Aging Pipeline: The V20 Watershed (Era Fénix)
+# 🧬 NK Aging Pipeline: RNA ambient correction + DESEQ2 Shrinkage correction
 
 Este repositorio contiene la arquitectura bioinformática avanzada para el rescate y análisis de transcriptómica de células NK humanas, enfocada en el estudio del envejecimiento celular.
 
