@@ -2,11 +2,10 @@
 
 Este repositorio contiene la arquitectura bioinformática avanzada para el rescate y análisis de transcriptómica de células NK humanas, enfocada en el estudio del envejecimiento celular.
 
-## 🚀 El Hito V20 (Abril 2026)
-Tras enfrentar una crisis de integridad de datos por archivos masivos (~80GB) y contaminación de RNA ambiental, implementamos el **Protocolo Fénix**. Este proceso rescató ~130,000 células NK con un estándar de pureza genética y funcional sin precedentes.
+Tras enfrentar una crisis de integridad de datos por archivos masivos (~80GB) y contaminación de RNA ambiental, implementamos pasos de correción de RNA ambiental. Este proceso rescató ~130,000 células NK con un estándar de pureza genética y funcional sin precedentes.
 
 ### 🏁 Estado de la Misión
-- **Dataset Maestro**: `V20_CLEAN_ANALYSIS/data/nk_v20_singlets.h5ad`
+- **Dataset Maestro**: `NK_dataset_qc_ready.h5ad`
 - **Volumen**: 196,091 células NK purificadas.
 *   **Resultados Clave**: Hemos demostrado que el 84% de la firma de envejecimiento previa era ruido técnico, redefiniendo la narrativa hacia un modelo de **Anergia Intínseca** y **Estrés Oxidativo**.
 
