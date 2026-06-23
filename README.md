@@ -6,6 +6,7 @@ Tras aplicar técnicas rigurosas de corrección de RNA ambiental y filtrado adap
 
 ### 🏁 Estado del Dataset Maestro
 - **Archivo Base**: `data/NK_dataset_qc_ready.h5ad`
+- https://drive.google.com/drive/folders/16QNDSToKWhiTFHAS-opsTl_1MYSuI2tV?usp=sharing
 - **Volumen**: 143,991 células NK purificadas × 60,530 genes.
 - **Balance Demográfico**: 73,434 células de adultos jóvenes (`adult`) vs 70,557 de adultos mayores (`old`).
 - **Resultados Clave**: La integración de múltiples plataformas de secuenciación (10x 3' v2, 10x 5' v2, Seq-Well) se neutraliza mediante el modelo aditivo `~ assay + age_group` en PyDESeq2. Hemos demostrado que una vasta proporción de la firma de envejecimiento reportada clásicamente era ruido de lote, redefiniendo la narrativa hacia un modelo de **Inflammaging (Hiper-reactividad Inflamatoria)** en CD56dim y una drástica **Contracción Poblacional** en progenitores CD56bright.
