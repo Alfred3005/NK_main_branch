@@ -280,106 +280,57 @@ def main():
     ora_html = parse_markdown_to_html(ora_raw)
     integration_html = parse_markdown_to_html(integration_raw)
 
-    gsea_tables_html = """
-<details style="margin-top: 1.5rem; background: rgba(30, 41, 59, 0.5); padding: 15px; border-radius: 8px; border: 1px solid #4f46e5; margin-bottom: 25px; cursor: pointer;">
-<summary style="font-weight: 700; color: #818cf8; font-size: 1.1rem;">Tablas de Enriquecimiento (Desplegable)</summary>
-<h4>Señalización Inmune e Inflamatoria</h4>
-<div class="table-responsive">
-<table>
-<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
-<tbody>
-<tr><td>Inflammatory Response</td><td>1.634</td><td>0.0478</td><td>0.0010</td><td>wald_stat</td></tr>
-<tr><td>Tnf-Alpha Signaling Via Nf-Kb</td><td>1.618</td><td>0.0407</td><td>0.0010</td><td>wald_stat</td></tr>
-<tr><td>Il-2/Stat5 Signaling</td><td>1.523</td><td>0.0834</td><td>0.0063</td><td>wald_stat</td></tr>
-<tr><td>Coagulation</td><td>1.404</td><td>0.1084</td><td>0.0510</td><td>wald_stat</td></tr>
-<tr><td>Complement</td><td>1.242</td><td>0.2314</td><td>0.1032</td><td>wald_stat</td></tr>
-<tr><td>Il-6/Jak/Stat3 Signaling</td><td>1.145</td><td>0.3561</td><td>0.2411</td><td>wald_stat</td></tr>
-<tr><td>Tgf-Beta Signaling</td><td>1.025</td><td>0.5625</td><td>0.4000</td><td>wald_stat</td></tr>
-<tr><td>Interferon Gamma Response</td><td>0.991</td><td>0.5669</td><td>0.4872</td><td>wald_stat</td></tr>
-<tr><td>Allograft Rejection</td><td>0.961</td><td>0.5895</td><td>0.5556</td><td>wald_stat</td></tr>
-<tr><td>Interferon Alpha Response</td><td>-0.879</td><td>0.7842</td><td>0.7183</td><td>wald_stat</td></tr>
-</tbody>
-</table>
-</div>
-<h4>Metabolismo y Bioenergética</h4>
-<div class="table-responsive">
-<table>
-<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
-<tbody>
-<tr><td>Glycolysis</td><td>1.476</td><td>0.0833</td><td>0.0150</td><td>wald_stat</td></tr>
-<tr><td>Mtorc1 Signaling</td><td>1.448</td><td>0.0818</td><td>0.0089</td><td>wald_stat</td></tr>
-<tr><td>Adipogenesis</td><td>1.399</td><td>0.1034</td><td>0.0068</td><td>wald_stat</td></tr>
-<tr><td>Reactive Oxygen Species Pathway</td><td>1.359</td><td>0.1196</td><td>0.0681</td><td>wald_stat</td></tr>
-<tr><td>Bile Acid Metabolism</td><td>1.120</td><td>0.3948</td><td>0.2559</td><td>wald_stat</td></tr>
-<tr><td>Heme Metabolism</td><td>1.074</td><td>0.4713</td><td>0.2927</td><td>wald_stat</td></tr>
-<tr><td>Fatty Acid Metabolism</td><td>0.996</td><td>0.5983</td><td>0.4457</td><td>wald_stat</td></tr>
-<tr><td>Pperoxisome</td><td>0.956</td><td>0.5820</td><td>0.5763</td><td>wald_stat</td></tr>
-<tr><td>Cholesterol Homeostasis</td><td>-0.994</td><td>0.6949</td><td>0.4672</td><td>wald_stat</td></tr>
-<tr><td>Xenobiotic Metabolism</td><td>-1.038</td><td>0.9066</td><td>0.3866</td><td>wald_stat</td></tr>
-<tr><td>Oxidative Phosphorylation</td><td>-1.206</td><td>0.8573</td><td>0.0869</td><td>wald_stat</td></tr>
-</tbody>
-</table>
-</div>
-<h4>Ciclo Celular, Apoptosis y Daño al ADN</h4>
-<div class="table-responsive">
-<table>
-<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
-<tbody>
-<tr><td>Myc Targets V1</td><td>1.687</td><td>0.0475</td><td>0.0010</td><td>wald_stat</td></tr>
-<tr><td>Apoptosis</td><td>1.516</td><td>0.0728</td><td>0.0067</td><td>wald_stat</td></tr>
-<tr><td>E2F Targets</td><td>1.379</td><td>0.1098</td><td>0.0067</td><td>wald_stat</td></tr>
-<tr><td>Wnt-Beta Catenin Signaling</td><td>1.029</td><td>0.5746</td><td>0.4211</td><td>wald_stat</td></tr>
-<tr><td>Notch Signaling</td><td>0.992</td><td>0.5861</td><td>0.4897</td><td>wald_stat</td></tr>
-<tr><td>Myc Targets V2</td><td>-0.918</td><td>0.7613</td><td>0.6167</td><td>wald_stat</td></tr>
-<tr><td>Dna Repair</td><td>-0.980</td><td>0.6617</td><td>0.5083</td><td>wald_stat</td></tr>
-<tr><td>Mitotic Spindle</td><td>-1.018</td><td>0.7118</td><td>0.4200</td><td>wald_stat</td></tr>
-<tr><td>P53 Pathway</td><td>-1.041</td><td>1.0000</td><td>0.3657</td><td>wald_stat</td></tr>
-<tr><td>Spermatogenesis</td><td>-1.156</td><td>0.7866</td><td>0.2359</td><td>wald_stat</td></tr>
-</tbody>
-</table>
-</div>
-<h4>Estrés Celular y Respuestas Estructurales</h4>
-<div class="table-responsive">
-<table>
-<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
-<tbody>
-<tr><td>Uv Response Dn</td><td>1.855</td><td>0.0145</td><td>0.0010</td><td>wald_stat</td></tr>
-<tr><td>Hypoxia</td><td>1.460</td><td>0.0850</td><td>0.0242</td><td>wald_stat</td></tr>
-<tr><td>Androgen Response</td><td>1.273</td><td>0.2094</td><td>0.1118</td><td>wald_stat</td></tr>
-<tr><td>Protein Secretion</td><td>1.261</td><td>0.2128</td><td>0.1031</td><td>wald_stat</td></tr>
-<tr><td>Apical Junction</td><td>1.170</td><td>0.3555</td><td>0.1727</td><td>wald_stat</td></tr>
-<tr><td>Uv Response Up</td><td>1.162</td><td>0.3538</td><td>0.1849</td><td>wald_stat</td></tr>
-<tr><td>Epithelial Mesenchymal Transition</td><td>1.093</td><td>0.4406</td><td>0.2805</td><td>wald_stat</td></tr>
-<tr><td>Myogenesis</td><td>1.012</td><td>0.5771</td><td>0.4204</td><td>wald_stat</td></tr>
-<tr><td>Kras Signaling Up</td><td>0.989</td><td>0.5540</td><td>0.4802</td><td>wald_stat</td></tr>
-<tr><td>Unfolded Protein Response</td><td>0.962</td><td>0.6050</td><td>0.5247</td><td>wald_stat</td></tr>
-<tr><td>Estrogen Response Late</td><td>0.884</td><td>0.7391</td><td>0.7045</td><td>wald_stat</td></tr>
-<tr><td>Apical Surface</td><td>0.735</td><td>0.9470</td><td>0.8528</td><td>wald_stat</td></tr>
-<tr><td>Kras Signaling Dn</td><td>-0.541</td><td>0.9980</td><td>0.9947</td><td>wald_stat</td></tr>
-<tr><td>Estrogen Response Early</td><td>-1.036</td><td>0.7653</td><td>0.3831</td><td>wald_stat</td></tr>
-<tr><td>Pi3K/Akt/Mtor Signaling</td><td>-1.423</td><td>0.3352</td><td>0.0151</td><td>wald_stat</td></tr>
-</tbody>
-</table>
-</div>
-<h4>Otras Vías Hallmark</h4>
-<div class="table-responsive">
-<table>
-<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
-<tbody>
-<tr><td>G2-M Checkpoint</td><td>1.155</td><td>0.3518</td><td>0.1599</td><td>wald_stat</td></tr>
-</tbody>
-</table>
-</div>
-</details>
-"""
-    # Inyectar colores en la columna NES usando regex
-    def colorize_nes(match):
-        term = match.group(1)
-        nes_val = float(match.group(2))
-        color = "#10b981" if nes_val > 0 else "#ef4444"
-        return f'<tr><td>{term}</td><td><span style="color: {color}; font-weight: 600;">{nes_val:.3f}</span></td>'
+    # Cargar tablas GSEA de forma dinámica
+    def load_gsea_table_html(csv_path):
+        if not os.path.exists(csv_path):
+            return "<p>No GSEA data available.</p>"
+        df = pd.read_csv(csv_path)
+        # Limpiar Term
+        df['Term'] = df['Term'].str.replace('HALLMARK_', '').str.replace('_', ' ').str.title()
+        # Sort by NES
+        df = df.sort_values(by='NES', ascending=False)
+        
+        def get_category(term):
+            term_upper = term.upper()
+            if any(x in term_upper for x in ['OXIDATIVE', 'GLYCOLYSIS', 'MTORC1', 'FATTY ACID', 'ADIPOGENESIS', 'CHOLESTEROL', 'BILE ACID', 'PEROXISOME', 'HEME', 'REACTIVE OXYGEN', 'METABOLISM']):
+                return 'Metabolismo y Bioenergética'
+            elif any(x in term_upper for x in ['TNF', 'INFLAMMATORY', 'IL6', 'INTERFERON', 'ALLOGRAFT', 'COMPLEMENT', 'IL2', 'TGF', 'COAGULATION', 'IMMUNE', 'STAT']):
+                return 'Señalización Inmune e Inflamatoria'
+            elif any(x in term_upper for x in ['G2M', 'APOPTOSIS', 'DNA REPAIR', 'E2F', 'MITOTIC', 'P53', 'MYC', 'WNT', 'HEDGEHOG', 'NOTCH', 'SPERMATOGENESIS', 'CELL CYCLE']):
+                return 'Ciclo Celular, Apoptosis y Daño al ADN'
+            elif any(x in term_upper for x in ['HYPOXIA', 'UNFOLDED', 'UV ', 'EPITHELIAL', 'SECRETION', 'APICAL', 'MYOGENESIS', 'ANGIOGENESIS', 'KRAS', 'ESTROGEN', 'ANDROGEN', 'PANCREAS', 'PI3K', 'ROS ']):
+                return 'Estrés Celular y Respuestas Estructurales'
+            else:
+                return 'Otras Vías Hallmark'
 
-    gsea_tables_html = re.sub(r'<tr><td>(.*?)</td><td>(-?[0-9]+\.[0-9]+)</td>', colorize_nes, gsea_tables_html)
+        df['Category'] = df['Term'].apply(get_category)
+        
+        html = '<details style="margin-top: 1.5rem; background: rgba(30, 41, 59, 0.5); padding: 15px; border-radius: 8px; border: 1px solid #4f46e5; margin-bottom: 25px; cursor: pointer;"><summary style="font-weight: 700; color: #818cf8; font-size: 1.1rem;">Tablas de Enriquecimiento (Desplegable)</summary>'
+        # Mantener un orden lógico para las categorías
+        cat_order = ['Señalización Inmune e Inflamatoria', 'Metabolismo y Bioenergética', 'Ciclo Celular, Apoptosis y Daño al ADN', 'Estrés Celular y Respuestas Estructurales', 'Otras Vías Hallmark']
+        
+        for cat in cat_order:
+            cat_df = df[df['Category'] == cat]
+            if cat_df.empty: continue
+            
+            html += f"<h4 style='color: var(--primary-light); margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;'>{{cat}}</h4>"
+            html += '<div class="table-responsive" style="margin-bottom: 1rem;"><table style="font-size: 0.85rem; margin-bottom: 0;">'
+            html += '<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead><tbody>'
+            for _, row in cat_df.iterrows():
+                fdr = row['FDR']
+                pval = row['pval']
+                fdr_str = f"{fdr:.4f}" if isinstance(fdr, (int, float)) else str(fdr)
+                pval_str = f"{pval:.4f}" if isinstance(pval, (int, float)) else str(pval)
+                # Destacar NES visualmente dependiendo de su dirección
+                color = "#10b981" if row['NES'] > 0 else "#ef4444"
+                html += f"<tr><td>{{row['Term']}}</td><td><span style='color: {{color}}; font-weight: 600;'>{{row['NES']:.3f}}</span></td><td>{{fdr_str}}</td><td>{{pval_str}}</td><td>{{row.get('metric', 'N/A')}}</td></tr>"
+            html += '</tbody></table></div>'
+        html += '</details>'
+        return html
+
+    table_gsea_dim = load_gsea_table_html(os.path.join(abundance_dir, "gsea/cd56dim/gsea_MSigDB_Hallmark_2020.csv"))
+    table_gsea_bright = load_gsea_table_html(os.path.join(abundance_dir, "gsea/cd56bright/gsea_MSigDB_Hallmark_2020.csv"))
+    table_gsea_global = load_gsea_table_html(os.path.join(abundance_dir, "gsea/global/gsea_MSigDB_Hallmark_2020.csv"))
     
     # 5. Cargar imágenes en base64
     print("🖼️ Codificando imágenes a base64...")
@@ -1026,7 +977,7 @@ def main():
                         <img src="{img_gsea_dim}" alt="GSEA CD56dim Hallmark">
                         <div class="image-caption">Dotplot GSEA Preranked para CD56dim. Se aprecia la represión de TNF-α/NF-κB (enmascaramiento por inflammaging).</div>
                     </div>
-                    {gsea_tables_html}
+                    {table_gsea_dim}
                 </div>
 
                 <div id="gsea-sub-bright" class="sub-panel">
@@ -1034,6 +985,7 @@ def main():
                         <img src="{img_gsea_bright}" alt="GSEA CD56bright Hallmark">
                         <div class="image-caption">Dotplot GSEA Preranked para CD56bright, exhibiendo represión en OXPHOS/ROS mitocondrial.</div>
                     </div>
+                    {table_gsea_bright}
                 </div>
 
                 <div id="gsea-sub-global" class="sub-panel">
@@ -1041,6 +993,7 @@ def main():
                         <img src="{img_gsea_global}" alt="GSEA Global Hallmark">
                         <div class="image-caption">Dotplot GSEA Preranked Global. La firma de CD56dim domina completamente, cancelando la biología de la población rara.</div>
                     </div>
+                    {table_gsea_global}
                 </div>
             </div>
 
