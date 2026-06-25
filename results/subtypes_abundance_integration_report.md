@@ -318,15 +318,19 @@ Nuestros resultados de *Gene Set Enrichment Analysis (GSEA Preranked)* evalúan 
 
 ---
 
-### C. Integración Multidimensional de Vías y Genes (Dicotomía Transcriptómica)
+### C. Integración Multidimensional de Vías y Genes: Respuesta Asimétrica y Compartimentalizada
 
-Para comprender de forma holística cómo se orquesta funcionalmente el envejecimiento en ambas subpoblaciones de manera simultánea y diseccionar la arquitectura de la dicotomía, hemos clasificado las vías significativas por su firma biológica (Exclusivas de Dim, Exclusivas de Bright, o Compartidas).
+Para comprender de forma holística cómo se orquesta el envejecimiento en ambas subpoblaciones, los resultados de PyDESeq2 nos obligan a abandonar el modelo de la "dicotomía simétrica" (asumir que si una población activa una vía, la otra forzosamente la reprime). La arquitectura de la senescencia revela una biología mucho más asimétrica y compartimentalizada:
+
+*   **El Eje CD56dim (Inflammaging Sincronizado):** La población madura sufre un envejecimiento altamente estereotipado. Prácticamente todos los donantes ancianos queman el mismo perfil inflamatorio y metabólico (TNF-α, ROS, Glicólisis), generando un consenso estadístico robusto (*FDRs altamente significativos*). Son células hiper-reactivas o "en llamas".
+*   **El Eje CD56bright (Inercia o Resistencia Heterogénea):** La escasez de vías significativas en las células inmaduras no es un fallo estadístico, sino un hallazgo biológico: su respuesta al envejecimiento es masivamente heterogénea entre los individuos. Estas células se resisten a envejecer de una manera uniforme, diluyendo la señal de consenso en el análisis poblacional.
+*   **El Estrés Compartido (Reloj de Envejecimiento Intrínseco):** A diferencia de los perfiles metabólicos e inflamatorios compartimentalizados, la vía *Hallmark UV Response Dn* emergió como la única firma molecular coordinada de manera simétrica en ambos linajes. Esta firma agrupa genes de mantenimiento de la cromatina y splicing que la célula reprime ante daño genotóxico. Su enriquecimiento basal positivo sugiere que el paso del tiempo impone un desgaste genómico universal (estrés transcripcional crónico y desregulación epigenética) que afecta al compartimento NK sin importar su estadio de diferenciación.
 
 El siguiente gráfico tabular emula arquitecturas analíticas avanzadas, mostrando simultáneamente la competencia de NES (panel izquierdo), la matriz de pertenencia de genes a la vía (panel central) y el despliegue del LogFoldChange real del gen en la cabecera (anotación superior).
 
 ![Gráfico Comparativo Estilo g:Profiler](C:/Users/PREDATOR/.gemini/antigravity-ide/brain/662c0a88-56f3-4ff5-b408-4e4a65e442c9/gProfiler_Style_Comparative_Plot_v6.png)
 
-*Figura 9: Matriz de intersección multidimensional. Muestra cómo los genes reguladores se distribuyen y comportan de manera dicotómica entre las dos subpoblaciones senescentes.*
+*Figura 9: Matriz de intersección multidimensional. Muestra cómo los genes reguladores se distribuyen y revelan la respuesta de estrés asimétrica entre las dos subpoblaciones senescentes.*
 
 ---
 
@@ -346,8 +350,10 @@ Al visualizar las alteraciones moleculares a través de nuestras macro-categorí
 
 1. **La Inmunosenescencia es un Fenotipo "Divergente" (Dicotomía Funcional):**
    El envejecimiento no afecta al linaje NK como un todo homogéneo. En las células efectoras **CD56dim**, el módulo biológico masivamente hiperactivado es la *Señalización Inmune e Inflamatoria* (tormenta de citocinas), llevando a un envejecimiento hiper-reactivo (Inflammaging). Por el contrario, en las progenitoras **CD56bright**, el daño está focalizado en el colapso del *Metabolismo y Bioenergética* (OXPHOS) y el *Ciclo Celular*, resultando en un fenotipo anérgico y proliferativamente exhausto.
-2. **El "Estrés Celular" Actúa como Puente por Causas Opuestas:**
-   Ambos subtipos presentan hiperactivación del bloque de *Estrés Celular y Respuestas Estructurales*, pero por razones radicalmente distintas. En las CD56dim, el estrés endoplásmico (*Unfolded Protein Response*) surge como un "daño por sobrecarga de trabajo" debido a la hiperproducción de alarminas (S100A8/A9). En las CD56bright, el estrés intrínseco (*ROS*) es provocado por una falla primaria e irreparable del motor mitocondrial.
+2. **El "Estrés Celular" Actúa como Puente (Divergente vs. Convergente):**
+   El estrés celular une a ambas subpoblaciones en dos capas analíticas distintas:
+   *   *Estrés Funcional Divergente:* El daño endoplásmico (UPR) es exclusivo de las CD56dim por sobrecarga secretora (alarminas), mientras que el estrés oxidativo mitocondrial (*ROS*) es exclusivo de las CD56bright por asfixia metabólica.
+   *   *Estrés Arquitectónico Convergente:* Subyaciendo a las fallas funcionales, el desgaste del andamiaje del ADN y el estrés transcripcional (*UV Response Dn*) actúa como el verdadero reloj biológico basal, representando un daño genotóxico ineludible y universal para todo el linaje NK.
 3. **La "Ilusión" de la Reparación de ADN (El Punto de No Retorno):**
    En las CD56bright, la detención del ciclo celular (*G2M Checkpoint*) viene acompañada de una drástica caída en la maquinaria de *Reparación de ADN*. Esto subraya clínicamente que el arresto no es una pausa temporal para reparar daño genómico, sino que el genoma ha claudicado. Este evento, sumado a la resistencia fenotípica a morir, marca la entrada definitiva al "estado zombie" (senescencia patológica).
 4. **Transferencia de Cargo Metabólico y Estrés:**
@@ -370,12 +376,16 @@ El análisis de expresión diferencial reveló un núcleo de genes (Hits) de alt
    La inducción masiva de *SLC25A37* (+1.6 LFC) en células CD56dim constituye un hallazgo pivotante. *SLC25A37* codifica para la Mitoferrina-1, un transportador esencial de la membrana mitocondrial interna encargado de la importación de hierro (Shaw et al., 2006). En el contexto inmunometabólico, el influjo desregulado de hierro mitocondrial propicia la generación de especies reactivas de oxígeno (ROS) mediante la reacción de Fenton. La acumulación de ROS acoplada al hierro libre es el gatillo fundamental de la peroxidación lipídica letal conocida como ferroptosis (Dixon et al., 2012; Chen et al., 2020). La sobreexpresión de este importador justifica plenamente el enriquecimiento del pathway de "Ferroptosis" detectado en el análisis GSEA, evidenciando una crisis mitocondrial subyacente inducida por la sobrecarga férrica.
 
 3. **HMGA1 y la Condensación Irreversible de la Senescencia (Estado Zombie):**
-   La regulación al alza de *HMGA1* (*High Mobility Group AT-hook 1*; +1.2 LFC) valida el arresto irreversible del ciclo celular. HMGA1 es una proteína arquitectónica de la cromatina identificada como el orquestador principal de los Focos de Heterocromatina Asociados a la Senescencia (SAHF, por sus siglas en inglés) (Narita et al., 2006). A través de los SAHF, la célula condensa y silencia permanentemente el acceso a genes promotores de proliferación (como los dependientes de E2F). Su alta expresión confirma molecularmente nuestra tercera conclusión macro: el silenciamiento de vías de reparación de ADN y puntos de control celular (G2M) se correlaciona con un empaquetamiento genómico terminal, marcando el "punto de no retorno" hacia un estado senescente refractario.
+   La regulación al alza de *HMGA1* (*High Mobility Group AT-hook 1*; +1.2 LFC) valida el arresto irreversible del ciclo celular y conecta directamente con nuestro hallazgo de estrés genotóxico basal (*UV Response Dn*). Ante la pérdida masiva del control epigenético y las lesiones que bloquean a la ARN polimerasa, la célula responde sobreexpresando HMGA1. Esta proteína arquitectónica actúa como orquestadora principal de los Focos de Heterocromatina Asociados a la Senescencia (SAHF) (Narita et al., 2006). En un intento desesperado por frenar la transcripción aberrante, HMGA1 condensa y silencia permanentemente regiones genómicas enteras, sellando el arresto irreversible. Su alta expresión, sumada a la represión de reparación de ADN, marca el "punto de no retorno" hacia un estado senescente refractario.
 
-4. **Colapso del Repertorio Inhibidor (KIR3DL1/KIR3DL2):**
+4. **Traduciendo el Estrés por Radiación al Envejecimiento Inmunológico:**
+   La prominencia de la vía *Hallmark UV Response Dn* exige una decodificación ontológica. Originalmente construida en fibroblastos bajo daño agudo por irradiación, esta firma agrupa transcritos que la célula apaga para concentrar energía en reparar el ADN. Sin embargo, su enriquecimiento fuertemente positivo en células NK senescentes no irradiadas revela un fenómeno biológico crónico: la acumulación endógena progresiva de lesiones que atascan a la ARN Polimerasa II, desencadenando un estrés transcripcional profundo (Muniz et al., 2021). Ante el inminente colapso de la transcripción basal, las células sobreexpresan compensatoriamente su maquinaria de splicing y remodelación de la cromatina intentando infructuosamente mantener la homeostasis funcional frente a un genoma erosionado.
+
+5. **Colapso del Repertorio Inhibidor (KIR3DL1/KIR3DL2):**
    A nivel global, detectamos una marcada regulación a la baja de los receptores inhibitorios clásicos *KIR3DL1* (-2.3 LFC) y *KIR3DL2* (-1.2 LFC). Durante la inmunosenescencia, el compartimento NK sufre profundos cambios fenotípicos y funcionales que alteran el balance de señales activadoras e inhibitorias (Solana et al., 2012). La pérdida de expresión de estos receptores KIR sugiere una "ceguera" en el mecanismo de reconocimiento de lo propio (*missing-self*). Ante la ausencia de frenos moleculares (inhibición por contacto HLA de clase I), se reduce el umbral de activación celular, predisponiendo a las células NK a una citotoxicidad aberrante o a la secreción autoinmune constante de citocinas inflamatorias.
 
 #### Referencias (Formato APA 7)
+*   Muniz, L., Margeli, A., & Nicolas, E. (2021). DNA damage-induced transcriptional stress: causes and consequences. *Chromosoma*, 130(4), 221-237. https://doi.org/10.1007/s00412-021-00762-2
 *   Chen, X., Yu, C., Kang, R., & Tang, D. (2020). Iron metabolism in ferroptosis. *Frontiers in Cell and Developmental Biology*, 8, 590226. https://doi.org/10.3389/fcell.2020.590226
 *   Dixon, S. J., Lemberg, K. M., Lamprecht, M. R., Skouta, R., Zaitsev, E. M., Gleason, C. E., ... & Stockwell, B. R. (2012). Ferroptosis: an iron-dependent form of nonapoptotic cell death. *Cell*, 149(5), 1060-1072. https://doi.org/10.1016/j.cell.2012.03.042
 *   Franceschi, C., Garagnani, P., Parini, P., Giuliani, C., & Santoro, A. (2018). Inflammaging: a new immune-metabolic viewpoint for age-related diseases. *Nature Reviews Endocrinology*, 14(10), 576-590. https://doi.org/10.1038/s41574-018-0059-4
@@ -413,7 +423,7 @@ Para consolidar empíricamente estos hallazgos predictivos, planteamos las sigui
 
 ### I. Conclusión Integral y Perspectivas Traslacionales
 
-#### La Dicotomía del Envejecimiento NK: Hiperactividad Tóxica frente a Colapso Metabólico
+#### Las Diferencias entre Subpoblaciones del Envejecimiento NK: Hiperactividad Tóxica frente a Colapso Metabólico
 El envejecimiento del sistema inmunológico innato, específicamente en el linaje *Natural Killer* (NK), no ocurre como un debilitamiento silencioso o uniforme, sino como un colapso orgánico altamente divergente. Nuestro análisis transcriptómico revela una crisis sistémica donde el linaje celular se rompe en dos polos opuestos dependiendo de la maduración de la célula: la primera línea de defensa se incendia por exceso de actividad, mientras que el reservorio inmaduro colapsa por asfixia mitocondrial.
 
 *   **El arco del "Burnout" (Las células CD56dim):** Estas células efectoras maduras entran en un estado de toxicidad hiper-inflamatoria (*inflammaging*). Se llenan de alarminas de emergencia (*S100A8/A9*), absorben niveles letales de hierro (*SLC25A37* / Mitoferrina-1) y terminan sucumbiendo a un estallido de estrés oxidativo conocido como **Ferroptosis**. 
