@@ -21,9 +21,18 @@ def generate_table_rows(df, columns_to_show):
             val = row[col]
             if isinstance(val, float):
                 if abs(val) < 1e-4 and val != 0:
-                    cells += f"<td>{val:.4e}</td>"
+                    val_str = f"{val:.4e}"
                 else:
-                    cells += f"<td>{val:.4f}</td>"
+                    val_str = f"{val:.4f}"
+                
+                # Formato condicional de colores para Fold Change
+                if col == 'log2FoldChange':
+                    if val > 0:
+                        val_str = f"<span style='color: #10b981; font-weight: 600;'>{val_str}</span>"
+                    elif val < 0:
+                        val_str = f"<span style='color: #ef4444; font-weight: 600;'>{val_str}</span>"
+                
+                cells += f"<td>{val_str}</td>"
             else:
                 cells += f"<td>{str(val)}</td>"
         rows_html += f"<tr><td>{idx+1}</td>{cells}</tr>"
@@ -218,11 +227,12 @@ def main():
     if 'padj' not in df_bright_sig.columns:
         de_cols_bright = ['feature_name', 'log2FoldChange', 'stat', 'pvalue', 'stderr']
         
-    dim_rows = generate_table_rows(df_dim_sig, de_cols_dim)
+    dim_top10 = generate_table_rows(df_dim_sig.head(10), de_cols_dim)
+    dim_rest = generate_table_rows(df_dim_sig.iloc[10:], de_cols_dim)
     
-    # Para CD56bright, mostramos top 15 y el resto plegable
-    bright_top15 = generate_table_rows(df_bright_sig.head(15), de_cols_bright)
-    bright_rest = generate_table_rows(df_bright_sig.iloc[15:], de_cols_bright)
+    # Para CD56bright, mostramos top 10 y el resto plegable
+    bright_top10 = generate_table_rows(df_bright_sig.head(10), de_cols_bright)
+    bright_rest = generate_table_rows(df_bright_sig.iloc[10:], de_cols_bright)
     
     # 3. Leer archivos de abundancia
     print("📖 Cargando archivos de texto de abundancia...")
@@ -252,8 +262,124 @@ def main():
     else:
         conclusions_raw = "<h2>Conclusiones</h2><p>No se encontraron conclusiones en el archivo markdown.</p>"
 
+    # Extraer Global Pool (dentro de sección 3)
+    match_global_pool = re.search(r'(### A\. NK Cells General \(Pool Global Pseudobulk\).*?)### B\. NK CD56dim', report_raw, re.DOTALL)
+    global_pool_raw = match_global_pool.group(1) if match_global_pool else ""
+    
+    # Extraer ORA (dentro de sección 4)
+    match_ora = re.search(r'(### A\. Análisis de Sobre-Representación \(ORA\) Clásico.*?)### B\. Gene Set Enrichment Analysis', report_raw, re.DOTALL)
+    ora_raw = match_ora.group(1) if match_ora else ""
+    
+    # Extraer Integración (dentro de sección 4)
+    match_integration = re.search(r'(### C\. Integración Multidimensional de Vías y Genes.*?)(?:## \S*\s*5\.)', report_raw, re.DOTALL)
+    integration_raw = match_integration.group(1) if match_integration else ""
+
     report_html = parse_markdown_to_html(narrative_raw)
     conclusions_html = parse_markdown_to_html(conclusions_raw)
+    global_pool_html = parse_markdown_to_html(global_pool_raw)
+    ora_html = parse_markdown_to_html(ora_raw)
+    integration_html = parse_markdown_to_html(integration_raw)
+
+    gsea_tables_html = """
+<details style="margin-top: 1.5rem; background: rgba(30, 41, 59, 0.5); padding: 15px; border-radius: 8px; border: 1px solid #4f46e5; margin-bottom: 25px; cursor: pointer;">
+<summary style="font-weight: 700; color: #818cf8; font-size: 1.1rem;">Tablas de Enriquecimiento (Desplegable)</summary>
+<h4>Señalización Inmune e Inflamatoria</h4>
+<div class="table-responsive">
+<table>
+<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
+<tbody>
+<tr><td>Inflammatory Response</td><td>1.634</td><td>0.0478</td><td>0.0010</td><td>wald_stat</td></tr>
+<tr><td>Tnf-Alpha Signaling Via Nf-Kb</td><td>1.618</td><td>0.0407</td><td>0.0010</td><td>wald_stat</td></tr>
+<tr><td>Il-2/Stat5 Signaling</td><td>1.523</td><td>0.0834</td><td>0.0063</td><td>wald_stat</td></tr>
+<tr><td>Coagulation</td><td>1.404</td><td>0.1084</td><td>0.0510</td><td>wald_stat</td></tr>
+<tr><td>Complement</td><td>1.242</td><td>0.2314</td><td>0.1032</td><td>wald_stat</td></tr>
+<tr><td>Il-6/Jak/Stat3 Signaling</td><td>1.145</td><td>0.3561</td><td>0.2411</td><td>wald_stat</td></tr>
+<tr><td>Tgf-Beta Signaling</td><td>1.025</td><td>0.5625</td><td>0.4000</td><td>wald_stat</td></tr>
+<tr><td>Interferon Gamma Response</td><td>0.991</td><td>0.5669</td><td>0.4872</td><td>wald_stat</td></tr>
+<tr><td>Allograft Rejection</td><td>0.961</td><td>0.5895</td><td>0.5556</td><td>wald_stat</td></tr>
+<tr><td>Interferon Alpha Response</td><td>-0.879</td><td>0.7842</td><td>0.7183</td><td>wald_stat</td></tr>
+</tbody>
+</table>
+</div>
+<h4>Metabolismo y Bioenergética</h4>
+<div class="table-responsive">
+<table>
+<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
+<tbody>
+<tr><td>Glycolysis</td><td>1.476</td><td>0.0833</td><td>0.0150</td><td>wald_stat</td></tr>
+<tr><td>Mtorc1 Signaling</td><td>1.448</td><td>0.0818</td><td>0.0089</td><td>wald_stat</td></tr>
+<tr><td>Adipogenesis</td><td>1.399</td><td>0.1034</td><td>0.0068</td><td>wald_stat</td></tr>
+<tr><td>Reactive Oxygen Species Pathway</td><td>1.359</td><td>0.1196</td><td>0.0681</td><td>wald_stat</td></tr>
+<tr><td>Bile Acid Metabolism</td><td>1.120</td><td>0.3948</td><td>0.2559</td><td>wald_stat</td></tr>
+<tr><td>Heme Metabolism</td><td>1.074</td><td>0.4713</td><td>0.2927</td><td>wald_stat</td></tr>
+<tr><td>Fatty Acid Metabolism</td><td>0.996</td><td>0.5983</td><td>0.4457</td><td>wald_stat</td></tr>
+<tr><td>Pperoxisome</td><td>0.956</td><td>0.5820</td><td>0.5763</td><td>wald_stat</td></tr>
+<tr><td>Cholesterol Homeostasis</td><td>-0.994</td><td>0.6949</td><td>0.4672</td><td>wald_stat</td></tr>
+<tr><td>Xenobiotic Metabolism</td><td>-1.038</td><td>0.9066</td><td>0.3866</td><td>wald_stat</td></tr>
+<tr><td>Oxidative Phosphorylation</td><td>-1.206</td><td>0.8573</td><td>0.0869</td><td>wald_stat</td></tr>
+</tbody>
+</table>
+</div>
+<h4>Ciclo Celular, Apoptosis y Daño al ADN</h4>
+<div class="table-responsive">
+<table>
+<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
+<tbody>
+<tr><td>Myc Targets V1</td><td>1.687</td><td>0.0475</td><td>0.0010</td><td>wald_stat</td></tr>
+<tr><td>Apoptosis</td><td>1.516</td><td>0.0728</td><td>0.0067</td><td>wald_stat</td></tr>
+<tr><td>E2F Targets</td><td>1.379</td><td>0.1098</td><td>0.0067</td><td>wald_stat</td></tr>
+<tr><td>Wnt-Beta Catenin Signaling</td><td>1.029</td><td>0.5746</td><td>0.4211</td><td>wald_stat</td></tr>
+<tr><td>Notch Signaling</td><td>0.992</td><td>0.5861</td><td>0.4897</td><td>wald_stat</td></tr>
+<tr><td>Myc Targets V2</td><td>-0.918</td><td>0.7613</td><td>0.6167</td><td>wald_stat</td></tr>
+<tr><td>Dna Repair</td><td>-0.980</td><td>0.6617</td><td>0.5083</td><td>wald_stat</td></tr>
+<tr><td>Mitotic Spindle</td><td>-1.018</td><td>0.7118</td><td>0.4200</td><td>wald_stat</td></tr>
+<tr><td>P53 Pathway</td><td>-1.041</td><td>1.0000</td><td>0.3657</td><td>wald_stat</td></tr>
+<tr><td>Spermatogenesis</td><td>-1.156</td><td>0.7866</td><td>0.2359</td><td>wald_stat</td></tr>
+</tbody>
+</table>
+</div>
+<h4>Estrés Celular y Respuestas Estructurales</h4>
+<div class="table-responsive">
+<table>
+<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
+<tbody>
+<tr><td>Uv Response Dn</td><td>1.855</td><td>0.0145</td><td>0.0010</td><td>wald_stat</td></tr>
+<tr><td>Hypoxia</td><td>1.460</td><td>0.0850</td><td>0.0242</td><td>wald_stat</td></tr>
+<tr><td>Androgen Response</td><td>1.273</td><td>0.2094</td><td>0.1118</td><td>wald_stat</td></tr>
+<tr><td>Protein Secretion</td><td>1.261</td><td>0.2128</td><td>0.1031</td><td>wald_stat</td></tr>
+<tr><td>Apical Junction</td><td>1.170</td><td>0.3555</td><td>0.1727</td><td>wald_stat</td></tr>
+<tr><td>Uv Response Up</td><td>1.162</td><td>0.3538</td><td>0.1849</td><td>wald_stat</td></tr>
+<tr><td>Epithelial Mesenchymal Transition</td><td>1.093</td><td>0.4406</td><td>0.2805</td><td>wald_stat</td></tr>
+<tr><td>Myogenesis</td><td>1.012</td><td>0.5771</td><td>0.4204</td><td>wald_stat</td></tr>
+<tr><td>Kras Signaling Up</td><td>0.989</td><td>0.5540</td><td>0.4802</td><td>wald_stat</td></tr>
+<tr><td>Unfolded Protein Response</td><td>0.962</td><td>0.6050</td><td>0.5247</td><td>wald_stat</td></tr>
+<tr><td>Estrogen Response Late</td><td>0.884</td><td>0.7391</td><td>0.7045</td><td>wald_stat</td></tr>
+<tr><td>Apical Surface</td><td>0.735</td><td>0.9470</td><td>0.8528</td><td>wald_stat</td></tr>
+<tr><td>Kras Signaling Dn</td><td>-0.541</td><td>0.9980</td><td>0.9947</td><td>wald_stat</td></tr>
+<tr><td>Estrogen Response Early</td><td>-1.036</td><td>0.7653</td><td>0.3831</td><td>wald_stat</td></tr>
+<tr><td>Pi3K/Akt/Mtor Signaling</td><td>-1.423</td><td>0.3352</td><td>0.0151</td><td>wald_stat</td></tr>
+</tbody>
+</table>
+</div>
+<h4>Otras Vías Hallmark</h4>
+<div class="table-responsive">
+<table>
+<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead>
+<tbody>
+<tr><td>G2-M Checkpoint</td><td>1.155</td><td>0.3518</td><td>0.1599</td><td>wald_stat</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+"""
+    # Inyectar colores en la columna NES usando regex
+    def colorize_nes(match):
+        term = match.group(1)
+        nes_val = float(match.group(2))
+        color = "#10b981" if nes_val > 0 else "#ef4444"
+        return f'<tr><td>{term}</td><td><span style="color: {color}; font-weight: 600;">{nes_val:.3f}</span></td>'
+
+    gsea_tables_html = re.sub(r'<tr><td>(.*?)</td><td>(-?[0-9]+\.[0-9]+)</td>', colorize_nes, gsea_tables_html)
     
     # 5. Cargar imágenes en base64
     print("🖼️ Codificando imágenes a base64...")
@@ -690,6 +816,60 @@ def main():
             color: var(--text-muted);
             font-size: 0.9rem;
         }}
+        
+        /* Modal for Image Zoom */
+        .modal {{
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+        }}
+        .modal-content {{
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 1200px;
+            transition: transform 0.25s ease;
+            cursor: zoom-in;
+            border-radius: 8px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }}
+        .modal-content.zoomed {{
+            transform: scale(1.5);
+            cursor: zoom-out;
+        }}
+        .close {{
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+        }}
+        .close:hover,
+        .close:focus {{
+            color: var(--primary-light);
+            text-decoration: none;
+            cursor: pointer;
+        }}
+        .image-card img, .carousel-slide img {{
+            cursor: pointer;
+            transition: 0.3s;
+        }}
+        .image-card img:hover, .carousel-slide img:hover {{
+            opacity: 0.7;
+            box-shadow: 0 0 15px var(--primary-light);
+        }}
     </style>
 </head>
 <body>
@@ -744,7 +924,12 @@ def main():
         <!-- PANEL EXPRESIÓN DIFERENCIAL -->
         <div id="expression-panel" class="panel">
             <h1>Expresión Diferencial (DEGs) por Subtipo</h1>
-            <p>Comparativa de las firmas moleculares depuradas por pseudobulk PyDESeq2 ($padj < 0.05$) bajo el diseño aditivo completo <code>~ assay + age_group</code>.</p>
+            <p>Comparativa de las firmas moleculares depuradas por pseudobulk PyDESeq2 ($padj &lt; 0.05$) bajo el diseño aditivo completo <code>~ assay + age_group</code>.</p>
+
+            <!-- POOL GLOBAL -->
+            <div style="margin-bottom: 2.5rem; padding: 1.5rem; background: rgba(15, 23, 42, 0.4); border-radius: 12px; border: 1px solid var(--border);">
+                {global_pool_html}
+            </div>
 
             <div class="split-container">
                 <!-- COLUMNA CD56DIM -->
@@ -765,16 +950,22 @@ def main():
                                 </tr>
                             </thead>
                             <tbody>
-                                {dim_rows}
+                                {dim_top10}
+                            </tbody>
+                            <tbody id="dim-more-rows" class="collapse-content">
+                                {dim_rest}
                             </tbody>
                         </table>
                     </div>
+                    <button class="collapse-btn" onclick="toggleCollapse('dim-more-rows')">Ver más genes CD56dim</button>
                 </div>
 
                 <!-- COLUMNA CD56BRIGHT -->
                 <div class="split-half">
-                    <h2>NK CD56bright (GLMM Single-Cell)</h2>
-                    <p>A diferencia de las células Dim, colapsar esta población rara (~5%) por donante generaría perfiles dominados por ruido. Para sortear esto, implementamos <b>Modelos Mixtos Lineales Generalizados (GLMM)</b> conservando la resolución <i>single-cell</i>. Los GLMM modelan las variables biológicas (`age_group`) y técnicas (`assay`) como efectos fijos, y controlan la variabilidad específica de cada paciente (`donante_id`) como un efecto aleatorio. Esta arquitectura estadística es ideal para poblaciones escasas: capitaliza la inmensa potencia estadística de evaluar ~1,870 eventos celulares individuales estructurados jerárquicamente dentro de sus $N = 173$ donantes biológicos (142 adultos y 31 viejos). Mientras el modelo evalúa cada célula para maximizar la sensibilidad, ajusta estrictamente la correlación intra-donante para no inflar artificialmente el p-valor (sesgo de pseudoreplicación). Aunque la severa penalización múltiple (FDR) de miles de células arroja 0 hits, la evaluación por p-valor nominal revela 92 top genes altamente consistentes con el desgaste mitocondrial:</p>
+                    <h2>NK CD56bright (PyDESeq2 Pseudobulk)</h2>
+                    <p>A pesar de representar una población extremadamente minoritaria (~5%), optamos por mantener el rigor simétrico y aplicamos el mismo modelo <b>Pseudobulk con PyDESeq2</b> (<code>~ assay + age_group</code>) utilizado en CD56dim. Si bien la escasez de células por donante en este subtipo plantea un reto analítico, el algoritmo de DESeq2 está intrínsecamente diseñado para manejar estas disparidades mediante sus factores de tamaño (<i>Size Factors</i> calculados vía mediana de ratios), compensando matemáticamente a los donantes con baja captura celular.</p>
+                    <p>Adicionalmente, la robusta contracción empírica de Bayes (<code>apeGLM</code>) castigó severamente cualquier gen cuya varianza estuviera impulsada por donantes con conteos minúsculos, comprimiendo su Fold Change hacia cero para proteger el modelo contra falsos positivos. Como resultado de esta protección algorítmica extrema —y del desbalance demográfico del N de donantes—, <b>cero genes lograron superar el estricto umbral FDR &lt; 0.05 individualmente</b>.</p>
+                    <p>Sin embargo, el Estadístico de Wald continuo generado por DESeq2 probó ser matemáticamente perfecto para el <i>Gene Set Enrichment Analysis</i> (GSEA). Al no depender de líneas de corte arbitrarias, el GSEA rescató la señal biológica al detectar que cientos de genes mitocondriales se desplazaban coordinadamente a la baja en el ranking, revelando un colapso sistémico a pesar de la falta de potencia estadística a nivel de gen individual. El total de células CD56bright analizadas fue N = 4,986 (distribuidas en 173 donantes: 142 adultos / 31 ancianos). A continuación se muestran los top genes ordenados por p-valor nominal extraídos de PyDESeq2, evidenciando alteraciones en rutas estructurales y mitocondriales:</p>
                     
                     <div class="table-responsive">
                         <table>
@@ -789,20 +980,25 @@ def main():
                                 </tr>
                             </thead>
                             <tbody>
-                                {bright_top15}
+                                {bright_top10}
                             </tbody>
                             <tbody id="bright-more-rows" class="collapse-content">
                                 {bright_rest}
                             </tbody>
                         </table>
                     </div>
-                    <button class="collapse-btn" onclick="toggleCollapse('bright-more-rows')">Ver más tendencias CD56bright</button>
+                    <button class="collapse-btn" onclick="toggleCollapse('bright-more-rows')">Ver más genes CD56bright</button>
                 </div>
             </div>
         </div>
 
         <!-- PANEL GSEA -->
         <div id="gsea-panel" class="panel">
+            <!-- ORA SECTION -->
+            <div style="margin-bottom: 2.5rem;">
+                {ora_html}
+            </div>
+
             <h1>Enriquecimiento Funcional GSEA Preranked</h1>
             <p>Dotplots y gráficos de enriquecimiento comparando los análisis funcionales de los subtipos y el pool completo (Global).</p>
             <div class="methodology-explanation" style="margin-bottom: 20px;">
@@ -830,6 +1026,7 @@ def main():
                         <img src="{img_gsea_dim}" alt="GSEA CD56dim Hallmark">
                         <div class="image-caption">Dotplot GSEA Preranked para CD56dim. Se aprecia la represión de TNF-α/NF-κB (enmascaramiento por inflammaging).</div>
                     </div>
+                    {gsea_tables_html}
                 </div>
 
                 <div id="gsea-sub-bright" class="sub-panel">
@@ -846,6 +1043,11 @@ def main():
                     </div>
                 </div>
             </div>
+
+            <!-- INTEGRATION SECTION -->
+            <div style="margin-top: 3rem;">
+                {integration_html}
+            </div>
         </div>
 
         <!-- PANEL CONCLUSIONES -->
@@ -856,6 +1058,13 @@ def main():
         <footer>
             <p>Generado por Antigravity · Proyecto de Inmunosenescencia de Células NK · 2026</p>
         </footer>
+    </div>
+
+    <!-- Modal para Zoom de Imágenes -->
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="img01" onclick="toggleZoom()">
+      <div id="caption" style="text-align: center; color: #cbd5e1; padding: 20px; font-size: 1.1rem; font-style: italic;"></div>
     </div>
 
     <script>
@@ -892,7 +1101,7 @@ def main():
             const content = document.getElementById(divId);
             if (content.classList.contains('show')) {{
                 content.classList.remove('show');
-                event.target.innerText = "Ver todos los DEGs CD56bright (34 genes)";
+                event.target.innerText = "Ver más genes";
             }} else {{
                 content.classList.add('show');
                 event.target.innerText = "Ocultar genes adicionales";
@@ -913,6 +1122,37 @@ def main():
             if (newIndex >= slides.length) newIndex = 0;
             if (newIndex < 0) newIndex = slides.length - 1;
             slides[newIndex].classList.add('active');
+        }}
+
+        // Configuración del Modal de Imágenes (Lightbox Zoom)
+        document.addEventListener("DOMContentLoaded", function() {{
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            var images = document.querySelectorAll(".image-card img, .carousel-slide img");
+            
+            images.forEach(img => {{
+                img.onclick = function(){{
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    modalImg.classList.remove("zoomed");
+                    var caption = this.nextElementSibling;
+                    if(caption && caption.classList.contains("image-caption")) {{
+                        captionText.innerHTML = caption.innerHTML;
+                    }} else {{
+                        captionText.innerHTML = this.alt;
+                    }}
+                }}
+            }});
+        }});
+
+        function closeModal() {{
+            document.getElementById("imageModal").style.display = "none";
+        }}
+        
+        function toggleZoom() {{
+            var img = document.getElementById("img01");
+            img.classList.toggle("zoomed");
         }}
     </script>
 </body>

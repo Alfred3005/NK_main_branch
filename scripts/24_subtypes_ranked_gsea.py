@@ -34,13 +34,13 @@ warnings.filterwarnings("ignore")
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIGURACIÓN GLOBAL
 # ─────────────────────────────────────────────────────────────────────────────
-BASE_RESULTS = '../results/subtypes'
+BASE_RESULTS = 'C:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient_Main_Branch/results/subtypes'
 GSEA_DIR     = os.path.join(BASE_RESULTS, 'gsea')
 os.makedirs(GSEA_DIR, exist_ok=True)
 
 # Tres análisis: (clave_archivo, nombre_display, subdirectorio_output, ruta_absoluta_opcional)
 # Para el análisis Global se usa el dataset completo V4-clean (todos los NK, sin split por subtipo)
-GLOBAL_DESEQ_PATH = '../results/pydeseq2/deseq2_results_v4_final.csv'
+GLOBAL_DESEQ_PATH = 'C:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient_Main_Branch/results/pydeseq2/deseq2_results_v4_final.csv'
 
 ANALYSES = [
     ('global',       'NK Global (Todos los NK · V4-Clean)', 'global',     GLOBAL_DESEQ_PATH),
@@ -71,10 +71,9 @@ SEED         = 42
 # ─────────────────────────────────────────────────────────────────────────────
 def build_rankings(df: pd.DataFrame) -> dict:
     """
-    Construye dos rankings a partir del DataFrame completo de DESeq2:
-      - wald_stat:       estadístico de Wald (gold standard DESeq2)
-      - combined_metric: sign(LFC) × -log10(padj) [Manual de referencia, pág. 15]
-    Retorna un dict con ambas Series ordenadas descendentemente.
+    Construye el ranking a partir del DataFrame completo de DESeq2:
+      - wald_stat: estadístico de Wald (gold standard DESeq2)
+    Retorna un dict con la Serie ordenada descendentemente.
     """
     df = df.copy()
     df = df[~df.index.isna() & ~df.index.duplicated(keep='first')]
@@ -83,15 +82,7 @@ def build_rankings(df: pd.DataFrame) -> dict:
     wald = df['stat'].dropna().replace([np.inf, -np.inf], np.nan).dropna()
     wald = wald.sort_values(ascending=False)
 
-    # 2. Métrica combinada
-    eps = 1e-300
-    df['padj_clean'] = df['padj'].fillna(1.0).clip(lower=eps)
-    df['lfc_clean']  = df['log2FoldChange'].fillna(0.0)
-    df['combined']   = np.sign(df['lfc_clean']) * (-np.log10(df['padj_clean']))
-    combined = df['combined'].dropna().replace([np.inf, -np.inf], np.nan).dropna()
-    combined = combined.sort_values(ascending=False)
-
-    return {'wald_stat': wald, 'combined_metric': combined}
+    return {'wald_stat': wald}
 
 # ─────────────────────────────────────────────────────────────────────────────
 # FUNCIONES GSEA PRERANK
@@ -145,12 +136,14 @@ def run_gsea_prerank(ranked: pd.Series, gene_set: str, out_dir: str,
         nes_col  = _extract_col(raw, ['nes'])
         fdr_col  = _extract_col(raw, ['fdr', 'q val', 'qval'])
         pval_col = _extract_col(raw, ['nom p', 'nom_p', 'p-val'])
+        lead_col = _extract_col(raw, ['lead_genes', 'core_enrichment', 'genes'])
 
         clean = pd.DataFrame({
             'Term': term_vals,
             'NES':  pd.to_numeric(nes_col,  errors='coerce').values if nes_col  is not None else np.nan,
             'FDR':  pd.to_numeric(fdr_col,  errors='coerce').values if fdr_col  is not None else np.nan,
             'pval': pd.to_numeric(pval_col, errors='coerce').values if pval_col is not None else np.nan,
+            'Lead_genes': lead_col.values if lead_col is not None else np.nan
         })
         clean['metric']      = metric_label
         clean['gene_set_db'] = gene_set
@@ -336,7 +329,7 @@ def plot_gsea_dotplot(df_res: pd.DataFrame, display_name: str, gs_name: str,
     # Mapa term → posición Y
     term_pos = {t: i for i, t in enumerate(order)}
 
-    markers = {'wald_stat': 'o', 'combined_metric': 'D'}
+    markers = {'wald_stat': 'o'}
     vmax = max(abs(df_plot['NES'].max()), abs(df_plot['NES'].min())) + 0.1
     norm = plt.Normalize(vmin=-vmax, vmax=vmax)
 
@@ -357,7 +350,7 @@ def plot_gsea_dotplot(df_res: pd.DataFrame, display_name: str, gs_name: str,
             s=(mdf['neg_log_fdr'].values * 45).clip(30, 700),
             marker=markers.get(metric, 'o'),
             alpha=0.82, edgecolors='white', linewidths=0.6,
-            label='Wald stat' if metric == 'wald_stat' else 'Sign × -log₁₀(padj)',
+            label='Wald stat',
             zorder=3,
         )
 
@@ -515,7 +508,7 @@ def main():
             rnk_path = os.path.join(GSEA_DIR, subdir, f'ranked_{metric_label}.rnk')
             os.makedirs(os.path.dirname(rnk_path), exist_ok=True)
             ranked.reset_index().to_csv(rnk_path, sep='\t', index=False, header=False)
-        print(f"  Ranked lists: Wald={len(ranked_dict['wald_stat'])} genes | Combined={len(ranked_dict['combined_metric'])} genes")
+        print(f"  Ranked lists: Wald={len(ranked_dict['wald_stat'])} genes")
 
         # ── GSEA Prerank ──────────────────────────────────────────────────────
         print(f"\n  [GSEA Prerank]")
