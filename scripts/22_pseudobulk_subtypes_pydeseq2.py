@@ -146,7 +146,10 @@ def run_pseudobulk_by_subtype():
         print("="*60)
         
         # 1. Filtrar células del subtipo
-        adata_sub = adata[adata.obs['cell_type_simplified'] == ct].copy()
+        if ct == 'NK cell general':
+            adata_sub = adata.copy()
+        else:
+            adata_sub = adata[adata.obs['cell_type_simplified'] == ct].copy()
         
         # 2. Filtrar donantes por conteo mínimo de células para mitigar shot noise
         min_cells_per_donor = 5 if ct == 'NK CD56bright' else 1
@@ -237,12 +240,8 @@ def run_pseudobulk_by_subtype():
             print("   Tabla de contingencia Lote vs Grupo de Edad:")
             print(cross_tab)
             
-            if (cross_tab == 0).any().any():
-                design_factors = ['age_group']
-                print(f"   ⚠️ Colinealidad perfecta o lote sin adultos/viejos en este subtipo. Degradando diseño a: ~ age_group")
-            else:
-                design_factors = ['assay', 'age_group']
-                print(f"   Diseño aditivo robusto seleccionado: ~ assay + age_group")
+            design_factors = ['assay', 'age_group']
+            print(f"   Diseño aditivo robusto seleccionado: ~ assay + age_group")
                 
         # 5. Ejecutar PyDESeq2
         print(f" 🚀 Corriendo PyDESeq2 para {ct}...")
