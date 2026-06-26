@@ -313,7 +313,7 @@ def main():
             cat_df = df[df['Category'] == cat]
             if cat_df.empty: continue
             
-            html += f"<h4 style='color: var(--primary-light); margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;'>{{cat}}</h4>"
+            html += f"<h4 style='color: var(--primary-light); margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;'>{cat}</h4>"
             html += '<div class="table-responsive" style="margin-bottom: 1rem;"><table style="font-size: 0.85rem; margin-bottom: 0;">'
             html += '<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead><tbody>'
             for _, row in cat_df.iterrows():
@@ -323,7 +323,7 @@ def main():
                 pval_str = f"{pval:.4f}" if isinstance(pval, (int, float)) else str(pval)
                 # Destacar NES visualmente dependiendo de su dirección
                 color = "#10b981" if row['NES'] > 0 else "#ef4444"
-                html += f"<tr><td>{{row['Term']}}</td><td><span style='color: {{color}}; font-weight: 600;'>{{row['NES']:.3f}}</span></td><td>{{fdr_str}}</td><td>{{pval_str}}</td><td>{{row.get('metric', 'N/A')}}</td></tr>"
+                html += f"<tr><td>{row['Term']}</td><td><span style='color: {color}; font-weight: 600;'>{row['NES']:.3f}</span></td><td>{fdr_str}</td><td>{pval_str}</td><td>{row.get('metric', 'N/A')}</td></tr>"
             html += '</tbody></table></div>'
         html += '</details>'
         return html
