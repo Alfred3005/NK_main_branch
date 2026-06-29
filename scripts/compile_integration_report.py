@@ -266,8 +266,19 @@ def main():
     match_global_pool = re.search(r'(### A\. NK Cells General \(Pool Global Pseudobulk\).*?)### B\. NK CD56dim', report_raw, re.DOTALL)
     global_pool_raw = match_global_pool.group(1) if match_global_pool else ""
     
+    # Extraer CD56dim (dentro de sección 3)
+    match_cd56dim = re.search(r'(### B\. NK CD56dim: Expresión Diferencial por Pseudobulk \(PyDESeq2\).*?)### C\. NK CD56bright', report_raw, re.DOTALL)
+    cd56dim_raw = match_cd56dim.group(1) if match_cd56dim else ""
+    
+    # Extraer CD56bright (dentro de sección 3)
+    match_cd56bright = re.search(r'(### C\. NK CD56bright: Expresión Diferencial por Pseudobulk \(PyDESeq2\).*?)## \S*\s*4\.', report_raw, re.DOTALL)
+    cd56bright_raw = match_cd56bright.group(1) if match_cd56bright else ""
+    
     # Extraer ORA (dentro de sección 4)
-    match_ora = re.search(r'(### A\. Análisis de Sobre-Representación \(ORA\) Clásico.*?)### B\. Gene Set Enrichment Analysis', report_raw, re.DOTALL)
+    match_ora = re.search(r'(### A\. Análisis de Sobre-Representación \(ORA\) Clásico.*?)### B\. Análisis GSEA Preranked', report_raw, re.DOTALL)
+    if not match_ora:
+        # Fallback if title changed slightly
+        match_ora = re.search(r'(### A\. Análisis de Sobre-Representación \(ORA\) Clásico.*?)### B\. ', report_raw, re.DOTALL)
     ora_raw = match_ora.group(1) if match_ora else ""
     
     # Extraer Integración (dentro de sección 4)
@@ -277,6 +288,8 @@ def main():
     report_html = parse_markdown_to_html(narrative_raw)
     conclusions_html = parse_markdown_to_html(conclusions_raw)
     global_pool_html = parse_markdown_to_html(global_pool_raw)
+    cd56dim_html = parse_markdown_to_html(cd56dim_raw)
+    cd56bright_html = parse_markdown_to_html(cd56bright_raw)
     ora_html = parse_markdown_to_html(ora_raw)
     integration_html = parse_markdown_to_html(integration_raw)
 
@@ -885,12 +898,12 @@ def main():
             <div class="split-container">
                 <!-- COLUMNA CD56DIM -->
                 <div class="split-half">
-                    <h2>NK CD56dim (PyDESeq2 Pseudobulk)</h2>
-                    <p>Para esta población abundante, aplicamos un enfoque de <b>pseudobulk</b> colapsando las cuentas a nivel de donante ($N = 187$: 152 adultos y 35 viejos). Este método suma los perfiles de todas las células CD56dim de un mismo individuo, creando perfiles sintéticos altamente robustos. La ventaja principal del pseudobulk frente a enfoques puramente <i>single-cell</i> es que erradica la sobredispersión artificial ("dropouts" o inflación de ceros) y mitiga los sesgos de pseudoreplicación, permitiendo usar herramientas estándar de oro como PyDESeq2. Gracias a este modelado, logramos aislar la señal biológica y revelar 12 DEGs robustos con FDR &lt; 0.05 (S100A8, S100A9, AHR, CD83) asociados a hiper-inflamación.</p>
+                    {cd56dim_html}
                     
+                    <button class="collapse-btn" onclick="toggleCollapse('dim-more-rows')" style="margin-top: 20px;">Ver todos los DEGs brutos (CSV) CD56dim</button>
                     <div class="table-responsive">
                         <table>
-                            <thead>
+                            <tbody id="dim-more-rows" class="collapse-content">
                                 <tr>
                                     <th>N°</th>
                                     <th>Gen</th>
@@ -899,28 +912,21 @@ def main():
                                     <th>p-value</th>
                                     <th>p-adj (FDR)</th>
                                 </tr>
-                            </thead>
-                            <tbody>
                                 {dim_top10}
-                            </tbody>
-                            <tbody id="dim-more-rows" class="collapse-content">
                                 {dim_rest}
                             </tbody>
                         </table>
                     </div>
-                    <button class="collapse-btn" onclick="toggleCollapse('dim-more-rows')">Ver más genes CD56dim</button>
                 </div>
 
                 <!-- COLUMNA CD56BRIGHT -->
                 <div class="split-half">
-                    <h2>NK CD56bright (PyDESeq2 Pseudobulk)</h2>
-                    <p>A pesar de representar una población extremadamente minoritaria (~5%), optamos por mantener el rigor simétrico y aplicamos el mismo modelo <b>Pseudobulk con PyDESeq2</b> (<code>~ assay + age_group</code>) utilizado en CD56dim. Si bien la escasez de células por donante en este subtipo plantea un reto analítico, el algoritmo de DESeq2 está intrínsecamente diseñado para manejar estas disparidades mediante sus factores de tamaño (<i>Size Factors</i> calculados vía mediana de ratios), compensando matemáticamente a los donantes con baja captura celular.</p>
-                    <p>Adicionalmente, la robusta contracción empírica de Bayes (<code>apeGLM</code>) castigó severamente cualquier gen cuya varianza estuviera impulsada por donantes con conteos minúsculos, comprimiendo su Fold Change hacia cero para proteger el modelo contra falsos positivos. Como resultado de esta protección algorítmica extrema —y del desbalance demográfico del N de donantes—, <b>cero genes lograron superar el estricto umbral FDR &lt; 0.05 individualmente</b>.</p>
-                    <p>Sin embargo, el Estadístico de Wald continuo generado por DESeq2 probó ser matemáticamente perfecto para el <i>Gene Set Enrichment Analysis</i> (GSEA). Al no depender de líneas de corte arbitrarias, el GSEA rescató la señal biológica al detectar que cientos de genes mitocondriales se desplazaban coordinadamente a la baja en el ranking, revelando un colapso sistémico a pesar de la falta de potencia estadística a nivel de gen individual. El total de células CD56bright analizadas fue N = 4,986 (distribuidas en 173 donantes: 142 adultos / 31 ancianos). A continuación se muestran los top genes ordenados por p-valor nominal extraídos de PyDESeq2, evidenciando alteraciones en rutas estructurales y mitocondriales:</p>
+                    {cd56bright_html}
                     
+                    <button class="collapse-btn" onclick="toggleCollapse('bright-more-rows')" style="margin-top: 20px;">Ver todos los DEGs brutos (CSV) CD56bright</button>
                     <div class="table-responsive">
                         <table>
-                            <thead>
+                            <tbody id="bright-more-rows" class="collapse-content">
                                 <tr>
                                     <th>N°</th>
                                     <th>Gen</th>
@@ -929,16 +935,11 @@ def main():
                                     <th>p-value</th>
                                     <th>p-adj (FDR)</th>
                                 </tr>
-                            </thead>
-                            <tbody>
                                 {bright_top10}
-                            </tbody>
-                            <tbody id="bright-more-rows" class="collapse-content">
                                 {bright_rest}
                             </tbody>
                         </table>
                     </div>
-                    <button class="collapse-btn" onclick="toggleCollapse('bright-more-rows')">Ver más genes CD56bright</button>
                 </div>
             </div>
         </div>
