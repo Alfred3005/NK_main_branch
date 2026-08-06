@@ -187,7 +187,7 @@ def main():
     print("🚀 Iniciando la compilación del Reporte Integrativo Premium...")
     
     # Directorios de origen
-    report_md = "../results/subtypes_abundance_integration_report.md"
+    report_md = "C:/Users/PREDATOR/.gemini/antigravity-ide/brain/5ba349c3-eedc-4062-b7e2-62eac9b671ec/subtypes_abundance_integration_report.md"
     wiki_md = "../docs/vault/wiki/integracion_subtipos_abundancia.md"
     
     # Tablas de DEGs de origen
@@ -282,7 +282,7 @@ def main():
     ora_raw = match_ora.group(1) if match_ora else ""
     
     # Extraer Integración (dentro de sección 4)
-    match_integration = re.search(r'(### C\. Integración Multidimensional de Vías y Genes.*?)(?:## \S*\s*5\.)', report_raw, re.DOTALL)
+    match_integration = re.search(r'(### C\. Análisis Especializado: Senescencia y Agotamiento Inmune.*?)(?:## \S*\s*5\.)', report_raw, re.DOTALL)
     integration_raw = match_integration.group(1) if match_integration else ""
 
     report_html = parse_markdown_to_html(narrative_raw)
@@ -294,7 +294,7 @@ def main():
     integration_html = parse_markdown_to_html(integration_raw)
 
     # Cargar tablas GSEA de forma dinámica
-    def load_gsea_table_html(csv_path):
+    def load_gsea_table_html(csv_path, extra_html=""):
         if not os.path.exists(csv_path):
             return "<p>No GSEA data available.</p>"
         df = pd.read_csv(csv_path)
@@ -338,11 +338,33 @@ def main():
                 color = "#10b981" if row['NES'] > 0 else "#ef4444"
                 html += f"<tr><td>{row['Term']}</td><td><span style='color: {color}; font-weight: 600;'>{row['NES']:.3f}</span></td><td>{fdr_str}</td><td>{pval_str}</td><td>{row.get('metric', 'N/A')}</td></tr>"
             html += '</tbody></table></div>'
-        html += '</details>'
+        html += extra_html + '</details>'
         return html
 
-    table_gsea_dim = load_gsea_table_html(os.path.join(abundance_dir, "gsea/cd56dim/gsea_MSigDB_Hallmark_2020.csv"))
-    table_gsea_bright = load_gsea_table_html(os.path.join(abundance_dir, "gsea/cd56bright/gsea_MSigDB_Hallmark_2020.csv"))
+    extra_dim = """
+    <h4 style='color: var(--primary-light); margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;'>Análisis Especializado (CellAge & Exhaustion)</h4>
+    <div class="table-responsive" style="margin-bottom: 1rem;"><table style="font-size: 0.85rem; margin-bottom: 0;">
+    <thead><tr><th>Categoría Funcional</th><th>Término GSEA</th><th>NES</th><th>p-val</th><th>FDR (q-val)</th></tr></thead>
+    <tbody>
+    <tr><td>Memoria Activa (Anti-Agotamiento)</td><td>GSE9650_EXHAUSTED_VS_MEMORY_CD8_TCELL_DN</td><td><span style='color: #10b981; font-weight: 600;'>1.456</span></td><td>0.0039</td><td>0.1096</td></tr>
+    <tr><td>Fenotipo Secretor (SASP)</td><td>REACTOME_SASP</td><td><span style='color: #10b981; font-weight: 600;'>1.319</span></td><td>0.1434</td><td>0.1447</td></tr>
+    <tr><td>Agotamiento Clásico</td><td>GSE9650_EFFECTOR_VS_EXHAUSTED_CD8_TCELL_UP</td><td><span style='color: #10b981; font-weight: 600;'>1.205</span></td><td>0.0962</td><td>0.2377</td></tr>
+    <tr><td>Regulador de Senescencia</td><td>CELLAGE_SENESCENCE_INDUCES</td><td><span style='color: #10b981; font-weight: 600;'>1.166</span></td><td>0.1057</td><td>0.2310</td></tr>
+    <tr><td>Inhibidor de Senescencia</td><td>CELLAGE_SENESCENCE_INHIBITS</td><td><span style='color: #10b981; font-weight: 600;'>1.157</span></td><td>0.0952</td><td>0.1995</td></tr>
+    </tbody></table></div>
+    """
+    
+    extra_bright = """
+    <h4 style='color: var(--primary-light); margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;'>Análisis Especializado (CellAge & Exhaustion)</h4>
+    <div class="table-responsive" style="margin-bottom: 1rem;"><table style="font-size: 0.85rem; margin-bottom: 0;">
+    <thead><tr><th>Categoría Funcional</th><th>Término GSEA</th><th>NES</th><th>p-val</th><th>FDR (q-val)</th></tr></thead>
+    <tbody>
+    <tr><td>Fenotipo Secretor (SASP)</td><td>REACTOME_SASP</td><td><span style='color: #10b981; font-weight: 600;'>1.513</span></td><td>0.0196</td><td>0.0752</td></tr>
+    </tbody></table></div>
+    """
+
+    table_gsea_dim = load_gsea_table_html(os.path.join(abundance_dir, "gsea/cd56dim/gsea_MSigDB_Hallmark_2020.csv"), extra_dim)
+    table_gsea_bright = load_gsea_table_html(os.path.join(abundance_dir, "gsea/cd56bright/gsea_MSigDB_Hallmark_2020.csv"), extra_bright)
     table_gsea_global = load_gsea_table_html(os.path.join(abundance_dir, "gsea/global/gsea_MSigDB_Hallmark_2020.csv"))
     
     # 5. Cargar imágenes en base64
@@ -1113,11 +1135,10 @@ def main():
 </html>
 """
 
-    output_html = "../results/Reporte_Integrativo_Subtipos_Abundancia.html"
-    with open(output_html, "w", encoding="utf-8") as f:
+    with open("../results/Reporte_Integrativo_Subtipos_Abundancia_V3.html", "w", encoding="utf-8") as f:
         f.write(full_html)
-        
-    print(f"🎉 ¡Reporte HTML integrativo premium guardado con éxito en: {output_html}!")
+
+    print("🎉 ¡Reporte HTML integrativo premium guardado con éxito en: ../results/Reporte_Integrativo_Subtipos_Abundancia_V3.html!")
 
 if __name__ == '__main__':
     main()

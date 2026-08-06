@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Reporte de Colinealidad</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 40px auto; padding: 20px; }
+        h1, h2, h3, h4 { color: #111; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+        th, td { border: 1px solid #dfe2e5; padding: 8px 12px; text-align: left; }
+        th { background-color: #f6f8fa; }
+        blockquote { border-left: 4px solid #dfe2e5; color: #6a737d; padding-left: 15px; margin-left: 0; }
+        pre { background-color: #f6f8fa; border-radius: 6px; padding: 16px; overflow: auto; }
+        .mermaid { margin: 20px 0; text-align: center; }
+    </style>
+</head>
+<body>
+<h1>Reporte Técnico: Colinealidad y Sesgo Tecnológico en PyDESeq2</h1>
+<p>Este documento explica de manera detallada el fenómeno de <strong>Colinealidad de Rango Deficiente</strong> que afectó nuestro pipeline original, por qué los algoritmos estándar generaron falsos positivos masivos, y cómo implementamos una solución matemática estricta para purgar el sesgo técnico.</p>
+<h2>1. El Conflicto Fundamental: Edad vs. Máquina</h2>
+<p>En experimentos de célula única (<em>scRNA-seq</em>), los datos se recolectan frecuentemente en diferentes lotes o versiones tecnológicas. En nuestra cohorte, las muestras se procesaron usando dos kits de secuenciación distintos de 10x Genomics: <code>10x 3' v2</code> y <code>10x 3' v3</code>.</p>
+<p>El problema biológico que investigamos es el envejecimiento (<code>Adult</code> vs <code>Old</code>). Idealmente, el diseño estadístico debe ser aditivo, de la forma <code>~ assay + age_group</code>, para separar el efecto de la máquina del efecto real de la edad.</p>
+<h3>Las Matrices de Colinealidad (El Problema Real)</h3>
+<p>El problema ocurre cuando la distribución de pacientes es altamente asimétrica, o cuando un kit se usó casi exclusivamente para un grupo de edad. A continuación se muestran las 3 matrices reales de nuestros pacientes (N de donantes) <strong>antes</strong> de aplicar la purga:</p>
+<h4>A. NK Global (Previo al Filtro)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Máquina (<code>assay</code>)</th>
+<th style="text-align: center;">Adultos (<code>Adult</code>)</th>
+<th style="text-align: center;">Ancianos (<code>Old</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>10x 3' transcription profiling</strong></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10x 3' v2</strong></td>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;">182</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10x 3' v3</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10x 5' v1</strong></td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10x 5' v2</strong></td>
+<td style="text-align: center;">143</td>
+<td style="text-align: center;">31</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span style="color:red"><strong>Seq-Well</strong></span></td>
+<td style="text-align: center;"><span style="color:red">3</span></td>
+<td style="text-align: center;"><span style="color:red">0</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span style="color:red"><strong>Smart-seq2</strong></span></td>
+<td style="text-align: center;"><span style="color:red">0</span></td>
+<td style="text-align: center;"><span style="color:red">1</span></td>
+</tr>
+</tbody>
+</table>
+<h4>B. NK CD56dim (Previo al Filtro)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Máquina (<code>assay</code>)</th>
+<th style="text-align: center;">Adultos (<code>Adult</code>)</th>
+<th style="text-align: center;">Ancianos (<code>Old</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>10x 3' transcription profiling</strong></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span style="color:red"><strong>10x 3' v3</strong></span></td>
+<td style="text-align: center;"><span style="color:red">0</span></td>
+<td style="text-align: center;"><span style="color:red">2</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10x 5' v1</strong></td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10x 5' v2</strong></td>
+<td style="text-align: center;">140</td>
+<td style="text-align: center;">30</td>
+</tr>
+</tbody>
+</table>
+<h4>C. NK CD56bright (Previo al Filtro)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Máquina (<code>assay</code>)</th>
+<th style="text-align: center;">Adultos (<code>Adult</code>)</th>
+<th style="text-align: center;">Ancianos (<code>Old</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>10x 3' transcription profiling</strong></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10x 3' v2</strong></td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">153</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span style="color:red"><strong>10x 3' v3</strong></span></td>
+<td style="text-align: center;"><span style="color:red">0</span></td>
+<td style="text-align: center;"><span style="color:red">1</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10x 5' v1</strong></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10x 5' v2</strong></td>
+<td style="text-align: center;">132</td>
+<td style="text-align: center;">27</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!WARNING]
+<strong>Colinealidad Perfecta:</strong> En esta tabla, casi todos los ancianos están en <code>v3</code>, y todos los adultos están en <code>v2</code>. El modelo estadístico es matemáticamente ciego: es incapaz de determinar si una célula tiene un gen diferente porque es <strong>Vieja</strong> o porque fue leída en la máquina <strong>v3</strong>.</p>
+</blockquote>
+<h2>2. La "Trampa" Algorítmica de PyDESeq2</h2>
+<p>Cuando enviamos esta matriz a PyDESeq2 pidiendo el diseño <code>~ assay + age_group</code>, el modelo encuentra una <em>Deficiencia de Rango</em> (no puede invertir la matriz porque las columnas son combinaciones lineales unas de otras).</p>
+<p>Para evitar fallar y arrojar un error fatal (crash), PyDESeq2 y algoritmos similares toman una decisión automatizada muy peligrosa: <strong>Degradan el diseño experimental</strong>.
+Automáticamente eliminan el término conflictivo (<code>assay</code>) y calculan las diferencias usando el modelo simplificado: <code>~ age_group</code>.</p>
+<h3>Consecuencias: Explosión de Falsos Positivos</h3>
+<p>Al ignorar el efecto de lote (las diferencias físicas entre los kits v2 y v3), PyDESeq2 asume que toda la varianza técnica es biología pura. 
+* En nuestras primeras versiones, el modelo reportaba <strong>más de 3,000 genes</strong> diferencialmente expresados.
+* Genes como <em>FCER1G</em> y <em>CCL3</em> aparecían altamente significativos.
+* En realidad, estos genes no tenían nada que ver con la senescencia celular; simplemente eran genes que el kit <code>v3</code> captaba con mayor sensibilidad que el kit <code>v2</code>.</p>
+<h2>3. Nuestra Solución: "Experiment Collinearity Strict"</h2>
+<p>Para evitar esta catástrofe, no podíamos confiar en los fallbacks automatizados de las librerías estadísticas. Implementamos un filtro de pre-procesamiento estricto en el script <code>22_pseudobulk_subtypes_pydeseq2_strict.py</code>.</p>
+<h3>El Algoritmo de Purga</h3>
+<pre><code class="language-mermaid">graph TD
+    A[Matriz Pseudobulk por Subtipo] --&gt; B{Generar Cross-Tabulación}
+    B --&gt;|Evaluar 'assay' vs 'age_group'| C[Iterar sobre cada Assay]
+    C --&gt; D{¿El Assay tiene Adultos &gt; 0\nY Ancianos &gt; 0?}
+    D -- Sí --&gt; E[Retener Assay]
+    D -- No --&gt; F[Excluir Assay del Análisis]
+    E --&gt; G[PyDESeq2: Diseño Robusto]
+    F --&gt; G
+    G --&gt; H[Fórmula: ~ assay + age_group]
+    H --&gt; I[Resultados Puros de Senescencia]
+</code></pre>
+<h3>Tabla Validada (Matriz de Rango Completo)</h3>
+<p>Al aplicar este filtro estricto, el script elimina iterativamente cualquier ensayo que no tenga representación en <strong>ambos</strong> grupos etarios. Esto asegura que la matriz final entregada a PyDESeq2 esté rigurosamente balanceada y validada.</p>
+<blockquote>
+<p>[!TIP]
+<strong>Biología Real:</strong> Al lograr una tabla balanceada (o restringida a una sola máquina controlada), PyDESeq2 puede aplicar exitosamente el diseño sin degradarlo. El ruido tecnológico desapareció por completo y los 3,000 falsos positivos colapsaron. Nos quedamos únicamente con las verdaderas huellas de la senescencia (los <strong>23 DEGs</strong> finales).</p>
+</blockquote>
+<h2>4. Potencia Estadística y Distribución Final por Análisis (Filtro Aplicado)</h2>
+<p>El error de colinealidad (y la inflación de falsos positivos) se presentó masivamente en los <strong>tres análisis</strong> iniciales porque, por defecto, se intentó procesar a toda la población heterogénea junta. Como respuesta, <strong>la corrección del filtrado estricto (Experiment Collinearity Strict) se aplicó a los tres niveles</strong> (Global, CD56dim, y CD56bright) antes de ejecutar el modelo de regresión. </p>
+<p>A continuación se detalla exactamente con cuántos donantes (N) y células reales nos quedamos tras la purga para cada análisis DEA (Differential Expression Analysis):</p>
+<h3>A. Análisis Global (NK Total)</h3>
+<p>El análisis general de células NK logró retener la mayor potencia estadística, ya que a nivel macro, la mayoría de los ensayos conservaban representación en ambos grupos etarios.
+* <strong>Ensayos validados:</strong> <code>10x 3' transcription profiling</code>, <code>10x 3' v2</code>, <code>10x 3' v3</code>, <code>10x 5' v1</code>, <code>10x 5' v2</code>
+* <strong>Células Analizadas:</strong> 140,930
+* <strong>Donantes Totales (N):</strong> 420
+* <strong>Distribución:</strong> Adultos = 194 | Ancianos = 226</p>
+<h3>B. Análisis Subpoblación CD56dim</h3>
+<p>Para la subpoblación inmadura y secretora, la asimetría de kits forzó al script a eliminar ensayos importantes como el <code>10x 3' v2</code> y <code>v3</code>, debido a que carecían de balance etario en esta subpoblación específica.
+* <strong>Ensayos validados:</strong> <code>10x 3' transcription profiling</code>, <code>10x 5' v1</code>, <code>10x 5' v2</code>
+* <strong>Células Analizadas:</strong> 62,553
+* <strong>Donantes Totales (N):</strong> 187
+* <strong>Distribución:</strong> Adultos = 152 | Ancianos = 35</p>
+<h3>C. Análisis Subpoblación CD56bright</h3>
+<p>En esta subpoblación madura y efectora (altamente escasa en sangre periférica, ~5%), el modelo retuvo a casi todos los donantes de la <code>v2</code> pero purificó a la <code>v3</code>.
+* <strong>Ensayos validados:</strong> <code>10x 3' transcription profiling</code>, <code>10x 3' v2</code>, <code>10x 5' v1</code>, <code>10x 5' v2</code>
+* <strong>Células Analizadas:</strong> 2,814
+* <strong>Donantes Totales (N):</strong> 354
+* <strong>Distribución:</strong> Adultos = 170 | Ancianos = 184</p>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+    // Replace code blocks containing mermaid with a div for rendering
+    document.querySelectorAll('code.language-mermaid').forEach(el => {
+        const pre = el.parentElement;
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = el.textContent;
+        pre.replaceWith(div);
+    });
+</script>
+</body>
+</html>

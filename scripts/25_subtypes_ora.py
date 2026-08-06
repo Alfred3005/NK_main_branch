@@ -65,7 +65,7 @@ def run_ora(significant_file, output_dir, prefix):
             print(f"    Error in enrichr: {e}")
 
 if __name__ == '__main__':
-    base_dir = "/mnt/c/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scAR_python_validation_v4_clean_subtypes_abundance/results/subtypes"
+    base_dir = "../results/subtypes"
     out_base = f"{base_dir}/ora"
     
     # Run for CD56dim

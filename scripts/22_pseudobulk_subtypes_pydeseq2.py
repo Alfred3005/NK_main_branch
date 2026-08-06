@@ -132,8 +132,8 @@ def run_pseudobulk_by_subtype():
         'CD16-negative, CD56-bright natural killer cell, human': 'NK CD56bright'
     })
     
-    subtypes = ['NK CD56dim', 'NK cell general']
-    print(f"\nSubtipos celulares seleccionados para Pseudobulk (Aislado de GLMM): {subtypes}")
+    subtypes = ['NK CD56dim', 'NK cell general', 'NK CD56bright']
+    print(f"\nSubtipos celulares seleccionados para Pseudobulk: {subtypes}")
     
     # Mapeo de metadatos de donantes a nivel global
     donor_meta_global = adata.obs.groupby(['donor_id', 'age_group', 'assay']).size().reset_index(name='cell_count')

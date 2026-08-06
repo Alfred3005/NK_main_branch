@@ -1,2 +1,8 @@
 
 data/
+
+# Logs
+*.log
+
+# Scratch scripts
+scripts/scratch/
