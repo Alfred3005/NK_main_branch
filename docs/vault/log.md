@@ -2,6 +2,26 @@
 
 Todas las decisiones y cambios significativos del proyecto se registran aquí.
 
+## 2026-09-07
+- **01:00 AM**: 🧹 **Gran Limpieza, Consolidación Canónica y Alineación Definitiva con Reporte V2**.
+    - **Auditoría Forense:** Se comprobó que el reporte `Reporte_Integrativo_Subtipos_Abundancia_V2.html` (20 de julio de 2026) es el entregable final canónico, superando al borrador previo e incompleto V3.
+    - **Promoción Canónica:** Se promovieron los scripts de la solución de colinealidad (`experiment_collinearity`) a la raíz de `scripts/` (`22_pseudobulk_subtypes_pydeseq2.py`, `24_subtypes_ranked_gsea.py`, `14_run_specialized_gsea.py`, `25_subtypes_ora.py`, `plot_gprofiler_style.py`, `plot_heatmap_global.py`).
+    - **Sincronización de Resultados:** La carpeta `results/subtypes/` se consolidó con la totalidad de tablas de DEGs, GSEA unificado, ORA y figuras maestras en Base64.
+    - **Independencia y Portabilidad:** Se importó el documento maestro `docs/reporte_integrativo_final.md` y se recopilaron todas las 20 figuras en `results/figures/`, permitiendo que `generate_report_v2.py` compile de forma 100% autónoma sin depender de rutas externas del sistema.
+    - **Aislamiento a Legacy:** Se movieron a `legacy/` los reportes históricos (V1, V3 trunca, Colinealidad), los scripts descriptivos de agosto (`02_...`, `results/descriptive_analysis_v5/`), los scripts temporales de depuración (`scratch/`) y los respaldos previos.
+    - **Automatización Unificada:** Se actualizaron `run_final_pipeline.py` y `run_pipeline.ps1` para orquestar linealmente la ejecución canónica.
+
+## 2026-08-19
+- **02:00 PM**: 📊 **Generación de Figuras y Tablas Descriptivas para Manuscrito de Tesis**.
+    - Creación de scripts descriptivos (`02_descriptive_analysis_figures.py`, `02b_descriptive_figures_individual.py`, `generate_descriptive_tables.py`, `compile_descriptive_report.py`) y generación de `results/descriptive_analysis_v5/` para alimentar específicamente las secciones 5.1 y 5.2 del manuscrito de tesis.
+    - Aislados posteriormente a `legacy/descriptive_analysis/` para preservar la pureza del pipeline transcriptómico central.
+
+## 2026-07-20
+- **03:05 PM**: 🧬 **Cierre del Hito de Colinealidad Estricta y Compilación del Reporte V2**.
+    - **Resolución de Colinealidad:** Filtrado riguroso por química balanceada (`10x 3' v3`, N=187 donantes: 152 adultos vs 35 ancianos, 62,553 células).
+    - **Firma Molecular Pura:** Identificación del colapso de *IL7R* (CD127, log2FC = -1.0416, FDR = 0.0003) como marcador maestro de atrofia del nicho secretor, junto con el silenciamiento de *XCL1/2* y la verdadera represión de *S100A9* (-1.6169).
+    - **Reporte Integrativo V2:** Creación de `scripts/generate_report_v2.py` con navegación por pestañas (`Narrativa`, `Abundancia`, `DEGs`, `Perfiles GSEApy`, `Conclusiones`), 21 tablas interactivas completas y gráficos estilo gProfiler v7.
+
 ## 2026-06-10
 - **06:30 PM**: 🧬 **Reporte Integrativo y Cierre de Tesis (CD56dim vs CD56bright + Abundancia)**.
     - **Reporte Científico:** Redactado [subtypes_abundance_integration_report.md](file:///c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/results/subtypes_abundance_integration_report.md) contrastando las subpoblaciones NK, la abundancia celular y el efecto cancelación en Global NK.

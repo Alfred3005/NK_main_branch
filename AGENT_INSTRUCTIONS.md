@@ -12,34 +12,42 @@ The goal of this pipeline is to analyze 187 healthy donors to identify different
 
 ## Execution Steps (Sequential)
 
-Execute the scripts sequentially from the `scripts/` directory:
+Execute the scripts sequentially from the `scripts/` directory or run `python scripts/run_final_pipeline.py`:
 
-1. **`01_exploratory_data_analysis.py`**
-   - **Purpose**: Validates the input `NK_dataset_qc_ready.h5ad` file. Verifies dimensions (~143,991 cells × 60,530 genes) and age group balancing. 
-   - **Note**: The large number of genes is intentional. Ribosomal (RPS/RPL) and IG genes are filtered *dynamically* at runtime by PyDESeq2 to preserve count matrices for stochastic assumption validity.
+1. **`22_pseudobulk_subtypes_pydeseq2.py`**
+   - **Purpose**: Runs Differential Expression by Subtype (CD56dim, CD56bright, and Global NK) with strict assay balance per age group (`10x 3' v3`, N=187 donantes).
+   - **Model**: `~ assay + age_group` with `apeGLM` shrinkage.
+   - **Output**: Generates CSVs in `../results/subtypes/` and identifies 23 significant DEGs globally (*IL7R* down, *S100A9* down, *NKG7* up).
 
-2. **`10-pydeseq2-pseudobulk-clean.py`**
-   - **Purpose**: Runs Global Differential Expression (Baseline) using PyDESeq2 with pseudobulk aggregation.
-   - **Model**: `~ assay + age_group`
-   - **Output**: Identifies purely significant global DEGs after LFC Shrinkage (`apeGLM`).
-
-3. **`22_pseudobulk_subtypes_pydeseq2.py`**
-   - **Purpose**: Runs Differential Expression by Subtype (CD56dim and CD56bright).
-   - **Model**: Degrades to `~ age_group` for CD56dim to avoid collinearity. CD56bright might skip DEG output if cell mass is insufficient (this is an expected statistical control).
-
-4. **`23_differential_abundance_milo.py`**
+2. **`23_differential_abundance_milo.py`**
    - **Purpose**: Differential Abundance.
    - **Mechanism**: Calculates a Binomial GLM of the ratio between CD56bright and Total NK cells. 
-   - **Expected Result**: Log Odds Ratio around -0.47 (OR=0.62), p-val = 0.000000, confirming the loss of CD56bright progenitors with age.
+   - **Result**: Log Odds Ratio around -0.47 (OR=0.62), p-val < 0.0001, confirming the significant loss of CD56bright progenitors with age.
 
-5. **`24_subtypes_ranked_gsea.py`**
-   - **Purpose**: Performs Gene Set Enrichment Analysis (GSEA) using MSigDB Hallmark, KEGG, and Reactome based on the Wald stats from PyDESeq2.
+3. **`24_subtypes_ranked_gsea.py`**
+   - **Purpose**: Performs Gene Set Enrichment Analysis (GSEA) using MSigDB Hallmark, KEGG, and Reactome based on Wald stats from PyDESeq2.
+   - **Output**: Generates reports and dotplots in `../results/subtypes/gsea/`.
 
-6. **`compile_integration_report.py`**
-   - **Purpose**: Compiles all CSVs, text results, and generated PNGs into a final, self-contained base64 HTML report.
-   - **Output**: `../results/Reporte_Integrativo_Subtipos_Abundancia.html`
+4. **`14_run_specialized_gsea.py`**
+   - **Purpose**: Runs specialized GSEA on orthogonal senescence signatures (CellAge, Reactome SASP, Immune Exhaustion).
+   - **Output**: `../results/subtypes/gsea_specialized/`.
+
+5. **`25_subtypes_ora.py`**
+   - **Purpose**: Over-Representation Analysis (ORA) on high-confidence DEG sets.
+   - **Output**: `../results/subtypes/ora/`.
+
+6. **`plot_gprofiler_style.py` & `plot_heatmap_global.py`**
+   - **Purpose**: Generates publication-grade figures: comparative gProfiler-style plots (FDR < 0.05 and FDR < 0.25) and clustered heatmaps.
+   - **Output**: `../results/subtypes/`.
+
+7. **`compile_gsea_table.py`**
+   - **Purpose**: Consolidates GSEA results into a unified semantic table (`gsea_unified_table.md`) categorizing pathways by biological process.
+
+8. **`generate_report_v2.py`**
+   - **Purpose**: Compiles all narrative sections, 21 data tables, and 20 figures into the standalone interactive HTML report.
+   - **Output**: `../results/Reporte_Integrativo_Subtipos_Abundancia_V2.html`.
 
 ## Agent Guidelines
 - If a step fails, do not arbitrarily change the statistical model. Check for missing dependencies or file path issues.
-- The absence of a CD56bright results CSV is handled gracefully by the compilation script. Do not attempt to force false-positive DEG extraction for sparse populations.
-- All visualizations are output to `results/subtypes/gsea/` and `results/subtypes/`.
+- All visualizations and tables are output to `results/subtypes/` and `results/figures/`.
+- All legacy, exploratory or historical versions are isolated in `legacy/`. Do not run or modify files in `legacy/` during standard pipeline execution.

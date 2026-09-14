@@ -58,8 +58,10 @@ def main():
         "24_subtypes_ranked_gsea.py",
         "14_run_specialized_gsea.py",
         "25_subtypes_ora.py",
+        "plot_gprofiler_style.py",
+        "plot_heatmap_global.py",
         "compile_gsea_table.py",
-        "compile_integration_report.py"
+        "generate_report_v2.py"
     ]
     
     total_start_time = time.time()

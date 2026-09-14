@@ -56,7 +56,8 @@ def format_cell(row, col):
     return val
 
 def compile_gsea_table():
-    base_dir = r"C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes"
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+    base_dir = os.path.join(repo_root, "results", "subtypes")
     search_pattern = os.path.join(base_dir, "**", "gseapy.gene_set.prerank.report.csv")
     csv_files = glob.glob(search_pattern, recursive=True)
     
@@ -105,7 +106,7 @@ def compile_gsea_table():
     filtered['NOM p-val'] = filtered.apply(lambda row: format_cell(row, 'NOM p-val'), axis=1)
     filtered['FDR q-val'] = filtered.apply(lambda row: format_cell(row, 'FDR q-val'), axis=1)
     
-    out_path = r"C:\Users\PREDATOR\.gemini\antigravity-ide\brain\5ba349c3-eedc-4062-b7e2-62eac9b671ec\gsea_unified_table.md"
+    out_path = os.path.join(base_dir, "gsea_unified_table.md")
     
     with open(out_path, "w", encoding="utf-8") as f:
         f.write("# Tablas Unificadas GSEA por Subpoblación (FDR < 0.25)\n\n")

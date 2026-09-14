@@ -170,9 +170,14 @@ def run_pseudobulk_by_subtype():
         cross_tab = pd.crosstab(sub_donor_meta['assay'], sub_donor_meta['age_group'])
         print(f" - Tabla de contingencia inicial para {ct}:\n{cross_tab}")
         
-        # Omitimos el filtro estricto de requerir 1 viejo y 1 adulto por lote para no perder poder estadístico.
-        # PyDESeq2 puede estimar efectos principales siempre que la matriz global no sea perfectamente colineal.
-        valid_assays = sub_donor_meta['assay'].unique().tolist()
+        # Filtrado estricto de requerir al menos 1 viejo y 1 adulto por lote para aislar sesgos técnicos
+        valid_assays = []
+        for assay in cross_tab.index:
+            if ('adult' in cross_tab.columns and cross_tab.loc[assay, 'adult'] > 0) and \
+               ('old' in cross_tab.columns and cross_tab.loc[assay, 'old'] > 0):
+                valid_assays.append(assay)
+            else:
+                print(f"   ⚠️ Excluyendo ensayo '{assay}' por no tener representación en ambos grupos de edad.")
         
         # Quedarse solo con células de ensayos válidos
         adata_sub = adata_sub[adata_sub.obs['assay'].isin(valid_assays)].copy()

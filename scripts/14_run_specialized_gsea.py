@@ -58,6 +58,7 @@ def run_specialized_gsea():
                              max_size=1000,
                              permutation_num=1000,
                              outdir=subset_out,
+                             no_plot=True,
                              seed=42)
             print(f"Análisis completado para {subset_name}")
         except Exception as e:

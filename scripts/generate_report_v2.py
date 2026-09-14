@@ -1,15 +1,31 @@
 import os
+import sys
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8")
 import base64
 import re
 import random
 import markdown
 
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+
 def get_image_base64(path):
-    if not os.path.exists(path):
+    if not path:
         return ""
-    with open(path, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
-    return f"data:image/png;base64,{encoded_string}"
+    candidates = [
+        path,
+        os.path.normpath(path),
+        os.path.join(REPO_ROOT, path.replace("../", "").replace("./", "")),
+        os.path.join(REPO_ROOT, "results", "figures", os.path.basename(path)),
+        os.path.join(REPO_ROOT, "results", "subtypes", os.path.basename(path)),
+    ]
+    for c in candidates:
+        if os.path.exists(c) and os.path.isfile(c):
+            with open(c, "rb") as image_file:
+                encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
+            return f"data:image/png;base64,{encoded_string}"
+    print(f"⚠️ Imagen no encontrada en candidatos para: {path}")
+    return ""
 
 def process_carousels(md_text):
     # Encontrar bloques ````carousel ... ````
@@ -37,12 +53,9 @@ def process_carousels(md_text):
 
 def process_alerts_and_images(html_text):
     # Process Github style alerts that were parsed as blockquotes
-    # <blockquote><p>[!NOTE]<br />text</p></blockquote>
-    # or similar.
     def alert_repl(match):
         alert_type = match.group(1).lower()
         content = match.group(2)
-        # Map github types to our classes
         if alert_type == "note": css_class = "note"
         elif alert_type == "important": css_class = "important"
         elif alert_type == "warning": css_class = "warning"
@@ -52,17 +65,15 @@ def process_alerts_and_images(html_text):
         
         return f"<div class='alert alert-{css_class}'><span class='alert-title'>{alert_type.upper()}</span><div>{content}</div></div>"
     
-    # Regex to catch blockquotes starting with [!TYPE]
     html_text = re.sub(r'<blockquote>\s*<p>\[!(.*?)\](?:<br\s*/?>|\n)(.*?)</p>\s*</blockquote>', alert_repl, html_text, flags=re.DOTALL | re.IGNORECASE)
     
     # Process images to add image-card and base64
     def img_repl(match):
         alt = match.group(1)
         src = match.group(2)
-        if src.startswith("C:/") or src.startswith("../"):
-            b64 = get_image_base64(src.replace("C:/", "C:\\"))
-            if not b64: b64 = get_image_base64(src) # try raw
-            if b64: src = b64
+        b64 = get_image_base64(src)
+        if b64:
+            src = b64
         return f"<div class='image-card'><img src='{src}' alt='{alt}'></div>"
     
     html_text = re.sub(r'<img\s+alt="(.*?)"\s+src="(.*?)"\s*/>', img_repl, html_text)
@@ -110,7 +121,7 @@ def parse_markdown_to_html(md_content):
 def main():
     print("🚀 Iniciando la compilación del Reporte Integrativo Premium V2 (Con Pestañas)...")
     
-    report_md = r"C:\Users\PREDATOR\.gemini\antigravity-ide\brain\a7692536-367e-4c7b-b76f-4a7d478e4ebf\reporte_integrativo_final.md"
+    report_md = os.path.join(REPO_ROOT, "docs", "reporte_integrativo_final.md")
     
     with open(report_md, "r", encoding="utf-8") as f:
         full_md = f.read()

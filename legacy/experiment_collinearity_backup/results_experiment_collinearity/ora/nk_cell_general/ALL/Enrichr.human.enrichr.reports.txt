@@ -1,0 +1,324 @@
+Gene_set	Term	Overlap	P-value	Adjusted P-value	Old P-value	Old Adjusted P-value	Odds Ratio	Combined Score	Genes
+MSigDB_Hallmark_2020	IL-2/STAT5 Signaling	2/199	2.172624e-02	1.315829e-01	0	0	9.562485e+00	3.661700e+01	MAP3K8;CST7
+MSigDB_Hallmark_2020	Estrogen Response Late	2/200	2.193049e-02	1.315829e-01	0	0	9.513709e+00	3.634120e+01	PRSS23;S100A9
+MSigDB_Hallmark_2020	IL-6/JAK/STAT3 Signaling	1/87	9.545498e-02	2.064868e-01	0	0	1.051321e+01	2.469660e+01	MAP3K8
+MSigDB_Hallmark_2020	Coagulation	1/138	1.472915e-01	2.064868e-01	0	0	6.582614e+00	1.260795e+01	PRSS23
+MSigDB_Hallmark_2020	Mitotic Spindle	1/199	2.055640e-01	2.064868e-01	0	0	4.540634e+00	7.183273e+00	PALLD
+MSigDB_Hallmark_2020	Xenobiotic Metabolism	1/200	2.064868e-01	2.064868e-01	0	0	4.517588e+00	7.126581e+00	PTGDS
+MSigDB_Hallmark_2020	TNF-alpha Signaling via NF-kB	1/200	2.064868e-01	2.064868e-01	0	0	4.517588e+00	7.126581e+00	MAP3K8
+MSigDB_Hallmark_2020	Interferon Gamma Response	1/200	2.064868e-01	2.064868e-01	0	0	4.517588e+00	7.126581e+00	XCL1
+MSigDB_Hallmark_2020	Complement	1/200	2.064868e-01	2.064868e-01	0	0	4.517588e+00	7.126581e+00	S100A9
+MSigDB_Hallmark_2020	G2-M Checkpoint	1/200	2.064868e-01	2.064868e-01	0	0	4.517588e+00	7.126581e+00	HIRA
+MSigDB_Hallmark_2020	Adipogenesis	1/200	2.064868e-01	2.064868e-01	0	0	4.517588e+00	7.126581e+00	ABCB8
+MSigDB_Hallmark_2020	Estrogen Response Early	1/200	2.064868e-01	2.064868e-01	0	0	4.517588e+00	7.126581e+00	PRSS23
+GO_Biological_Process_2023	Neutrophil Chemotaxis (GO:0030593)	3/70	6.915173e-05	4.484457e-03	0	0	4.457463e+01	4.269896e+02	XCL2;XCL1;S100A9
+GO_Biological_Process_2023	Granulocyte Chemotaxis (GO:0071621)	3/73	7.839426e-05	4.484457e-03	0	0	4.265786e+01	4.032771e+02	XCL2;XCL1;S100A9
+GO_Biological_Process_2023	Positive Regulation Of T Cell Chemotaxis (GO:0010820)	2/12	8.290811e-05	4.484457e-03	0	0	1.901619e+02	1.787099e+03	XCL2;XCL1
+GO_Biological_Process_2023	Neutrophil Migration (GO:1990266)	3/77	9.192511e-05	4.484457e-03	0	0	4.034392e+01	3.749780e+02	XCL2;XCL1;S100A9
+GO_Biological_Process_2023	Regulation Of T Cell Chemotaxis (GO:0010819)	2/13	9.791390e-05	4.484457e-03	0	0	1.728658e+02	1.595797e+03	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of Lymphocyte Chemotaxis (GO:0140131)	2/17	1.702452e-04	6.497692e-03	0	0	1.267429e+02	1.099909e+03	XCL2;XCL1
+GO_Biological_Process_2023	Eosinophil Chemotaxis (GO:0048245)	2/24	3.438115e-04	9.502152e-03	0	0	8.638528e+01	6.889587e+02	XCL2;XCL1
+GO_Biological_Process_2023	Eosinophil Migration (GO:0072677)	2/24	3.438115e-04	9.502152e-03	0	0	8.638528e+01	6.889587e+02	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of T Cell Migration (GO:2000406)	2/25	3.734470e-04	9.502152e-03	0	0	8.262526e+01	6.521392e+02	XCL2;XCL1
+GO_Biological_Process_2023	Lymphocyte Migration (GO:0072676)	2/41	1.009406e-03	2.204928e-02	0	0	4.868864e+01	3.358734e+02	XCL2;XCL1
+GO_Biological_Process_2023	Monocyte Chemotaxis (GO:0002548)	2/42	1.059136e-03	2.204928e-02	0	0	4.746905e+01	3.251773e+02	XCL2;XCL1
+GO_Biological_Process_2023	Lymphocyte Chemotaxis (GO:0048247)	2/44	1.162071e-03	2.217620e-02	0	0	4.520408e+01	3.054689e+02	XCL2;XCL1
+GO_Biological_Process_2023	Chemokine-Mediated Signaling Pathway (GO:0070098)	2/57	1.942816e-03	3.402122e-02	0	0	3.449697e+01	2.153859e+02	XCL2;XCL1
+GO_Biological_Process_2023	Cellular Response To Chemokine (GO:1990869)	2/59	2.079900e-03	3.402122e-02	0	0	3.328321e+01	2.055383e+02	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of GTPase Activity (GO:0043547)	3/234	2.355382e-03	3.453526e-02	0	0	1.282208e+01	7.758707e+01	AGAP2;XCL2;XCL1
+GO_Biological_Process_2023	Inflammatory Response (GO:0006954)	3/236	2.412944e-03	3.453526e-02	0	0	1.271073e+01	7.660639e+01	XCL2;XCL1;S100A9
+GO_Biological_Process_2023	Cellular Response To Type II Interferon (GO:0071346)	2/66	2.594763e-03	3.495299e-02	0	0	2.963244e+01	1.764393e+02	XCL2;XCL1
+GO_Biological_Process_2023	Response To Type II Interferon (GO:0034341)	2/80	3.785434e-03	4.674688e-02	0	0	2.429670e+01	1.354929e+02	XCL2;XCL1
+GO_Biological_Process_2023	Cellular Response To Interleukin-1 (GO:0071347)	2/81	3.878562e-03	4.674688e-02	0	0	2.398794e+01	1.331880e+02	XCL2;XCL1
+GO_Biological_Process_2023	Response To Interleukin-1 (GO:0070555)	2/85	4.261697e-03	4.866071e-02	0	0	2.282731e+01	1.245935e+02	XCL2;XCL1
+GO_Biological_Process_2023	Regulation Of Circadian Sleep/Wake Cycle (GO:0042749)	1/5	5.737289e-03	4.866071e-02	0	0	2.269659e+02	1.171319e+03	PTGDS
+GO_Biological_Process_2023	Regulation Of Circadian Sleep/Wake Cycle, Sleep (GO:0045187)	1/5	5.737289e-03	4.866071e-02	0	0	2.269659e+02	1.171319e+03	PTGDS
+GO_Biological_Process_2023	Positive Regulation Of T-helper 1 Cell Cytokine Production (GO:2000556)	1/5	5.737289e-03	4.866071e-02	0	0	2.269659e+02	1.171319e+03	XCL1
+GO_Biological_Process_2023	Zymogen Inhibition (GO:0097341)	1/5	5.737289e-03	4.866071e-02	0	0	2.269659e+02	1.171319e+03	CST7
+GO_Biological_Process_2023	Regulation Of T-helper 1 Cell Cytokine Production (GO:2000554)	1/5	5.737289e-03	4.866071e-02	0	0	2.269659e+02	1.171319e+03	XCL1
+GO_Biological_Process_2023	Astrocyte Differentiation (GO:0048708)	1/5	5.737289e-03	4.866071e-02	0	0	2.269659e+02	1.171319e+03	S100A9
+GO_Biological_Process_2023	Autocrine Signaling (GO:0035425)	1/5	5.737289e-03	4.866071e-02	0	0	2.269659e+02	1.171319e+03	S100A9
+GO_Biological_Process_2023	Response To Tumor Necrosis Factor (GO:0034612)	2/108	6.787835e-03	5.252472e-02	0	0	1.785355e+01	8.913604e+01	XCL2;XCL1
+GO_Biological_Process_2023	Negative Regulation Of CD4-positive, Alpha-Beta T Cell Proliferation (GO:2000562)	1/6	6.880968e-03	5.252472e-02	0	0	1.815636e+02	9.040046e+02	XCL1
+GO_Biological_Process_2023	Regulation Of Natural Killer Cell Chemotaxis (GO:2000501)	1/6	6.880968e-03	5.252472e-02	0	0	1.815636e+02	9.040046e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of T-helper 2 Cell Cytokine Production (GO:2000553)	1/7	8.023390e-03	5.381239e-02	0	0	1.512955e+02	7.300602e+02	XCL1
+GO_Biological_Process_2023	Inhibition Of Cysteine-Type Endopeptidase Activity (GO:0097340)	1/7	8.023390e-03	5.381239e-02	0	0	1.512955e+02	7.300602e+02	CST7
+GO_Biological_Process_2023	Leukocyte Aggregation (GO:0070486)	1/7	8.023390e-03	5.381239e-02	0	0	1.512955e+02	7.300602e+02	S100A9
+GO_Biological_Process_2023	Cellular Response To Tumor Necrosis Factor (GO:0071356)	2/119	8.185150e-03	5.381239e-02	0	0	1.616606e+01	7.768491e+01	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of CD8-positive, Alpha-Beta T Cell Activation (GO:2001187)	1/8	9.164555e-03	5.381239e-02	0	0	1.296753e+02	6.084900e+02	XCL1
+GO_Biological_Process_2023	Regulation Of CD8-positive, Alpha-Beta T Cell Proliferation (GO:2000564)	1/8	9.164555e-03	5.381239e-02	0	0	1.296753e+02	6.084900e+02	XCL1
+GO_Biological_Process_2023	Cyclooxygenase Pathway (GO:0019371)	1/8	9.164555e-03	5.381239e-02	0	0	1.296753e+02	6.084900e+02	PTGDS
+GO_Biological_Process_2023	Regulation Of T-helper 1 Type Immune Response (GO:0002825)	1/8	9.164555e-03	5.381239e-02	0	0	1.296753e+02	6.084900e+02	XCL1
+GO_Biological_Process_2023	Negative Regulation Of T Cell Cytokine Production (GO:0002725)	1/8	9.164555e-03	5.381239e-02	0	0	1.296753e+02	6.084900e+02	XCL1
+GO_Biological_Process_2023	Peptidyl-Cysteine Modification (GO:0018198)	1/9	1.030446e-02	5.487726e-02	0	0	1.134602e+02	5.191007e+02	S100A9
+GO_Biological_Process_2023	Regulation Of CD4-positive, Alpha-Beta T Cell Proliferation (GO:2000561)	1/9	1.030446e-02	5.487726e-02	0	0	1.134602e+02	5.191007e+02	XCL1
+GO_Biological_Process_2023	Response To Interleukin-4 (GO:0070670)	1/9	1.030446e-02	5.487726e-02	0	0	1.134602e+02	5.191007e+02	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Alpha-Beta T Cell Proliferation (GO:0046642)	1/9	1.030446e-02	5.487726e-02	0	0	1.134602e+02	5.191007e+02	XCL1
+GO_Biological_Process_2023	Regulation Of T-helper 2 Cell Cytokine Production (GO:2000551)	1/10	1.144312e-02	5.696684e-02	0	0	1.008485e+02	4.508297e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Transforming Growth Factor Beta Production (GO:0071636)	1/10	1.144312e-02	5.696684e-02	0	0	1.008485e+02	4.508297e+02	XCL1
+GO_Biological_Process_2023	Signal Release (GO:0023061)	1/10	1.144312e-02	5.696684e-02	0	0	1.008485e+02	4.508297e+02	PORCN
+GO_Biological_Process_2023	Negative Regulation Of CD4-positive, Alpha-Beta T Cell Activation (GO:2000515)	1/11	1.258052e-02	6.001958e-02	0	0	9.075909e+01	3.971260e+02	XCL1
+GO_Biological_Process_2023	Endoplasmic Reticulum Membrane Organization (GO:0090158)	1/11	1.258052e-02	6.001958e-02	0	0	9.075909e+01	3.971260e+02	ATL1
+GO_Biological_Process_2023	Positive Regulation Of CD4-positive, Alpha-Beta T Cell Activation (GO:2000516)	1/12	1.371667e-02	6.159056e-02	0	0	8.250413e+01	3.538720e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of T-helper 1 Type Immune Response (GO:0002827)	1/12	1.371667e-02	6.159056e-02	0	0	8.250413e+01	3.538720e+02	XCL1
+GO_Biological_Process_2023	Dendrite Self-Avoidance (GO:0070593)	1/12	1.371667e-02	6.159056e-02	0	0	8.250413e+01	3.538720e+02	PALLD
+GO_Biological_Process_2023	Cellular Response To Interleukin-4 (GO:0071353)	1/13	1.485157e-02	6.183656e-02	0	0	7.562500e+01	3.183547e+02	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Neuroinflammatory Response (GO:0150079)	1/13	1.485157e-02	6.183656e-02	0	0	7.562500e+01	3.183547e+02	CST7
+GO_Biological_Process_2023	Regulation Of Myoblast Fusion (GO:1901739)	1/13	1.485157e-02	6.183656e-02	0	0	7.562500e+01	3.183547e+02	PLEKHO1
+GO_Biological_Process_2023	Positive Regulation Of Type 2 Immune Response (GO:0002830)	1/13	1.485157e-02	6.183656e-02	0	0	7.562500e+01	3.183547e+02	XCL1
+GO_Biological_Process_2023	Prostanoid Biosynthetic Process (GO:0046457)	1/14	1.598523e-02	6.204436e-02	0	0	6.980420e+01	2.887165e+02	PTGDS
+GO_Biological_Process_2023	Regulation Of Microglial Cell Activation (GO:1903978)	1/14	1.598523e-02	6.204436e-02	0	0	6.980420e+01	2.887165e+02	CST7
+GO_Biological_Process_2023	Negative Regulation Of T Cell Mediated Immunity (GO:0002710)	1/14	1.598523e-02	6.204436e-02	0	0	6.980420e+01	2.887165e+02	XCL1
+GO_Biological_Process_2023	Lipoprotein Biosynthetic Process (GO:0042158)	1/14	1.598523e-02	6.204436e-02	0	0	6.980420e+01	2.887165e+02	PORCN
+GO_Biological_Process_2023	Positive Regulation Of Immunoglobulin Mediated Immune Response (GO:0002891)	1/15	1.711763e-02	6.237273e-02	0	0	6.481494e+01	2.636442e+02	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Macrophage Activation (GO:0043031)	1/15	1.711763e-02	6.237273e-02	0	0	6.481494e+01	2.636442e+02	CST7
+GO_Biological_Process_2023	Astrocyte Development (GO:0014002)	1/15	1.711763e-02	6.237273e-02	0	0	6.481494e+01	2.636442e+02	S100A9
+GO_Biological_Process_2023	Positive Regulation Of Hydrolase Activity (GO:0051345)	2/176	1.725616e-02	6.237273e-02	0	0	1.083908e+01	4.400218e+01	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of ERK1 And ERK2 Cascade (GO:0070374)	2/179	1.781404e-02	6.237273e-02	0	0	1.065375e+01	4.291085e+01	XCL2;XCL1
+GO_Biological_Process_2023	Regulation Of Transforming Growth Factor Beta Production (GO:0071634)	1/16	1.824879e-02	6.237273e-02	0	0	6.049091e+01	2.421848e+02	XCL1
+GO_Biological_Process_2023	Endoplasmic Reticulum Tubular Network Organization (GO:0071786)	1/16	1.824879e-02	6.237273e-02	0	0	6.049091e+01	2.421848e+02	ATL1
+GO_Biological_Process_2023	Negative Regulation Of Cytokine Production Involved In Immune Response (GO:0002719)	1/16	1.824879e-02	6.237273e-02	0	0	6.049091e+01	2.421848e+02	XCL1
+GO_Biological_Process_2023	Prostaglandin Biosynthetic Process (GO:0001516)	1/17	1.937870e-02	6.261584e-02	0	0	5.670739e+01	2.236302e+02	PTGDS
+GO_Biological_Process_2023	Regulation Of Leukocyte Chemotaxis (GO:0002688)	1/17	1.937870e-02	6.261584e-02	0	0	5.670739e+01	2.236302e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Alpha-Beta T Cell Proliferation (GO:0046641)	1/17	1.937870e-02	6.261584e-02	0	0	5.670739e+01	2.236302e+02	XCL1
+GO_Biological_Process_2023	Axonogenesis (GO:0007409)	2/188	1.953339e-02	6.261584e-02	0	0	1.013364e+01	3.988226e+01	PALLD;ATL1
+GO_Biological_Process_2023	Positive Regulation Of Nervous System Process (GO:0031646)	1/18	2.050737e-02	6.261584e-02	0	0	5.336898e+01	2.074437e+02	CST7
+GO_Biological_Process_2023	Positive Regulation Of Neutrophil Chemotaxis (GO:0090023)	1/18	2.050737e-02	6.261584e-02	0	0	5.336898e+01	2.074437e+02	XCL1
+GO_Biological_Process_2023	Regulation Of T Cell Cytokine Production (GO:0002724)	1/18	2.050737e-02	6.261584e-02	0	0	5.336898e+01	2.074437e+02	XCL1
+GO_Biological_Process_2023	Neuromuscular Synaptic Transmission (GO:0007274)	1/18	2.050737e-02	6.261584e-02	0	0	5.336898e+01	2.074437e+02	FCHSD1
+GO_Biological_Process_2023	Positive Regulation Of Granulocyte Chemotaxis (GO:0071624)	1/21	2.388593e-02	7.012664e-02	0	0	4.535682e+01	1.693835e+02	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Interleukin-2 Production (GO:0032703)	1/21	2.388593e-02	7.012664e-02	0	0	4.535682e+01	1.693835e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of T Cell Cytokine Production (GO:0002726)	1/21	2.388593e-02	7.012664e-02	0	0	4.535682e+01	1.693835e+02	XCL1
+GO_Biological_Process_2023	Regulation Of GTPase Activity (GO:0043087)	2/214	2.487406e-02	7.159008e-02	0	0	8.879155e+00	3.279898e+01	XCL2;XCL1
+GO_Biological_Process_2023	Natural Killer Cell Mediated Immunity (GO:0002228)	1/22	2.500964e-02	7.159008e-02	0	0	4.319481e+01	1.593238e+02	KIR3DL1
+GO_Biological_Process_2023	Cell-Cell Signaling By Wnt (GO:0198738)	1/23	2.613211e-02	7.209942e-02	0	0	4.122934e+01	1.502641e+02	PORCN
+GO_Biological_Process_2023	Glial Cell Development (GO:0021782)	1/23	2.613211e-02	7.209942e-02	0	0	4.122934e+01	1.502641e+02	S100A9
+GO_Biological_Process_2023	Positive Regulation Of Neutrophil Migration (GO:1902624)	1/23	2.613211e-02	7.209942e-02	0	0	4.122934e+01	1.502641e+02	XCL1
+GO_Biological_Process_2023	Natural Killer Cell Mediated Cytotoxicity (GO:0042267)	1/24	2.725334e-02	7.429779e-02	0	0	3.943478e+01	1.420669e+02	KIR3DL1
+GO_Biological_Process_2023	Negative Regulation Of Protein Transport (GO:0051224)	1/25	2.837334e-02	7.468384e-02	0	0	3.778977e+01	1.346187e+02	SERGEF
+GO_Biological_Process_2023	Regulation Of Neutrophil Chemotaxis (GO:0090022)	1/25	2.837334e-02	7.468384e-02	0	0	3.778977e+01	1.346187e+02	XCL1
+GO_Biological_Process_2023	Bile Acid Biosynthetic Process (GO:0006699)	1/25	2.837334e-02	7.468384e-02	0	0	3.778977e+01	1.346187e+02	OSBPL3
+GO_Biological_Process_2023	Cell Surface Receptor Signaling Pathway Involved In Cell-Cell Signaling (GO:1905114)	1/27	3.060964e-02	7.736473e-02	0	0	3.487937e+01	1.216048e+02	PORCN
+GO_Biological_Process_2023	Regulation Of Actin Polymerization Or Depolymerization (GO:0008064)	1/27	3.060964e-02	7.736473e-02	0	0	3.487937e+01	1.216048e+02	FCHSD1
+GO_Biological_Process_2023	Regulation Of Peptidase Activity (GO:0052547)	1/27	3.060964e-02	7.736473e-02	0	0	3.487937e+01	1.216048e+02	CST7
+GO_Biological_Process_2023	Regulation Of Inflammatory Response (GO:0050727)	2/240	3.074319e-02	7.736473e-02	0	0	7.898760e+00	2.750417e+01	XCL1;S100A9
+GO_Biological_Process_2023	Regulation Of ERK1 And ERK2 Cascade (GO:0070372)	2/244	3.169092e-02	7.812086e-02	0	0	7.766627e+00	2.680826e+01	XCL2;XCL1
+GO_Biological_Process_2023	Negative Regulation Of Type II Interferon Production (GO:0032689)	1/28	3.172594e-02	7.812086e-02	0	0	3.358586e+01	1.158921e+02	XCL1
+GO_Biological_Process_2023	Defense Response To Fungus (GO:0050832)	1/29	3.284101e-02	8.000629e-02	0	0	3.238474e+01	1.106288e+02	S100A9
+GO_Biological_Process_2023	Prostaglandin Metabolic Process (GO:0006693)	1/30	3.395486e-02	8.016146e-02	0	0	3.126646e+01	1.057658e+02	PTGDS
+GO_Biological_Process_2023	Positive Regulation Of Interleukin-10 Production (GO:0032733)	1/30	3.395486e-02	8.016146e-02	0	0	3.126646e+01	1.057658e+02	XCL1
+GO_Biological_Process_2023	Protein Palmitoylation (GO:0018345)	1/30	3.395486e-02	8.016146e-02	0	0	3.126646e+01	1.057658e+02	PORCN
+GO_Biological_Process_2023	Cytokine-Mediated Signaling Pathway (GO:0019221)	2/257	3.485060e-02	8.030451e-02	0	0	7.365826e+00	2.472476e+01	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of Leukocyte Migration (GO:0002687)	1/31	3.506747e-02	8.030451e-02	0	0	3.022273e+01	1.012607e+02	XCL1
+GO_Biological_Process_2023	Bile Acid Metabolic Process (GO:0008206)	1/31	3.506747e-02	8.030451e-02	0	0	3.022273e+01	1.012607e+02	OSBPL3
+GO_Biological_Process_2023	Negative Regulation Of Double-Strand Break Repair (GO:2000780)	1/33	3.728903e-02	8.132560e-02	0	0	2.833097e+01	9.318213e+01	RNF169
+GO_Biological_Process_2023	Regulation Of Protein Polymerization (GO:0032271)	1/33	3.728903e-02	8.132560e-02	0	0	2.833097e+01	9.318213e+01	FCHSD1
+GO_Biological_Process_2023	Positive Regulation Of T Cell Mediated Cytotoxicity (GO:0001916)	1/33	3.728903e-02	8.132560e-02	0	0	2.833097e+01	9.318213e+01	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Release Of Sequestered Calcium Ion Into Cytosol (GO:0051281)	1/33	3.728903e-02	8.132560e-02	0	0	2.833097e+01	9.318213e+01	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Cytokine Production Involved In Immune Response (GO:0002720)	1/33	3.728903e-02	8.132560e-02	0	0	2.833097e+01	9.318213e+01	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Immunoglobulin Production (GO:0002639)	1/34	3.839798e-02	8.295412e-02	0	0	2.747107e+01	8.954885e+01	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Sequestering Of Calcium Ion (GO:0051283)	1/36	4.061220e-02	8.611291e-02	0	0	2.589870e+01	8.297133e+01	XCL1
+GO_Biological_Process_2023	Regulation Of T Cell Mediated Cytotoxicity (GO:0001914)	1/36	4.061220e-02	8.611291e-02	0	0	2.589870e+01	8.297133e+01	XCL1
+GO_Biological_Process_2023	Protein Acylation (GO:0043543)	1/37	4.171748e-02	8.764499e-02	0	0	2.517803e+01	7.998645e+01	PORCN
+GO_Biological_Process_2023	Positive Regulation Of Production Of Molecular Mediator Of Immune Response (GO:0002702)	1/38	4.282155e-02	8.823409e-02	0	0	2.449631e+01	7.718088e+01	XCL1
+GO_Biological_Process_2023	Response To Transforming Growth Factor Beta (GO:0071559)	1/38	4.282155e-02	8.823409e-02	0	0	2.449631e+01	7.718088e+01	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001244)	1/39	4.392440e-02	8.823409e-02	0	0	2.385048e+01	7.453955e+01	S100A9
+GO_Biological_Process_2023	Negative Regulation Of Protein Secretion (GO:0050709)	1/39	4.392440e-02	8.823409e-02	0	0	2.385048e+01	7.453955e+01	SERGEF
+GO_Biological_Process_2023	Release Of Sequestered Calcium Ion Into Cytosol (GO:0051209)	1/39	4.392440e-02	8.823409e-02	0	0	2.385048e+01	7.453955e+01	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Secretion By Cell (GO:1903531)	1/40	4.502603e-02	8.888759e-02	0	0	2.323776e+01	7.204902e+01	SERGEF
+GO_Biological_Process_2023	Endothelial Cell Migration (GO:0043542)	1/40	4.502603e-02	8.888759e-02	0	0	2.323776e+01	7.204902e+01	S100A9
+GO_Biological_Process_2023	Negative Regulation Of Proteolysis (GO:0045861)	1/41	4.612645e-02	8.937747e-02	0	0	2.265568e+01	6.969723e+01	CST7
+GO_Biological_Process_2023	Positive Regulation Of Actin Filament Polymerization (GO:0030838)	1/41	4.612645e-02	8.937747e-02	0	0	2.265568e+01	6.969723e+01	FCHSD1
+GO_Biological_Process_2023	Organic Hydroxy Compound Biosynthetic Process (GO:1901617)	1/42	4.722565e-02	8.937747e-02	0	0	2.210200e+01	6.747337e+01	OSBPL3
+GO_Biological_Process_2023	Positive Regulation Of Calcium Ion Transmembrane Transport (GO:1904427)	1/42	4.722565e-02	8.937747e-02	0	0	2.210200e+01	6.747337e+01	XCL1
+GO_Biological_Process_2023	Lipid Modification (GO:0030258)	1/42	4.722565e-02	8.937747e-02	0	0	2.210200e+01	6.747337e+01	PORCN
+GO_Biological_Process_2023	Positive Regulation Of T Cell Mediated Immunity (GO:0002711)	1/43	4.832364e-02	9.002822e-02	0	0	2.157468e+01	6.536769e+01	XCL1
+GO_Biological_Process_2023	Cellular Response To Cytokine Stimulus (GO:0071345)	2/308	4.835577e-02	9.002822e-02	0	0	6.122316e+00	1.854553e+01	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of MAPK Cascade (GO:0043410)	2/310	4.891940e-02	9.034309e-02	0	0	6.081942e+00	1.835275e+01	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of Chemotaxis (GO:0050921)	1/44	4.942043e-02	9.053822e-02	0	0	2.107188e+01	6.337140e+01	XCL1
+GO_Biological_Process_2023	Epithelial Cell Migration (GO:0010631)	1/46	5.161037e-02	9.306121e-02	0	0	2.013333e+01	5.967586e+01	S100A9
+GO_Biological_Process_2023	Regulation Of Interleukin-10 Production (GO:0032653)	1/46	5.161037e-02	9.306121e-02	0	0	2.013333e+01	5.967586e+01	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Hydrolase Activity (GO:0051346)	1/47	5.270353e-02	9.355898e-02	0	0	1.969466e+01	5.796283e+01	CST7
+GO_Biological_Process_2023	Regulation Of Interleukin-2 Production (GO:0032663)	1/47	5.270353e-02	9.355898e-02	0	0	1.969466e+01	5.796283e+01	XCL1
+GO_Biological_Process_2023	Cellular Defense Response (GO:0006968)	1/48	5.379548e-02	9.403943e-02	0	0	1.927466e+01	5.633147e+01	KIR3DL2
+GO_Biological_Process_2023	Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001242)	1/48	5.379548e-02	9.403943e-02	0	0	1.927466e+01	5.633147e+01	S100A9
+GO_Biological_Process_2023	Steroid Biosynthetic Process (GO:0006694)	1/50	5.597578e-02	9.637935e-02	0	0	1.848609e+01	5.329236e+01	OSBPL3
+GO_Biological_Process_2023	Blood Circulation (GO:0008015)	1/50	5.597578e-02	9.637935e-02	0	0	1.848609e+01	5.329236e+01	XCL2
+GO_Biological_Process_2023	Regulation Of Release Of Sequestered Calcium Ion Into Cytosol (GO:0051279)	1/51	5.706413e-02	9.679767e-02	0	0	1.811545e+01	5.187505e+01	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Leukocyte Mediated Cytotoxicity (GO:0001912)	1/51	5.706413e-02	9.679767e-02	0	0	1.811545e+01	5.187505e+01	XCL1
+GO_Biological_Process_2023	Arachidonic Acid Metabolic Process (GO:0019369)	1/52	5.815127e-02	9.791648e-02	0	0	1.775936e+01	5.052018e+01	PTGDS
+GO_Biological_Process_2023	Regulation Of Macromolecule Biosynthetic Process (GO:0010556)	1/53	5.923722e-02	9.796972e-02	0	0	1.741696e+01	4.922390e+01	S100A9
+GO_Biological_Process_2023	Negative Regulation Of Cysteine-Type Endopeptidase Activity (GO:2000117)	1/53	5.923722e-02	9.796972e-02	0	0	1.741696e+01	4.922390e+01	CST7
+GO_Biological_Process_2023	Positive Regulation Of Leukocyte Chemotaxis (GO:0002690)	1/54	6.032197e-02	9.796972e-02	0	0	1.708748e+01	4.798265e+01	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Protein Catabolic Process (GO:0042177)	1/54	6.032197e-02	9.796972e-02	0	0	1.708748e+01	4.798265e+01	AGAP2
+GO_Biological_Process_2023	Nucleosome Assembly (GO:0006334)	1/54	6.032197e-02	9.796972e-02	0	0	1.708748e+01	4.798265e+01	HIRA
+GO_Biological_Process_2023	protein-DNA Complex Assembly (GO:0065004)	1/59	6.572780e-02	1.059976e-01	0	0	1.561050e+01	4.249543e+01	HIRA
+GO_Biological_Process_2023	Negative Regulation Of Peptidase Activity (GO:0010466)	1/60	6.680538e-02	1.062391e-01	0	0	1.534515e+01	4.152353e+01	CST7
+GO_Biological_Process_2023	Homophilic Cell Adhesion Via Plasma Membrane Adhesion Molecules (GO:0007156)	1/60	6.680538e-02	1.062391e-01	0	0	1.534515e+01	4.152353e+01	PALLD
+GO_Biological_Process_2023	Protein Lipidation (GO:0006497)	1/62	6.895700e-02	1.081586e-01	0	0	1.484054e+01	3.968763e+01	PORCN
+GO_Biological_Process_2023	Positive Regulation Of Apoptotic Signaling Pathway (GO:2001235)	1/62	6.895700e-02	1.081586e-01	0	0	1.484054e+01	3.968763e+01	S100A9
+GO_Biological_Process_2023	Monocarboxylic Acid Biosynthetic Process (GO:0072330)	1/65	7.217553e-02	1.116770e-01	0	0	1.414276e+01	3.717642e+01	OSBPL3
+GO_Biological_Process_2023	Antimicrobial Humoral Immune Response Mediated By Antimicrobial Peptide (GO:0061844)	1/65	7.217553e-02	1.116770e-01	0	0	1.414276e+01	3.717642e+01	S100A9
+GO_Biological_Process_2023	Protein Secretion (GO:0009306)	1/67	7.431529e-02	1.134547e-01	0	0	1.371281e+01	3.564561e+01	PORCN
+GO_Biological_Process_2023	Activation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0006919)	1/67	7.431529e-02	1.134547e-01	0	0	1.371281e+01	3.564561e+01	S100A9
+GO_Biological_Process_2023	Response To Molecule Of Bacterial Origin (GO:0002237)	1/69	7.645034e-02	1.159412e-01	0	0	1.330816e+01	3.421678e+01	S100A9
+GO_Biological_Process_2023	Positive Regulation Of Protein Polymerization (GO:0032273)	1/70	7.751610e-02	1.160208e-01	0	0	1.311462e+01	3.353763e+01	FCHSD1
+GO_Biological_Process_2023	Regulation Of Actin Filament Polymerization (GO:0030833)	1/70	7.751610e-02	1.160208e-01	0	0	1.311462e+01	3.353763e+01	FCHSD1
+GO_Biological_Process_2023	Negative Regulation Of Catabolic Process (GO:0009895)	1/72	7.964408e-02	1.184318e-01	0	0	1.274392e+01	3.224450e+01	AGAP2
+GO_Biological_Process_2023	Negative Regulation Of Neuron Apoptotic Process (GO:0043524)	1/74	8.176737e-02	1.208047e-01	0	0	1.239352e+01	3.103186e+01	AGAP2
+GO_Biological_Process_2023	Organelle Organization (GO:0006996)	2/418	8.265625e-02	1.208117e-01	0	0	4.478251e+00	1.116457e+01	PALLD;ATL1
+GO_Biological_Process_2023	Nucleosome Organization (GO:0034728)	1/75	8.282726e-02	1.208117e-01	0	0	1.222543e+01	3.045352e+01	HIRA
+GO_Biological_Process_2023	Wnt Signaling Pathway (GO:0016055)	1/76	8.388598e-02	1.215816e-01	0	0	1.206182e+01	2.989277e+01	PORCN
+GO_Biological_Process_2023	Cell Morphogenesis Involved In Neuron Differentiation (GO:0048667)	1/77	8.494353e-02	1.223400e-01	0	0	1.190251e+01	2.934884e+01	ATL1
+GO_Biological_Process_2023	Positive Regulation Of Cytoskeleton Organization (GO:0051495)	1/79	8.705512e-02	1.245976e-01	0	0	1.159615e+01	2.830869e+01	FCHSD1
+GO_Biological_Process_2023	Positive Regulation Of Growth (GO:0045927)	1/81	8.916205e-02	1.268206e-01	0	0	1.130511e+01	2.732785e+01	S100A9
+GO_Biological_Process_2023	Calcium Ion Transmembrane Import Into Cytosol (GO:0097553)	1/83	9.126433e-02	1.290095e-01	0	0	1.102827e+01	2.640163e+01	XCL1
+GO_Biological_Process_2023	Regulation Of Type II Interferon Production (GO:0032649)	1/87	9.545498e-02	1.339300e-01	0	0	1.051321e+01	2.469660e+01	XCL1
+GO_Biological_Process_2023	Regulation Of Double-Strand Break Repair (GO:2000779)	1/88	9.649975e-02	1.339300e-01	0	0	1.039185e+01	2.429838e+01	RNF169
+GO_Biological_Process_2023	Negative Regulation Of Neuron Death (GO:1901215)	1/88	9.649975e-02	1.339300e-01	0	0	1.039185e+01	2.429838e+01	AGAP2
+GO_Biological_Process_2023	Positive Regulation Of Neuron Projection Development (GO:0010976)	1/92	1.006673e-01	1.388724e-01	0	0	9.933067e+00	2.280567e+01	S100A9
+GO_Biological_Process_2023	Recombinational Repair (GO:0000725)	1/95	1.037809e-01	1.420294e-01	0	0	9.614603e+00	2.178163e+01	RNF169
+GO_Biological_Process_2023	Cellular Response To Transforming Growth Factor Beta Stimulus (GO:0071560)	1/96	1.048165e-01	1.420294e-01	0	0	9.512919e+00	2.145681e+01	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Supramolecular Fiber Organization (GO:1902905)	1/96	1.048165e-01	1.420294e-01	0	0	9.512919e+00	2.145681e+01	FCHSD1
+GO_Biological_Process_2023	Regulation Of Defense Response (GO:0031347)	1/97	1.058509e-01	1.425874e-01	0	0	9.413352e+00	2.113979e+01	XCL1
+GO_Biological_Process_2023	Axon Development (GO:0061564)	1/99	1.079163e-01	1.433847e-01	0	0	9.220315e+00	2.052810e+01	ATL1
+GO_Biological_Process_2023	Protein Complex Oligomerization (GO:0051259)	1/100	1.089473e-01	1.433847e-01	0	0	9.126722e+00	2.023295e+01	ATL1
+GO_Biological_Process_2023	Antimicrobial Humoral Response (GO:0019730)	1/100	1.089473e-01	1.433847e-01	0	0	9.126722e+00	2.023295e+01	S100A9
+GO_Biological_Process_2023	Regulation Of Organelle Organization (GO:0033043)	1/100	1.089473e-01	1.433847e-01	0	0	9.126722e+00	2.023295e+01	S100A9
+GO_Biological_Process_2023	Regulation Of Protein Secretion (GO:0050708)	1/102	1.110059e-01	1.444338e-01	0	0	8.945095e+00	1.966286e+01	SERGEF
+GO_Biological_Process_2023	Activation Of GTPase Activity (GO:0090630)	1/102	1.110059e-01	1.444338e-01	0	0	8.945095e+00	1.966286e+01	AGAP2
+GO_Biological_Process_2023	Positive Regulation Of Inflammatory Response (GO:0050729)	1/104	1.130599e-01	1.454535e-01	0	0	8.770521e+00	1.911831e+01	S100A9
+GO_Biological_Process_2023	Positive Regulation Of Kinase Activity (GO:0033674)	1/104	1.130599e-01	1.454535e-01	0	0	8.770521e+00	1.911831e+01	AGAP2
+GO_Biological_Process_2023	Regulation Of Neuron Apoptotic Process (GO:0043523)	1/105	1.140852e-01	1.459526e-01	0	0	8.685752e+00	1.885511e+01	AGAP2
+GO_Biological_Process_2023	Positive Regulation Of Cell Growth (GO:0030307)	1/106	1.151094e-01	1.464447e-01	0	0	8.602597e+00	1.859772e+01	S100A9
+GO_Biological_Process_2023	Positive Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0043280)	1/109	1.181751e-01	1.495144e-01	0	0	8.362374e+00	1.785858e+01	S100A9
+GO_Biological_Process_2023	Response To Lipid (GO:0033993)	1/110	1.191948e-01	1.496133e-01	0	0	8.285238e+00	1.762267e+01	S100A9
+GO_Biological_Process_2023	Cytoskeleton Organization (GO:0007010)	1/111	1.202133e-01	1.496133e-01	0	0	8.209504e+00	1.739173e+01	PALLD
+GO_Biological_Process_2023	Double-Strand Break Repair Via Homologous Recombination (GO:0000724)	1/111	1.202133e-01	1.496133e-01	0	0	8.209504e+00	1.739173e+01	RNF169
+GO_Biological_Process_2023	Regulation Of Cytoskeleton Organization (GO:0051493)	1/114	1.232621e-01	1.525785e-01	0	0	7.990346e+00	1.672733e+01	S100A9
+GO_Biological_Process_2023	Positive Regulation Of Cell Projection Organization (GO:0031346)	1/118	1.273115e-01	1.567438e-01	0	0	7.715618e+00	1.590280e+01	S100A9
+GO_Biological_Process_2023	Regulation Of Protein Kinase Activity (GO:0045859)	1/119	1.283211e-01	1.571418e-01	0	0	7.649846e+00	1.570682e+01	AGAP2
+GO_Biological_Process_2023	Regulation Of Protein Catabolic Process (GO:0042176)	1/122	1.313430e-01	1.599870e-01	0	0	7.459053e+00	1.514145e+01	AGAP2
+GO_Biological_Process_2023	Neuron Projection Guidance (GO:0097485)	1/124	1.333521e-01	1.607243e-01	0	0	7.337029e+00	1.478237e+01	PALLD
+GO_Biological_Process_2023	Positive Regulation Of Defense Response (GO:0031349)	1/124	1.333521e-01	1.607243e-01	0	0	7.337029e+00	1.478237e+01	S100A9
+GO_Biological_Process_2023	Regulation Of Response To External Stimulus (GO:0032101)	1/127	1.363573e-01	1.634860e-01	0	0	7.161255e+00	1.426863e+01	XCL1
+GO_Biological_Process_2023	Protein Homooligomerization (GO:0051260)	1/129	1.383553e-01	1.650175e-01	0	0	7.048651e+00	1.394174e+01	ATL1
+GO_Biological_Process_2023	Positive Regulation Of Cellular Process (GO:0048522)	2/594	1.481832e-01	1.758236e-01	0	0	3.118565e+00	5.954294e+00	CST7;S100A9
+GO_Biological_Process_2023	Positive Regulation Of Protein Kinase Activity (GO:0045860)	1/145	1.541806e-01	1.819967e-01	0	0	6.260417e+00	1.170467e+01	AGAP2
+GO_Biological_Process_2023	Neuron Projection Morphogenesis (GO:0048812)	1/146	1.551604e-01	1.822140e-01	0	0	6.216928e+00	1.158398e+01	ATL1
+GO_Biological_Process_2023	Negative Regulation Of Protein Metabolic Process (GO:0051248)	1/147	1.561391e-01	1.824278e-01	0	0	6.174035e+00	1.146523e+01	AGAP2
+GO_Biological_Process_2023	Negative Regulation Of DNA-binding Transcription Factor Activity (GO:0043433)	1/149	1.580933e-01	1.828452e-01	0	0	6.089988e+00	1.123341e+01	XCL1
+GO_Biological_Process_2023	Axon Guidance (GO:0007411)	1/149	1.580933e-01	1.828452e-01	0	0	6.089988e+00	1.123341e+01	PALLD
+GO_Biological_Process_2023	Positive Regulation Of NF-kappaB Transcription Factor Activity (GO:0051092)	1/152	1.610164e-01	1.852902e-01	0	0	5.968092e+00	1.089922e+01	S100A9
+GO_Biological_Process_2023	Cellular Response To Growth Factor Stimulus (GO:0071363)	1/155	1.639298e-01	1.867658e-01	0	0	5.850945e+00	1.058036e+01	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Response To External Stimulus (GO:0032103)	1/155	1.639298e-01	1.867658e-01	0	0	5.850945e+00	1.058036e+01	S100A9
+GO_Biological_Process_2023	Response To Lipopolysaccharide (GO:0032496)	1/159	1.677993e-01	1.902280e-01	0	0	5.701669e+00	1.017740e+01	S100A9
+GO_Biological_Process_2023	Regulation Of DNA-templated Transcription (GO:0006355)	4/1922	1.743027e-01	1.966272e-01	0	0	1.982218e+00	3.462860e+00	ZNF672;HIRA;SP2;XCL1
+GO_Biological_Process_2023	Double-Strand Break Repair (GO:0006302)	1/168	1.764432e-01	1.980661e-01	0	0	5.391943e+00	9.353707e+00	RNF169
+GO_Biological_Process_2023	Cell-Cell Adhesion Via Plasma-Membrane Adhesion Molecules (GO:0098742)	1/172	1.802573e-01	2.013606e-01	0	0	5.264753e+00	9.020470e+00	PALLD
+GO_Biological_Process_2023	Regulation Of Neuron Projection Development (GO:0010975)	1/174	1.821580e-01	2.024960e-01	0	0	5.203363e+00	8.860707e+00	S100A9
+GO_Biological_Process_2023	Negative Regulation Of Cytokine Production (GO:0001818)	1/178	1.859468e-01	2.057092e-01	0	0	5.084746e+00	8.554041e+00	XCL1
+GO_Biological_Process_2023	Endosomal Transport (GO:0016197)	1/180	1.878349e-01	2.067990e-01	0	0	5.027425e+00	8.406821e+00	AGAP2
+GO_Biological_Process_2023	Endomembrane System Organization (GO:0010256)	1/196	2.027895e-01	2.221952e-01	0	0	4.611189e+00	7.357553e+00	ATL1
+GO_Biological_Process_2023	Defense Response To Bacterium (GO:0042742)	1/204	2.101676e-01	2.291828e-01	0	0	4.427676e+00	6.906509e+00	S100A9
+GO_Biological_Process_2023	Regulation Of Cell Growth (GO:0001558)	1/227	2.310178e-01	2.505091e-01	0	0	3.972446e+00	5.820667e+00	S100A9
+GO_Biological_Process_2023	Chromatin Remodeling (GO:0006338)	1/228	2.319123e-01	2.505091e-01	0	0	3.954746e+00	5.779449e+00	HIRA
+GO_Biological_Process_2023	Positive Regulation Of DNA-binding Transcription Factor Activity (GO:0051091)	1/246	2.478438e-01	2.664612e-01	0	0	3.660853e+00	5.106732e+00	S100A9
+GO_Biological_Process_2023	Chromatin Organization (GO:0006325)	1/268	2.668866e-01	2.855936e-01	0	0	3.355465e+00	4.432339e+00	HIRA
+GO_Biological_Process_2023	Chemical Synaptic Transmission (GO:0007268)	1/273	2.711497e-01	2.888060e-01	0	0	3.292948e+00	4.297574e+00	FCHSD1
+GO_Biological_Process_2023	Monoatomic Cation Transmembrane Transport (GO:0098655)	1/281	2.779214e-01	2.946482e-01	0	0	3.197565e+00	4.094216e+00	ABCB8
+GO_Biological_Process_2023	Inorganic Cation Transmembrane Transport (GO:0098662)	1/284	2.804453e-01	2.959538e-01	0	0	3.163187e+00	4.021602e+00	ABCB8
+GO_Biological_Process_2023	DNA Repair (GO:0006281)	1/291	2.863015e-01	3.007479e-01	0	0	3.085737e+00	3.859361e+00	RNF169
+GO_Biological_Process_2023	Positive Regulation Of Cytokine Production (GO:0001819)	1/320	3.100809e-01	3.242398e-01	0	0	2.801083e+00	3.279850e+00	XCL1
+GO_Biological_Process_2023	Negative Regulation Of DNA-templated Transcription (GO:0045892)	2/1025	3.313611e-01	3.449168e-01	0	0	1.764558e+00	1.949036e+00	SP2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of Protein Phosphorylation (GO:0001934)	1/377	3.546295e-01	3.674667e-01	0	0	2.369560e+00	2.456480e+00	AGAP2
+GO_Biological_Process_2023	DNA Damage Response (GO:0006974)	1/384	3.599067e-01	3.712551e-01	0	0	2.325421e+00	2.376372e+00	RNF169
+GO_Biological_Process_2023	Vesicle-Mediated Transport (GO:0016192)	1/411	3.798778e-01	3.900987e-01	0	0	2.169290e+00	2.099668e+00	AGAP2
+GO_Biological_Process_2023	Negative Regulation Of Nucleic Acid-Templated Transcription (GO:1903507)	1/456	4.118451e-01	4.210381e-01	0	0	1.950250e+00	1.730082e+00	XCL1
+GO_Biological_Process_2023	Regulation Of Transcription By RNA Polymerase II (GO:0006357)	3/2028	4.171079e-01	4.245231e-01	0	0	1.329778e+00	1.162772e+00	ZNF672;HIRA;SP2
+GO_Biological_Process_2023	Negative Regulation Of Apoptotic Process (GO:0043066)	1/482	4.295902e-01	4.352927e-01	0	0	1.842374e+00	1.556665e+00	AGAP2
+GO_Biological_Process_2023	Positive Regulation Of Intracellular Signal Transduction (GO:1902533)	1/525	4.578192e-01	4.618529e-01	0	0	1.687457e+00	1.318378e+00	S100A9
+GO_Biological_Process_2023	Protein Modification Process (GO:0036211)	1/711	5.652580e-01	5.677372e-01	0	0	1.233483e+00	7.036686e-01	PORCN
+GO_Biological_Process_2023	Negative Regulation Of Transcription By RNA Polymerase II (GO:0000122)	1/763	5.914438e-01	5.914438e-01	0	0	1.146206e+00	6.019744e-01	SP2
+Reactome_2022	Chemokine Receptors Bind Chemokines R-HSA-380108	2/56	1.875956e-03	1.154470e-01	0	0	3.513757e+01	2.206160e+02	XCL2;XCL1
+Reactome_2022	Metal Sequestration By Antimicrobial Proteins R-HSA-6799990	1/6	6.880968e-03	1.154470e-01	0	0	1.815636e+02	9.040046e+02	S100A9
+Reactome_2022	MyD88:MAL(TIRAP) Cascade Initiated On Plasma Membrane R-HSA-166058	2/112	7.282073e-03	1.154470e-01	0	0	1.720087e+01	8.466850e+01	MAP3K8;S100A9
+Reactome_2022	Immunoregulatory Interactions Between A Lymphoid And A non-Lymphoid Cell R-HSA-198933	2/123	8.722753e-03	1.154470e-01	0	0	1.562849e+01	7.410750e+01	KIR3DL1;KIR3DL2
+Reactome_2022	Adaptive Immune System R-HSA-1280218	4/733	9.090964e-03	1.154470e-01	0	0	5.558588e+00	2.612800e+01	KIR3DL1;MAP3K8;KIR3DL2;S100A9
+Reactome_2022	Toll Like Receptor 4 (TLR4) Cascade R-HSA-166016	2/140	1.117882e-02	1.154470e-01	0	0	1.369151e+01	6.152601e+01	MAP3K8;S100A9
+Reactome_2022	Toll-like Receptor Cascades R-HSA-168898	2/162	1.475554e-02	1.154470e-01	0	0	1.179583e+01	4.973285e+01	MAP3K8;S100A9
+Reactome_2022	Transcriptional Regulation Of Testis Differentiation R-HSA-9690406	1/13	1.485157e-02	1.154470e-01	0	0	7.562500e+01	3.183547e+02	PTGDS
+Reactome_2022	Synthesis Of Prostaglandins (PG) And Thromboxanes (TX) R-HSA-2162123	1/15	1.711763e-02	1.154470e-01	0	0	6.481494e+01	2.636442e+02	PTGDS
+Reactome_2022	MAP3K8 (TPL2)-dependent MAPK1/3 Activation R-HSA-5684264	1/16	1.824879e-02	1.154470e-01	0	0	6.049091e+01	2.421848e+02	MAP3K8
+Reactome_2022	MyD88 Deficiency (TLR2/4) R-HSA-5602498	1/17	1.937870e-02	1.154470e-01	0	0	5.670739e+01	2.236302e+02	S100A9
+Reactome_2022	Formation Of Senescence-Associated Heterochromatin Foci (SAHF) R-HSA-2559584	1/17	1.937870e-02	1.154470e-01	0	0	5.670739e+01	2.236302e+02	HIRA
+Reactome_2022	Regulation Of TLR By Endogenous Ligand R-HSA-5686938	1/18	2.050737e-02	1.154470e-01	0	0	5.336898e+01	2.074437e+02	S100A9
+Reactome_2022	IRAK4 Deficiency (TLR2/4) R-HSA-5603041	1/18	2.050737e-02	1.154470e-01	0	0	5.336898e+01	2.074437e+02	S100A9
+Reactome_2022	Peptide Ligand-Binding Receptors R-HSA-375276	2/196	2.111835e-02	1.154470e-01	0	0	9.711831e+00	3.746449e+01	XCL2;XCL1
+Reactome_2022	G Alpha (Q) Signaling Events R-HSA-416476	2/212	2.444405e-02	1.241541e-01	0	0	8.964626e+00	3.327103e+01	XCL2;XCL1
+Reactome_2022	CD28 Dependent PI3K/Akt Signaling R-HSA-389357	1/23	2.613211e-02	1.241541e-01	0	0	4.122934e+01	1.502641e+02	MAP3K8
+Reactome_2022	RHO GTPases Activate NADPH Oxidases R-HSA-5668599	1/24	2.725334e-02	1.241541e-01	0	0	3.943478e+01	1.420669e+02	S100A9
+Reactome_2022	WNT Ligand Biogenesis And Trafficking R-HSA-3238698	1/26	2.949210e-02	1.272817e-01	0	0	3.627636e+01	1.278246e+02	PORCN
+Reactome_2022	Diseases Associated With TLR Signaling Cascade R-HSA-5602358	1/31	3.506747e-02	1.349778e-01	0	0	3.022273e+01	1.012607e+02	S100A9
+Reactome_2022	Signaling By WNT In Cancer R-HSA-4791275	1/33	3.728903e-02	1.349778e-01	0	0	2.833097e+01	9.318213e+01	PORCN
+Reactome_2022	Synthesis Of Bile Acids And Bile Salts R-HSA-192105	1/34	3.839798e-02	1.349778e-01	0	0	2.747107e+01	8.954885e+01	OSBPL3
+Reactome_2022	CD28 Co-Stimulation R-HSA-389356	1/34	3.839798e-02	1.349778e-01	0	0	2.747107e+01	8.954885e+01	MAP3K8
+Reactome_2022	Gene And Protein Expression By JAK-STAT Signaling After Interleukin-12 Stimulation R-HSA-8950505	1/35	3.950570e-02	1.349778e-01	0	0	2.666176e+01	8.615244e+01	S100A9
+Reactome_2022	RHOF GTPase Cycle R-HSA-9035034	1/42	4.722565e-02	1.534190e-01	0	0	2.210200e+01	6.747337e+01	FAM169A
+Reactome_2022	Interleukin-12 Signaling R-HSA-9020591	1/44	4.942043e-02	1.534190e-01	0	0	2.107188e+01	6.337140e+01	S100A9
+Reactome_2022	Bile Acid And Bile Salt Metabolism R-HSA-194068	1/45	5.051600e-02	1.534190e-01	0	0	2.059194e+01	6.147653e+01	OSBPL3
+Reactome_2022	Class A/1 (Rhodopsin-like Receptors) R-HSA-373076	2/327	5.380769e-02	1.551956e-01	0	0	5.758828e+00	1.682925e+01	XCL2;XCL1
+Reactome_2022	Netrin-1 Signaling R-HSA-373752	1/49	5.488623e-02	1.551956e-01	0	0	1.887216e+01	5.477630e+01	AGAP2
+Reactome_2022	Interleukin-12 Family Signaling R-HSA-447115	1/54	6.032197e-02	1.648800e-01	0	0	1.708748e+01	4.798265e+01	S100A9
+Reactome_2022	Arachidonic Acid Metabolism R-HSA-2142753	1/59	6.572780e-02	1.713477e-01	0	0	1.561050e+01	4.249543e+01	PTGDS
+Reactome_2022	DNA Damage/Telomere Stress Induced Senescence R-HSA-2559586	1/61	6.788179e-02	1.713477e-01	0	0	1.508864e+01	4.058824e+01	HIRA
+Reactome_2022	MAP Kinase Activation R-HSA-450294	1/62	6.895700e-02	1.713477e-01	0	0	1.484054e+01	3.968763e+01	MAP3K8
+Reactome_2022	Costimulation By CD28 Family R-HSA-388841	1/68	7.538341e-02	1.791122e-01	0	0	1.350746e+01	3.491906e+01	MAP3K8
+Reactome_2022	Interleukin-17 Signaling R-HSA-448424	1/69	7.645034e-02	1.791122e-01	0	0	1.330816e+01	3.421678e+01	MAP3K8
+Reactome_2022	Signaling By Interleukins R-HSA-449147	2/453	9.480063e-02	1.943441e-01	0	0	4.123324e+00	9.714465e+00	MAP3K8;S100A9
+Reactome_2022	GPCR Ligand Binding R-HSA-500792	2/458	9.657707e-02	1.943441e-01	0	0	4.077068e+00	9.529795e+00	XCL2;XCL1
+Reactome_2022	ER-Phagosome Pathway R-HSA-1236974	1/89	9.754337e-02	1.943441e-01	0	0	1.027324e+01	2.391055e+01	S100A9
+Reactome_2022	Antimicrobial Peptides R-HSA-6803157	1/89	9.754337e-02	1.943441e-01	0	0	1.027324e+01	2.391055e+01	S100A9
+Reactome_2022	MyD88 Cascade Initiated On Plasma Membrane R-HSA-975871	1/96	1.048165e-01	1.943441e-01	0	0	9.512919e+00	2.145681e+01	MAP3K8
+Reactome_2022	TRAF6 Mediated Induction Of NFkB And MAP Kinases Upon TLR7/8 Or 9 Activation R-HSA-975138	1/101	1.099772e-01	1.943441e-01	0	0	9.035000e+00	1.994461e+01	MAP3K8
+Reactome_2022	ABC-family Proteins Mediated Transport R-HSA-382556	1/102	1.110059e-01	1.943441e-01	0	0	8.945095e+00	1.966286e+01	ABCB8
+Reactome_2022	MyD88 Dependent Cascade Initiated On Endosome R-HSA-975155	1/102	1.110059e-01	1.943441e-01	0	0	8.945095e+00	1.966286e+01	MAP3K8
+Reactome_2022	Toll Like Receptor 3 (TLR3) Cascade R-HSA-168164	1/103	1.120335e-01	1.943441e-01	0	0	8.856952e+00	1.938749e+01	MAP3K8
+Reactome_2022	Toll Like Receptor 7/8 (TLR7/8) Cascade R-HSA-168181	1/103	1.120335e-01	1.943441e-01	0	0	8.856952e+00	1.938749e+01	MAP3K8
+Reactome_2022	Antigen processing-Cross Presentation R-HSA-1236975	1/104	1.130599e-01	1.943441e-01	0	0	8.770521e+00	1.911831e+01	S100A9
+Reactome_2022	Toll Like Receptor 9 (TLR9) Cascade R-HSA-168138	1/106	1.151094e-01	1.943441e-01	0	0	8.602597e+00	1.859772e+01	MAP3K8
+Reactome_2022	Post-translational Protein Phosphorylation R-HSA-8957275	1/106	1.151094e-01	1.943441e-01	0	0	8.602597e+00	1.859772e+01	PRSS23
+Reactome_2022	MyD88-independent TLR4 Cascade R-HSA-166166	1/107	1.161324e-01	1.943441e-01	0	0	8.521012e+00	1.834594e+01	MAP3K8
+Reactome_2022	Interleukin-1 Signaling R-HSA-9020702	1/114	1.232621e-01	2.021499e-01	0	0	7.990346e+00	1.672733e+01	MAP3K8
+Reactome_2022	Regulation Of IGF Transport And Uptake By IGFBPs R-HSA-381426	1/123	1.323481e-01	2.127950e-01	0	0	7.397541e+00	1.496019e+01	PRSS23
+Reactome_2022	Cell Surface Interactions At Vascular Wall R-HSA-202733	1/134	1.433309e-01	2.242879e-01	0	0	6.781955e+00	1.317462e+01	S100A9
+Reactome_2022	Signal Transduction R-HSA-162582	5/2465	1.449666e-01	2.242879e-01	0	0	1.977981e+00	3.819980e+00	PORCN;XCL2;XCL1;FAM169A;S100A9
+Reactome_2022	GPCR Downstream Signaling R-HSA-388396	2/619	1.582336e-01	2.371976e-01	0	0	2.988346e+00	5.509563e+00	XCL2;XCL1
+Reactome_2022	Interleukin-1 Family Signaling R-HSA-446652	1/152	1.610164e-01	2.371976e-01	0	0	5.968092e+00	1.089922e+01	MAP3K8
+Reactome_2022	Metabolism Of Steroids R-HSA-8957322	1/153	1.619886e-01	2.371976e-01	0	0	5.928529e+00	1.079128e+01	OSBPL3
+Reactome_2022	Signaling By Rho GTPases R-HSA-194315	2/644	1.684188e-01	2.422867e-01	0	0	2.868269e+00	5.109252e+00	FAM169A;S100A9
+Reactome_2022	Cellular Senescence R-HSA-2559583	1/165	1.735715e-01	2.432220e-01	0	0	5.491408e+00	9.616365e+00	HIRA
+Reactome_2022	Signaling By Rho GTPases, Miro GTPases And RHOBTB3 R-HSA-9716542	2/660	1.750012e-01	2.432220e-01	0	0	2.796208e+00	4.873685e+00	FAM169A;S100A9
+Reactome_2022	Immune System R-HSA-168256	4/1943	1.791705e-01	2.435913e-01	0	0	1.958470e+00	3.367427e+00	KIR3DL1;MAP3K8;KIR3DL2;S100A9
+Reactome_2022	Fatty Acid Metabolism R-HSA-8978868	1/173	1.812082e-01	2.435913e-01	0	0	5.233879e+00	8.940035e+00	PTGDS
+Reactome_2022	Signaling By GPCR R-HSA-372790	2/689	1.870452e-01	2.473824e-01	0	0	2.674153e+00	4.482963e+00	XCL2;XCL1
+Reactome_2022	Cytokine Signaling In Immune System R-HSA-1280215	2/702	1.924870e-01	2.505387e-01	0	0	2.622721e+00	4.321527e+00	MAP3K8;S100A9
+Reactome_2022	Metabolism Of Lipids R-HSA-556833	2/732	2.051333e-01	2.628270e-01	0	0	2.511024e+00	3.977702e+00	OSBPL3;PTGDS
+Reactome_2022	RHO GTPase Effectors R-HSA-195258	1/269	2.677411e-01	3.377657e-01	0	0	3.342775e+00	4.404891e+00	S100A9
+Reactome_2022	Signaling By WNT R-HSA-195721	1/294	2.887973e-01	3.588088e-01	0	0	3.053677e+00	3.792759e+00	PORCN
+Reactome_2022	Innate Immune System R-HSA-168249	2/1035	3.356560e-01	4.108028e-01	0	0	1.746554e+00	1.906658e+00	MAP3K8;S100A9
+Reactome_2022	Developmental Biology R-HSA-1266738	2/1073	3.519175e-01	4.223427e-01	0	0	1.681206e+00	1.755782e+00	AGAP2;PTGDS
+Reactome_2022	Class I MHC Mediated Antigen Processing And Presentation R-HSA-983169	1/378	3.553859e-01	4.223427e-01	0	0	2.363154e+00	2.444804e+00	S100A9
+Reactome_2022	Diseases Of Signal Transduction By Growth Factor Receptors And Second Messengers R-HSA-5663202	1/424	3.892796e-01	4.560132e-01	0	0	2.101225e+00	1.982416e+00	PORCN
+Reactome_2022	RHO GTPase Cycle R-HSA-9012999	1/441	4.013687e-01	4.635526e-01	0	0	2.018285e+00	1.842442e+00	FAM169A
+Reactome_2022	Neutrophil Degranulation R-HSA-6798695	1/468	4.200998e-01	4.784470e-01	0	0	1.898968e+00	1.646905e+00	S100A9
+Reactome_2022	Axon Guidance R-HSA-422475	1/519	4.539621e-01	5.099300e-01	0	0	1.707529e+00	1.348507e+00	AGAP2
+Reactome_2022	Nervous System Development R-HSA-9675108	1/545	4.704890e-01	5.213526e-01	0	0	1.623747e+00	1.224277e+00	AGAP2
+Reactome_2022	Hemostasis R-HSA-109582	1/576	4.895690e-01	5.352621e-01	0	0	1.533755e+00	1.095454e+00	S100A9
+Reactome_2022	Transport Of Small Molecules R-HSA-382551	1/706	5.626572e-01	6.070775e-01	0	0	1.242553e+00	7.145733e-01	ABCB8
+Reactome_2022	Cellular Responses To Stress R-HSA-2262752	1/722	5.709278e-01	6.076848e-01	0	0	1.213970e+00	6.804214e-01	HIRA
+Reactome_2022	Cellular Responses To Stimuli R-HSA-8953897	1/736	5.780416e-01	6.076848e-01	0	0	1.189981e+00	6.522400e-01	HIRA
+Reactome_2022	Disease R-HSA-1643685	2/1736	6.054328e-01	6.284240e-01	0	0	1.001977e+00	5.028038e-01	PORCN;S100A9
+Reactome_2022	Metabolism R-HSA-1430728	2/2049	6.983840e-01	7.158436e-01	0	0	8.342057e-01	2.994683e-01	OSBPL3;PTGDS
+Reactome_2022	Post-translational Protein Modification R-HSA-597592	1/1383	8.077673e-01	8.177398e-01	0	0	6.115972e-01	1.305645e-01	PRSS23
+Reactome_2022	Metabolism Of Proteins R-HSA-392499	1/1890	8.981722e-01	8.981722e-01	0	0	4.352471e-01	4.674270e-02	PRSS23

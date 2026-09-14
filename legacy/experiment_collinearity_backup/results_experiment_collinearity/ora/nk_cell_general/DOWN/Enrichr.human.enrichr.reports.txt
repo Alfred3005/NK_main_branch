@@ -1,0 +1,136 @@
+Gene_set	Term	Overlap	P-value	Adjusted P-value	Old P-value	Old Adjusted P-value	Odds Ratio	Combined Score	Genes
+MSigDB_Hallmark_2020	IL-6/JAK/STAT3 Signaling	1/87	2.582082e-02	5.852673e-02	0	0	4.629767e+01	1.692909e+02	MAP3K8
+MSigDB_Hallmark_2020	IL-2/STAT5 Signaling	1/199	5.824136e-02	5.852673e-02	0	0	1.999596e+01	5.685170e+01	MAP3K8
+MSigDB_Hallmark_2020	TNF-alpha Signaling via NF-kB	1/200	5.852673e-02	5.852673e-02	0	0	1.989447e+01	5.646592e+01	MAP3K8
+MSigDB_Hallmark_2020	Interferon Gamma Response	1/200	5.852673e-02	5.852673e-02	0	0	1.989447e+01	5.646592e+01	XCL1
+GO_Biological_Process_2023	Positive Regulation Of T Cell Chemotaxis (GO:0010820)	2/12	4.943298e-06	2.891449e-04	0	0	9.992000e+02	1.220770e+04	XCL2;XCL1
+GO_Biological_Process_2023	Regulation Of T Cell Chemotaxis (GO:0010819)	2/13	5.841311e-06	2.891449e-04	0	0	9.083182e+02	1.094574e+04	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of Lymphocyte Chemotaxis (GO:0140131)	2/17	1.017948e-05	3.359229e-04	0	0	6.659667e+02	7.655378e+03	XCL2;XCL1
+GO_Biological_Process_2023	Eosinophil Chemotaxis (GO:0048245)	2/24	2.063923e-05	3.701110e-04	0	0	4.539091e+02	4.896915e+03	XCL2;XCL1
+GO_Biological_Process_2023	Eosinophil Migration (GO:0072677)	2/24	2.063923e-05	3.701110e-04	0	0	4.539091e+02	4.896915e+03	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of T Cell Migration (GO:2000406)	2/25	2.243097e-05	3.701110e-04	0	0	4.341522e+02	4.647629e+03	XCL2;XCL1
+GO_Biological_Process_2023	Lymphocyte Migration (GO:0072676)	2/41	6.118115e-05	7.760939e-04	0	0	2.558333e+02	2.482011e+03	XCL2;XCL1
+GO_Biological_Process_2023	Monocyte Chemotaxis (GO:0002548)	2/42	6.423166e-05	7.760939e-04	0	0	2.494250e+02	2.407703e+03	XCL2;XCL1
+GO_Biological_Process_2023	Lymphocyte Chemotaxis (GO:0048247)	2/44	7.055399e-05	7.760939e-04	0	0	2.375238e+02	2.270522e+03	XCL2;XCL1
+GO_Biological_Process_2023	Chemokine-Mediated Signaling Pathway (GO:0070098)	2/57	1.188261e-04	1.146187e-03	0	0	1.812636e+02	1.638234e+03	XCL2;XCL1
+GO_Biological_Process_2023	Cellular Response To Chemokine (GO:1990869)	2/59	1.273541e-04	1.146187e-03	0	0	1.748860e+02	1.568472e+03	XCL2;XCL1
+GO_Biological_Process_2023	Cellular Response To Type II Interferon (GO:0071346)	2/66	1.595090e-04	1.315950e-03	0	0	1.557031e+02	1.361376e+03	XCL2;XCL1
+GO_Biological_Process_2023	Neutrophil Chemotaxis (GO:0030593)	2/70	1.794914e-04	1.366896e-03	0	0	1.465147e+02	1.263746e+03	XCL2;XCL1
+GO_Biological_Process_2023	Granulocyte Chemotaxis (GO:0071621)	2/73	1.952442e-04	1.380655e-03	0	0	1.403028e+02	1.198363e+03	XCL2;XCL1
+GO_Biological_Process_2023	Neutrophil Migration (GO:1990266)	2/77	2.172678e-04	1.400299e-03	0	0	1.327933e+02	1.120029e+03	XCL2;XCL1
+GO_Biological_Process_2023	Response To Type II Interferon (GO:0034341)	2/80	2.345494e-04	1.400299e-03	0	0	1.276667e+02	1.067018e+03	XCL2;XCL1
+GO_Biological_Process_2023	Cellular Response To Interleukin-1 (GO:0071347)	2/81	2.404553e-04	1.400299e-03	0	0	1.260443e+02	1.050324e+03	XCL2;XCL1
+GO_Biological_Process_2023	Response To Interleukin-1 (GO:0070555)	2/85	2.648048e-04	1.456427e-03	0	0	1.199458e+02	9.879355e+02	XCL2;XCL1
+GO_Biological_Process_2023	Response To Tumor Necrosis Factor (GO:0034612)	2/108	4.272697e-04	2.226300e-03	0	0	9.381132e+01	7.277971e+02	XCL2;XCL1
+GO_Biological_Process_2023	Cellular Response To Tumor Necrosis Factor (GO:0071356)	2/119	5.184246e-04	2.566202e-03	0	0	8.494444e+01	6.425806e+02	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of Hydrolase Activity (GO:0051345)	2/176	1.128492e-03	5.251206e-03	0	0	5.695402e+01	3.865397e+02	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of ERK1 And ERK2 Cascade (GO:0070374)	2/179	1.166935e-03	5.251206e-03	0	0	5.598023e+01	3.780555e+02	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of T-helper 1 Cell Cytokine Production (GO:2000556)	1/5	1.499220e-03	6.184282e-03	0	0	9.995000e+02	6.499559e+03	XCL1
+GO_Biological_Process_2023	Regulation Of T-helper 1 Cell Cytokine Production (GO:2000554)	1/5	1.499220e-03	6.184282e-03	0	0	9.995000e+02	6.499559e+03	XCL1
+GO_Biological_Process_2023	Regulation Of GTPase Activity (GO:0043087)	2/214	1.661623e-03	6.580028e-03	0	0	4.665566e+01	2.985944e+02	XCL2;XCL1
+GO_Biological_Process_2023	Negative Regulation Of CD4-positive, Alpha-Beta T Cell Proliferation (GO:2000562)	1/6	1.798841e-03	6.594112e-03	0	0	7.995600e+02	5.053709e+03	XCL1
+GO_Biological_Process_2023	Regulation Of Natural Killer Cell Chemotaxis (GO:2000501)	1/6	1.798841e-03	6.594112e-03	0	0	7.995600e+02	5.053709e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of GTPase Activity (GO:0043547)	2/234	1.982201e-03	6.594112e-03	0	0	4.259052e+01	2.650641e+02	XCL2;XCL1
+GO_Biological_Process_2023	Inflammatory Response (GO:0006954)	2/236	2.015763e-03	6.594112e-03	0	0	4.222222e+01	2.620631e+02	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of T-helper 2 Cell Cytokine Production (GO:2000553)	1/7	2.098387e-03	6.594112e-03	0	0	6.662667e+02	4.108591e+03	XCL1
+GO_Biological_Process_2023	Regulation Of ERK1 And ERK2 Cascade (GO:0070372)	2/244	2.152734e-03	6.594112e-03	0	0	4.080992e+01	2.506144e+02	XCL2;XCL1
+GO_Biological_Process_2023	Cytokine-Mediated Signaling Pathway (GO:0019221)	2/257	2.384574e-03	6.594112e-03	0	0	3.870392e+01	2.337227e+02	XCL2;XCL1
+GO_Biological_Process_2023	Regulation Of CD8-positive, Alpha-Beta T Cell Proliferation (GO:2000564)	1/8	2.397859e-03	6.594112e-03	0	0	5.710571e+02	3.445290e+03	XCL1
+GO_Biological_Process_2023	Regulation Of T-helper 1 Type Immune Response (GO:0002825)	1/8	2.397859e-03	6.594112e-03	0	0	5.710571e+02	3.445290e+03	XCL1
+GO_Biological_Process_2023	Negative Regulation Of T Cell Cytokine Production (GO:0002725)	1/8	2.397859e-03	6.594112e-03	0	0	5.710571e+02	3.445290e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of CD8-positive, Alpha-Beta T Cell Activation (GO:2001187)	1/8	2.397859e-03	6.594112e-03	0	0	5.710571e+02	3.445290e+03	XCL1
+GO_Biological_Process_2023	Regulation Of CD4-positive, Alpha-Beta T Cell Proliferation (GO:2000561)	1/9	2.697256e-03	6.846880e-03	0	0	4.996500e+02	2.955690e+03	XCL1
+GO_Biological_Process_2023	Response To Interleukin-4 (GO:0070670)	1/9	2.697256e-03	6.846880e-03	0	0	4.996500e+02	2.955690e+03	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Alpha-Beta T Cell Proliferation (GO:0046642)	1/9	2.697256e-03	6.846880e-03	0	0	4.996500e+02	2.955690e+03	XCL1
+GO_Biological_Process_2023	Regulation Of T-helper 2 Cell Cytokine Production (GO:2000551)	1/10	2.996578e-03	7.235640e-03	0	0	4.441111e+02	2.580412e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Transforming Growth Factor Beta Production (GO:0071636)	1/10	2.996578e-03	7.235640e-03	0	0	4.441111e+02	2.580412e+03	XCL1
+GO_Biological_Process_2023	Negative Regulation Of CD4-positive, Alpha-Beta T Cell Activation (GO:2000515)	1/11	3.295826e-03	7.737062e-03	0	0	3.996800e+02	2.284211e+03	XCL1
+GO_Biological_Process_2023	Cellular Response To Cytokine Stimulus (GO:0071345)	2/308	3.403743e-03	7.737062e-03	0	0	3.216993e+01	1.828179e+02	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of MAPK Cascade (GO:0043410)	2/310	3.447238e-03	7.737062e-03	0	0	3.195779e+01	1.812065e+02	XCL2;XCL1
+GO_Biological_Process_2023	Positive Regulation Of T-helper 1 Type Immune Response (GO:0002827)	1/12	3.594998e-03	7.737062e-03	0	0	3.633273e+02	2.044883e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of CD4-positive, Alpha-Beta T Cell Activation (GO:2000516)	1/12	3.594998e-03	7.737062e-03	0	0	3.633273e+02	2.044883e+03	XCL1
+GO_Biological_Process_2023	Regulation Of Myoblast Fusion (GO:1901739)	1/13	3.894096e-03	7.867664e-03	0	0	3.330333e+02	1.847767e+03	PLEKHO1
+GO_Biological_Process_2023	Cellular Response To Interleukin-4 (GO:0071353)	1/13	3.894096e-03	7.867664e-03	0	0	3.330333e+02	1.847767e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Type 2 Immune Response (GO:0002830)	1/13	3.894096e-03	7.867664e-03	0	0	3.330333e+02	1.847767e+03	XCL1
+GO_Biological_Process_2023	Negative Regulation Of T Cell Mediated Immunity (GO:0002710)	1/14	4.193120e-03	8.302377e-03	0	0	3.074000e+02	1.682803e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Immunoglobulin Mediated Immune Response (GO:0002891)	1/15	4.492068e-03	8.719897e-03	0	0	2.854286e+02	1.542868e+03	XCL1
+GO_Biological_Process_2023	Regulation Of Transforming Growth Factor Beta Production (GO:0071634)	1/16	4.790942e-03	8.949119e-03	0	0	2.663867e+02	1.422779e+03	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Cytokine Production Involved In Immune Response (GO:0002719)	1/16	4.790942e-03	8.949119e-03	0	0	2.663867e+02	1.422779e+03	XCL1
+GO_Biological_Process_2023	Regulation Of Leukocyte Chemotaxis (GO:0002688)	1/17	5.089741e-03	9.161535e-03	0	0	2.497250e+02	1.318680e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Alpha-Beta T Cell Proliferation (GO:0046641)	1/17	5.089741e-03	9.161535e-03	0	0	2.497250e+02	1.318680e+03	XCL1
+GO_Biological_Process_2023	Regulation Of T Cell Cytokine Production (GO:0002724)	1/18	5.388466e-03	9.358915e-03	0	0	2.350235e+02	1.227644e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Neutrophil Chemotaxis (GO:0090023)	1/18	5.388466e-03	9.358915e-03	0	0	2.350235e+02	1.227644e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of T Cell Cytokine Production (GO:0002726)	1/21	6.284191e-03	1.036892e-02	0	0	1.997400e+02	1.012625e+03	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Granulocyte Chemotaxis (GO:0071624)	1/21	6.284191e-03	1.036892e-02	0	0	1.997400e+02	1.012625e+03	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Interleukin-2 Production (GO:0032703)	1/21	6.284191e-03	1.036892e-02	0	0	1.997400e+02	1.012625e+03	XCL1
+GO_Biological_Process_2023	Natural Killer Cell Mediated Immunity (GO:0002228)	1/22	6.582617e-03	1.068326e-02	0	0	1.902190e+02	9.555317e+02	KIR3DL1
+GO_Biological_Process_2023	Positive Regulation Of Neutrophil Migration (GO:1902624)	1/23	6.880968e-03	1.098735e-02	0	0	1.815636e+02	9.040046e+02	XCL1
+GO_Biological_Process_2023	Natural Killer Cell Mediated Cytotoxicity (GO:0042267)	1/24	7.179245e-03	1.128167e-02	0	0	1.736609e+02	8.572875e+02	KIR3DL1
+GO_Biological_Process_2023	Regulation Of Neutrophil Chemotaxis (GO:0090022)	1/25	7.477447e-03	1.156668e-02	0	0	1.664167e+02	8.147533e+02	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Type II Interferon Production (GO:0032689)	1/28	8.371605e-03	1.275060e-02	0	0	1.479037e+02	7.074101e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Interleukin-10 Production (GO:0032733)	1/30	8.967338e-03	1.345101e-02	0	0	1.376897e+02	6.490920e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Leukocyte Migration (GO:0002687)	1/31	9.265092e-03	1.369021e-02	0	0	1.330933e+02	6.230766e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of T Cell Mediated Cytotoxicity (GO:0001916)	1/33	9.860378e-03	1.394539e-02	0	0	1.247625e+02	5.763068e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Release Of Sequestered Calcium Ion Into Cytosol (GO:0051281)	1/33	9.860378e-03	1.394539e-02	0	0	1.247625e+02	5.763068e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Cytokine Production Involved In Immune Response (GO:0002720)	1/33	9.860378e-03	1.394539e-02	0	0	1.247625e+02	5.763068e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Immunoglobulin Production (GO:0002639)	1/34	1.015791e-02	1.416384e-02	0	0	1.209758e+02	5.552186e+02	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Sequestering Of Calcium Ion (GO:0051283)	1/36	1.075275e-02	1.458249e-02	0	0	1.140514e+02	5.169488e+02	XCL1
+GO_Biological_Process_2023	Regulation Of T Cell Mediated Cytotoxicity (GO:0001914)	1/36	1.075275e-02	1.458249e-02	0	0	1.140514e+02	5.169488e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Production Of Molecular Mediator Of Immune Response (GO:0002702)	1/38	1.134729e-02	1.497842e-02	0	0	1.078757e+02	4.831510e+02	XCL1
+GO_Biological_Process_2023	Response To Transforming Growth Factor Beta (GO:0071559)	1/38	1.134729e-02	1.497842e-02	0	0	1.078757e+02	4.831510e+02	XCL1
+GO_Biological_Process_2023	Release Of Sequestered Calcium Ion Into Cytosol (GO:0051209)	1/39	1.164445e-02	1.516842e-02	0	0	1.050316e+02	4.676978e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Calcium Ion Transmembrane Transport (GO:1904427)	1/42	1.253548e-02	1.611704e-02	0	0	9.733171e+01	4.262343e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of T Cell Mediated Immunity (GO:0002711)	1/43	1.283234e-02	1.628720e-02	0	0	9.500952e+01	4.138412e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Chemotaxis (GO:0050921)	1/44	1.312912e-02	1.645295e-02	0	0	9.279535e+01	4.020750e+02	XCL1
+GO_Biological_Process_2023	Regulation Of Interleukin-10 Production (GO:0032653)	1/46	1.372248e-02	1.698156e-02	0	0	8.866222e+01	3.802475e+02	XCL1
+GO_Biological_Process_2023	Regulation Of Interleukin-2 Production (GO:0032663)	1/47	1.401904e-02	1.713438e-02	0	0	8.673043e+01	3.701082e+02	XCL1
+GO_Biological_Process_2023	Cellular Defense Response (GO:0006968)	1/48	1.431553e-02	1.728338e-02	0	0	8.488085e+01	3.604389e+02	KIR3DL2
+GO_Biological_Process_2023	Blood Circulation (GO:0008015)	1/50	1.490828e-02	1.770883e-02	0	0	8.140816e+01	3.423896e+02	XCL2
+GO_Biological_Process_2023	Regulation Of Release Of Sequestered Calcium Ion Into Cytosol (GO:0051279)	1/51	1.520455e-02	1.770883e-02	0	0	7.977600e+01	3.339551e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Leukocyte Mediated Cytotoxicity (GO:0001912)	1/51	1.520455e-02	1.770883e-02	0	0	7.977600e+01	3.339551e+02	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Leukocyte Chemotaxis (GO:0002690)	1/54	1.609291e-02	1.852555e-02	0	0	7.524906e+01	3.107317e+02	XCL1
+GO_Biological_Process_2023	Calcium Ion Transmembrane Import Into Cytosol (GO:0097553)	1/83	2.464597e-02	2.804541e-02	0	0	4.856585e+01	1.798463e+02	XCL1
+GO_Biological_Process_2023	Regulation Of Type II Interferon Production (GO:0032649)	1/87	2.582082e-02	2.904843e-02	0	0	4.629767e+01	1.692909e+02	XCL1
+GO_Biological_Process_2023	Cellular Response To Transforming Growth Factor Beta Stimulus (GO:0071560)	1/96	2.845994e-02	3.162808e-02	0	0	4.189263e+01	1.491067e+02	XCL1
+GO_Biological_Process_2023	Regulation Of Defense Response (GO:0031347)	1/97	2.875280e-02	3.162808e-02	0	0	4.145417e+01	1.471217e+02	XCL1
+GO_Biological_Process_2023	Regulation Of Response To External Stimulus (GO:0032101)	1/127	3.750467e-02	4.080178e-02	0	0	3.153651e+01	1.035435e+02	XCL1
+GO_Biological_Process_2023	Negative Regulation Of DNA-binding Transcription Factor Activity (GO:0043433)	1/149	4.388085e-02	4.721961e-02	0	0	2.681892e+01	8.384338e+01	XCL1
+GO_Biological_Process_2023	Cellular Response To Growth Factor Stimulus (GO:0071363)	1/155	4.561368e-02	4.855650e-02	0	0	2.576623e+01	7.955447e+01	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Cytokine Production (GO:0001818)	1/178	5.223200e-02	5.501030e-02	0	0	2.239209e+01	6.610279e+01	XCL1
+GO_Biological_Process_2023	Regulation Of Inflammatory Response (GO:0050727)	1/240	6.988245e-02	7.282487e-02	0	0	1.653138e+01	4.398902e+01	XCL1
+GO_Biological_Process_2023	Positive Regulation Of Cytokine Production (GO:0001819)	1/320	9.225171e-02	9.513458e-02	0	0	1.233542e+01	2.939821e+01	XCL1
+GO_Biological_Process_2023	Negative Regulation Of Nucleic Acid-Templated Transcription (GO:1903507)	1/456	1.292503e-01	1.319153e-01	0	0	8.588571e+00	1.757225e+01	XCL1
+GO_Biological_Process_2023	Negative Regulation Of DNA-templated Transcription (GO:0045892)	1/1025	2.707215e-01	2.734840e-01	0	0	3.705078e+00	4.841295e+00	XCL1
+GO_Biological_Process_2023	Regulation Of DNA-templated Transcription (GO:0006355)	1/1922	4.546339e-01	4.546339e-01	0	0	1.881624e+00	1.483214e+00	XCL1
+Reactome_2022	Chemokine Receptors Bind Chemokines R-HSA-380108	2/56	1.146720e-04	3.669504e-03	0	0	1.846296e+02	1.675225e+03	XCL2;XCL1
+Reactome_2022	Immunoregulatory Interactions Between A Lymphoid And A non-Lymphoid Cell R-HSA-198933	2/123	5.537192e-04	8.859507e-03	0	0	8.211983e+01	6.158046e+02	KIR3DL1;KIR3DL2
+Reactome_2022	Adaptive Immune System R-HSA-1280218	3/733	9.024544e-04	9.626180e-03	0	0	2.638904e+01	1.849975e+02	KIR3DL1;MAP3K8;KIR3DL2
+Reactome_2022	Peptide Ligand-Binding Receptors R-HSA-375276	2/196	1.396614e-03	1.043888e-02	0	0	5.103093e+01	3.354623e+02	XCL2;XCL1
+Reactome_2022	G Alpha (Q) Signaling Events R-HSA-416476	2/212	1.631075e-03	1.043888e-02	0	0	4.710476e+01	3.023427e+02	XCL2;XCL1
+Reactome_2022	Class A/1 (Rhodopsin-like Receptors) R-HSA-373076	2/327	3.827592e-03	2.041383e-02	0	0	3.026000e+01	1.684126e+02	XCL2;XCL1
+Reactome_2022	MAP3K8 (TPL2)-dependent MAPK1/3 Activation R-HSA-5684264	1/16	4.790942e-03	2.190145e-02	0	0	2.663867e+02	1.422779e+03	MAP3K8
+Reactome_2022	CD28 Dependent PI3K/Akt Signaling R-HSA-389357	1/23	6.880968e-03	2.625443e-02	0	0	1.815636e+02	9.040046e+02	MAP3K8
+Reactome_2022	GPCR Ligand Binding R-HSA-500792	2/458	7.384057e-03	2.625443e-02	0	0	2.142325e+01	1.051545e+02	XCL2;XCL1
+Reactome_2022	CD28 Co-Stimulation R-HSA-389356	1/34	1.015791e-02	3.250531e-02	0	0	1.209758e+02	5.552186e+02	MAP3K8
+Reactome_2022	GPCR Downstream Signaling R-HSA-388396	2/619	1.320583e-02	3.841696e-02	0	0	1.570259e+01	6.794664e+01	XCL2;XCL1
+Reactome_2022	Immune System R-HSA-168256	3/1943	1.461697e-02	3.897858e-02	0	0	9.306186e+00	3.932396e+01	KIR3DL1;MAP3K8;KIR3DL2
+Reactome_2022	Signaling By GPCR R-HSA-372790	2/689	1.621011e-02	3.990180e-02	0	0	1.405167e+01	5.792269e+01	XCL2;XCL1
+Reactome_2022	MAP Kinase Activation R-HSA-450294	1/62	1.845859e-02	4.104934e-02	0	0	6.535410e+01	2.609083e+02	MAP3K8
+Reactome_2022	Costimulation By CD28 Family R-HSA-388841	1/68	2.022974e-02	4.104934e-02	0	0	5.948358e+01	2.320218e+02	MAP3K8
+Reactome_2022	Interleukin-17 Signaling R-HSA-448424	1/69	2.052467e-02	4.104934e-02	0	0	5.860588e+01	2.277499e+02	MAP3K8
+Reactome_2022	MyD88 Cascade Initiated On Plasma Membrane R-HSA-975871	1/96	2.845994e-02	4.316198e-02	0	0	4.189263e+01	1.491067e+02	MAP3K8
+Reactome_2022	TRAF6 Mediated Induction Of NFkB And MAP Kinases Upon TLR7/8 Or 9 Activation R-HSA-975138	1/101	2.992354e-02	4.316198e-02	0	0	3.978800e+01	1.396205e+02	MAP3K8
+Reactome_2022	MyD88 Dependent Cascade Initiated On Endosome R-HSA-975155	1/102	3.021604e-02	4.316198e-02	0	0	3.939208e+01	1.378480e+02	MAP3K8
+Reactome_2022	Toll Like Receptor 3 (TLR3) Cascade R-HSA-168164	1/103	3.050846e-02	4.316198e-02	0	0	3.900392e+01	1.361140e+02	MAP3K8
+Reactome_2022	Toll Like Receptor 7/8 (TLR7/8) Cascade R-HSA-168181	1/103	3.050846e-02	4.316198e-02	0	0	3.900392e+01	1.361140e+02	MAP3K8
+Reactome_2022	Toll Like Receptor 9 (TLR9) Cascade R-HSA-168138	1/106	3.138530e-02	4.316198e-02	0	0	3.788381e+01	1.311316e+02	MAP3K8
+Reactome_2022	MyD88-independent TLR4 Cascade R-HSA-166166	1/107	3.167743e-02	4.316198e-02	0	0	3.752453e+01	1.295403e+02	MAP3K8
+Reactome_2022	MyD88:MAL(TIRAP) Cascade Initiated On Plasma Membrane R-HSA-166058	1/112	3.313699e-02	4.316198e-02	0	0	3.582523e+01	1.220603e+02	MAP3K8
+Reactome_2022	Interleukin-1 Signaling R-HSA-9020702	1/114	3.372030e-02	4.316198e-02	0	0	3.518761e+01	1.192739e+02	MAP3K8
+Reactome_2022	Toll Like Receptor 4 (TLR4) Cascade R-HSA-166016	1/140	4.127668e-02	5.080206e-02	0	0	2.856835e+01	9.106039e+01	MAP3K8
+Reactome_2022	Interleukin-1 Family Signaling R-HSA-446652	1/152	4.474759e-02	5.303418e-02	0	0	2.628212e+01	8.165112e+01	MAP3K8
+Reactome_2022	Toll-like Receptor Cascades R-HSA-168898	1/162	4.763202e-02	5.443659e-02	0	0	2.463727e+01	7.500200e+01	MAP3K8
+Reactome_2022	Signaling By Interleukins R-HSA-449147	1/453	1.284480e-01	1.417357e-01	0	0	8.646903e+00	1.774545e+01	MAP3K8
+Reactome_2022	Signal Transduction R-HSA-162582	2/2465	1.626664e-01	1.735108e-01	0	0	3.558871e+00	6.463102e+00	XCL2;XCL1
+Reactome_2022	Cytokine Signaling In Immune System R-HSA-1280215	1/702	1.929839e-01	1.992092e-01	0	0	5.504422e+00	9.055592e+00	MAP3K8
+Reactome_2022	Innate Immune System R-HSA-168249	1/1035	2.730248e-01	2.730248e-01	0	0	3.667311e+00	4.760877e+00	MAP3K8
