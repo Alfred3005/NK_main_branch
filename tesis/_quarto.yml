@@ -1,0 +1,69 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Análisis transcriptómico de células asesinas naturales en el contexto de la inmunosenescencia"
+  subtitle: "Tesis que para optar por el grado de Maestro en Ciencias Biológicas"
+  author: "Alfredo Morales Salazar"
+  date: "Abril de 2026"
+  language: es
+  chapters:
+    - index.md
+    - manuscripts/01_Introduccion.md
+    - manuscripts/02_Marco_Teorico.md
+    - manuscripts/03_Pregunta_Hipotesis_Objetivos.md
+    - manuscripts/04_Metodologia.md
+    - manuscripts/05_Resultados.md
+    - manuscripts/06_Discusion.md
+    - manuscripts/07_Conclusiones.md
+    - manuscripts/08_Bibliografia.md
+  appendices:
+    - manuscripts/Anexo_A_Analisis_Exploratorio.md
+
+format:
+  pdf:
+    documentclass: scrreprt
+    classoption: [openany, oneside]
+    papersize: letter
+    geometry:
+      - top=25mm
+      - bottom=25mm
+      - left=30mm
+      - right=25mm
+    keep-tex: true
+    fontsize: 12pt
+    linestretch: 1.5
+    toc: true
+    toc-depth: 3
+    toc-title: "Índice General"
+    lof: true   # Índice de Figuras (List of Figures)
+    lot: true   # Índice de Tablas (List of Tables)
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{pdfpages}
+        \usepackage{caption}
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{etoolbox}
+        \usepackage{pdflscape}
+        \captionsetup[figure]{name=Figura}
+        \captionsetup[table]{name=Tabla}
+        \AtBeginDocument{
+          \renewcommand{\listfigurename}{Índice de Figuras}
+          \renewcommand{\listtablename}{Índice de Tablas}
+        }
+        % Corrección crítica: Resetear interlineado a 1.0 y aplicar \small en tablas para prevenir encimado de líneas
+        \AtBeginEnvironment{longtable}{\small\linespread{1.0}\selectfont\renewcommand{\arraystretch}{1.3}}
+        \AtBeginEnvironment{tabular}{\small\linespread{1.0}\selectfont\renewcommand{\arraystretch}{1.3}}
+        \AtBeginEnvironment{table}{\small\linespread{1.0}\selectfont\renewcommand{\arraystretch}{1.3}}
+    include-before-body: manuscripts/include_preliminares.tex
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-title: "Índice General"
+    number-sections: true
+    smooth-scroll: true

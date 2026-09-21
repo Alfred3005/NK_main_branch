@@ -1,0 +1,50 @@
+name: Render Quarto Thesis
+
+on:
+  push:
+    paths:
+      - 'tesis/**'
+    branches:
+      - main
+      - tesis-manuscrito
+  pull_request:
+    paths:
+      - 'tesis/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-luatex texlive-xetex latexmk
+          
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        
+      - name: Render Quarto Project (PDF)
+        run: |
+          cd tesis
+          quarto render --to pdf
+          
+      - name: Render Quarto Project (HTML)
+        run: |
+          cd tesis
+          quarto render --to html
+          
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tesis-Borrador-PDF
+          path: tesis/_book/*.pdf
+          
+      - name: Upload HTML Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tesis-Borrador-HTML
+          path: tesis/_book/*.html

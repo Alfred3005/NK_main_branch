@@ -18,32 +18,38 @@ Tras aplicar técnicas rigurosas de corrección de RNA ambiental y filtrado adap
 El repositorio está diseñado para ser lineal, limpio, reproducible y portable:
 
 - `scripts/`: Pipeline de ejecución secuencial canónico.
-  - `22_pseudobulk_subtypes_pydeseq2.py`: Expresión Diferencial por subtipos (CD56dim/bright/general) con control estricto de colinealidad.
+  - `22_pseudobulk_subtypes_pydeseq2.py`: Expresión Diferencial por subtipos.
   - `23_differential_abundance_milo.py`: Modelado de abundancia (GLM Binomial).
-  - `24_subtypes_ranked_gsea.py`: Enriquecimiento GSEA Tricéfalo (Hallmark, KEGG, Reactome).
+  - `24_subtypes_ranked_gsea.py`: Enriquecimiento GSEA Tricéfalo.
   - `14_run_specialized_gsea.py`: GSEA especializado (CellAge, Reactome SASP, Inmunosenescencia).
   - `25_subtypes_ora.py`: Análisis de sobrerrepresentación (ORA).
-  - `plot_gprofiler_style.py`: Visualizaciones comparativas estilo gProfiler (FDR < 0.05 y FDR < 0.25).
+  - `plot_gprofiler_style.py`: Visualizaciones comparativas.
   - `plot_heatmap_global.py`: Heatmap de la firma de 23 genes alterados.
-  - `compile_gsea_table.py`: Compilador de tablas unificadas por categorías funcionales.
-  - `generate_report_v2.py`: Ensamblaje autónomo del reporte interactivo HTML final.
-  - `run_final_pipeline.py`: Automatizador que corre la suite completa.
+  - `compile_gsea_table.py`: Compilador de tablas unificadas.
+  - `generate_report_v2.py`: Ensamblaje autónomo del reporte interactivo HTML.
+  - `run_final_pipeline.py`: Automatizador de la suite completa.
 - `results/`:
-  - `Reporte_Integrativo_Subtipos_Abundancia_V2.html`: **Entregable maestro definitivo e interactivo**.
-  - `subtypes/`: Tablas maestras de DEGs, GSEA, ORA, volcanos y reportes CSV finales.
-  - `figures/`: Repositorio local de todas las 20 figuras canónicas en alta resolución.
-- `docs/`: Documentación metodológica, memoria en Obsidian (`docs/vault/`) y el markdown maestro `reporte_integrativo_final.md`.
-- `legacy/`: Cuarentena y resguardo de versiones históricas (V1, V3 trunca, análisis descriptivo exploratorio).
-- `data/`: (Ignorado en git) Carpeta destino para `NK_dataset_qc_ready.h5ad`.
+  - `Reporte_Integrativo_Subtipos_Abundancia_V2.html`: Entregable maestro.
+  - `subtypes/`: Tablas maestras.
+  - `figures/`: Repositorio local de figuras.
+- `tesis/`: **Manuscrito y Compilación de Tesis**
+  - `manuscripts/`: Documentos Markdown organizados por capítulos.
+  - `figures/`: Figuras canónicas de la tesis.
+  - `_quarto.yml`: Archivo de configuración del motor Quarto.
+  - Para compilar el documento en PDF, ingresar a esta carpeta y ejecutar: `quarto render --to pdf`.
+- `docs/`: Documentación metodológica.
+- `legacy/`: Cuarentena y resguardo de versiones históricas.
+- `data/`: (Ignorado en git) Carpeta destino para el `.h5ad`.
 
 ---
 
 ## 🤖 AI Onboarding (Para Claude Code / Antigravity / Agentic Tools)
 Si eres una IA encargada de auditar, automatizar o continuar este proyecto, es imperativo que leas los siguientes documentos de memoria y contexto en el proyecto:
-1. `AGENT_INSTRUCTIONS.md`: Guía de ejecución del pipeline paso a paso y asunciones estadísticas.
-2. `docs/vault/decisions.md`: Justificación biológica y matemática (depuración de lote, efecto cancelación, colinealidad).
-3. `docs/vault/log.md`: Bitácora histórica completa (Chronos).
-4. `results/Reporte_Integrativo_Subtipos_Abundancia_V2.html`: Fuente única de la verdad científica final.
+1. `AGENT_INSTRUCTIONS.md`: Guía de ejecución del pipeline paso a paso.
+2. `AGENTS.md`: **REGLA CRÍTICA** Instrucciones de validación de contexto, redacción académica y nuevo paradigma biológico (V4-Clean).
+3. `docs/vault/decisions.md`: Justificación biológica y matemática.
+4. `docs/vault/log.md`: Bitácora histórica completa.
+5. `results/Reporte_Integrativo_Subtipos_Abundancia_V2.html`: Fuente única de la verdad científica final.
 
 ---
 
