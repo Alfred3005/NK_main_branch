@@ -20,6 +20,11 @@ book:
     - manuscripts/08_Bibliografia.md
   appendices:
     - manuscripts/Anexo_A_Analisis_Exploratorio.md
+crossref:
+  fig-title: "Figura"
+  tbl-title: "Tabla"
+  fig-prefix: "Figura"
+  tbl-prefix: "Tabla"
 
 format:
   pdf:
@@ -32,6 +37,7 @@ format:
       - left=30mm
       - right=25mm
     keep-tex: true
+    fig-pos: "H"
     fontsize: 12pt
     linestretch: 1.5
     toc: true
@@ -49,6 +55,7 @@ format:
         \usepackage{array}
         \usepackage{etoolbox}
         \usepackage{pdflscape}
+        \usepackage{float}
         \captionsetup[figure]{name=Figura}
         \captionsetup[table]{name=Tabla}
         \AtBeginDocument{
