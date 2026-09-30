@@ -17,6 +17,8 @@
     - [x] Capítulo 6: Discusión (Completado y reestructurado: Consolidación de dinámica y fenotipo, bloque sistémico integrado y depuración bibliográfica).
     - [x] Capítulo 7: Conclusiones (Estructurado en formato jerárquico UNAM con correspondencia a objetivos e hipótesis).
     - [x] Capítulo 0: Resumen / Abstract (Completado en ambos idiomas).
+    - [x] Atención y respuestas a observaciones del Sínodo (Dra. Maldonado, Dra. Rosado, Dra. Torres, Dr. Gutiérrez, Dr. Mendoza Núñez).
+    - [x] Actualización de Marco Teórico (definición OMS y envejecimiento inflamatorio) y Bibliografía (41 entradas sincronizadas).
   - [ ] Fase 5: Redacción del Anexo A (Análisis Exploratorio Inicial y Diagnóstico).
 
 - [ ] **Etapa III: Compilación (LaTeX / Quarto)**
