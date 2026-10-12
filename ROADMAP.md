@@ -21,8 +21,8 @@
     - [x] Actualización de Marco Teórico (definición OMS y envejecimiento inflamatorio) y Bibliografía (41 entradas sincronizadas).
   - [x] Fase 5: Redacción de Anexos (Anexo A: Diagnóstico y Validación Metodológica; Anexo B: Registro de Versión Preliminar en Git).
 
-- [ ] **Etapa III: Compilación (LaTeX / Quarto)**
-  - [ ] Instalar/Verificar Quarto en el entorno de trabajo.
-  - [ ] Crear documento maestro `.qmd` para compilación Quarto/LaTeX con formato UNAM.
-  - [ ] Verificar referencias cruzadas e imágenes.
-  - [ ] Integrar citas bibliográficas y compilar PDF.
+- [x] **Etapa III: Compilación (LaTeX / Quarto)**
+  - [x] Instalar/Verificar Quarto en el entorno de trabajo (v1.10.18).
+  - [x] Configurar `_quarto.yml` para compilación Quarto/LaTeX con formato oficial UNAM (scrreprt, letra 12pt, 1.5 interlineado, preliminares firmados).
+  - [x] Verificar referencias cruzadas, figuras y tablas (incluyendo Anexos A y B).
+  - [x] Integrar citas bibliográficas y compilar PDF exitosamente (83 páginas, 6.48 MB).
