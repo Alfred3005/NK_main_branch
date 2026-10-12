@@ -19,7 +19,8 @@
 8. Conclusiones
 9. Bibliografía
 10. Anexos
-    * **Anexo A:** Análisis Exploratorio Inicial y Diagnóstico de Sesgos Técnicos (Historia de la evolución del pipeline, bimodalidad y contaminación por RNA ambiental).
+    * **Anexo A:** Análisis Exploratorio Inicial y Diagnóstico Metodológico (Estudios integrados, marcadores ASCT+B, bimodalidad y saneamiento scAR).
+    * **Anexo B:** Versión Preliminar del Manuscrito de Tesis (Registro histórico y documental archivado en Git, PDF `Tesis_NK_05_correciones.pdf`).
 
 ## Arquitectura Narrativa ("El Enfoque Directo")
 El objetivo de la tesis es presentar la investigación de forma clara, concisa y con la mayor robustez metodológica posible. Se abandona la estructura cronológica en favor de un formato científico tradicional. El trabajo inicial de diagnóstico de sesgos se mueve al Anexo A, dejando el cuerpo principal exclusivamente para la "Verdad Biológica".
@@ -46,4 +47,7 @@ El objetivo de la tesis es presentar la investigación de forma clara, concisa y
   - **Dra. Juana Rosado Pérez:** Compactación integral de Resultados (eliminando tablas saturadas hacia Anexos) alineada directamente a objetivos e hipótesis.
   - **Dra. Leda Torres:** Resolución de 27 observaciones (estricta distinción entre ARNm y proteínas, cursivas para genes, reordenamiento lógico con Marco Teórico antes de Hipótesis, criterios independientes de inclusión/exclusión y modelos en español).
   - **Dr. Humberto Gutiérrez González y Dr. Víctor Manuel Mendoza Núñez:** Comunicaciones ejecutivas de entrega del manuscrito definitivo consolidado previo al examen de grado.
-* **Próximo Paso Inmediato:** Redactar el **Anexo A** (Historia de la evolución del pipeline, bimodalidad y contaminación por RNA ambiental) y proceder a la compilación final en **Quarto/LaTeX** para la entrega formal y programación del examen.
+* **Anexos A y B (Completados y Sincronizados):**
+  - **Anexo A:** Incluye la tabla de los 13 estudios primarios (143,991 células con DOIs), catálogo de marcadores de pureza de linaje ASCT+B y referencias cruzadas directas al reporte integrativo maestro (`Reporte_Integrativo_Subtipos_Abundancia_V2.html`).
+  - **Anexo B:** Documenta el repositorio y registro de la versión preliminar del manuscrito de tesis (`Tesis_NK_05_correciones.pdf`), resguardado en el repositorio Git para trazabilidad científica y metodológica.
+* **Próximo Paso Inmediato:** Proceder a la compilación final en **Quarto/LaTeX** (Etapa III) para generar simultáneamente el HTML interactivo y el PDF oficial de entrega para el examen de grado.

@@ -20,6 +20,7 @@ book:
     - manuscripts/08_Bibliografia.md
   appendices:
     - manuscripts/Anexo_A_Analisis_Exploratorio.md
+    - manuscripts/Anexo_B_Version_Preliminar.md
 crossref:
   fig-title: "Figura"
   tbl-title: "Tabla"
