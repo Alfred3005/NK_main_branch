@@ -18,7 +18,7 @@
     - [x] Capítulo 7: Conclusiones (Estructurado en formato jerárquico UNAM con correspondencia a objetivos e hipótesis).
     - [x] Capítulo 0: Resumen / Abstract (Completado en ambos idiomas).
     - [x] Atención y respuestas a observaciones del Sínodo (Dra. Maldonado, Dra. Rosado, Dra. Torres, Dr. Gutiérrez, Dr. Mendoza Núñez).
-    - [x] Actualización de Marco Teórico (definición OMS y envejecimiento inflamatorio) y Bibliografía (41 entradas sincronizadas).
+    - [x] Actualización de Marco Teórico (definición OMS y envejecimiento inflamatorio) y Bibliografía (47 entradas sincronizadas con Comisión Europea 2026).
   - [x] Fase 5: Redacción de Anexos (Anexo A: Diagnóstico y Validación Metodológica; Anexo B: Registro de Versión Preliminar en Git).
 
 - [x] **Etapa III: Compilación (LaTeX / Quarto)**
