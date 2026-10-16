@@ -42,11 +42,11 @@ Resumen demográfico y de control de calidad transcriptómico de la cohorte.
 
 ## Pureza del Linaje NK y Distribución de Subtipos
 
-Los analisis de subconjuntos celulares se delimitaron al estudio de las dos subpoblaciones canónicas del linaje: el compartimento efector maduro CD56dim, que concentró el 98.0% de la cohorte (141,172 células), y el nicho regulador e inmaduro CD56bright, que constituyó el 2.0% restante (2,819 células) (@tbl-demografia). Los demás subtipos linfoides, tales como las células NKT, quedaron limitadas al análisis exploratorio global sin ser incorporadas como subconjunto independiente.
+Los análisis de subconjuntos celulares se delimitaron al estudio de las dos subpoblaciones canónicas del linaje: el compartimento efector maduro CD56dim, que concentró el 98.0% de la cohorte (141,172 células), y el nicho regulador e inmaduro CD56bright, que constituyó el 2.0% restante (2,819 células) (@tbl-demografia). Los demás subtipos linfoides, tales como las células NKT, quedaron limitados al análisis exploratorio global sin ser incorporadas como subconjunto independiente.
 
-Con el objetivo de corroborar la identidad celular y depurar posibles contaminaciones de otros linajes linfoides, se evaluó la expresión de genes marcadores canónicos derivados de las tablas ASCT+B del Atlas de Referencia Humana (Börner et al., 2021) (*lineage scoring*, ej. *NCAM1*, *FCGR3A*, *NKG7*, *GNLY*, *PRF1*, *KLRB1* para el linaje NK) en contraposición a firmas de células B y T (@fig-3a). La lista completa de genes marcadores empleada para esta validación fenotípica se encuentra disponible en los Anexos.
+Con el objetivo de corroborar la identidad celular y depurar posibles contaminaciones de otros linajes linfoides, se evaluó la expresión de genes marcadores canónicos derivados de las tablas ASCT+B del Atlas de Referencia Humana (Börner et al., 2021) (*lineage scoring*; p. ej., *NCAM1*, *FCGR3A*, *NKG7*, *GNLY*, *PRF1*, *KLRB1* para el linaje NK) en contraposición a firmas de células B y T (@fig-3a). La lista completa de genes marcadores empleada para esta validación fenotípica se encuentra disponible en los Anexos.
 
-Al proyectar las 30 componentes principales de la matriz log-normalizada sin correcciones forzadas sobre un espacio UMAP bidimensional, se evidenció una estructuración espacial orientada predominantemente por el grupo etario y sus covariables técnicas asociadas (@fig-3a). Lejos de representar un obstáculo analítico, esta dispersión ratificó la necesidad de modelar explícitamente la plataforma de captura mediante formulaciones aditivas en *pseudobulk* (`~ assay + age_group`), protegiendo la varianza biológica genuina frente a cualquier homogeneización artificial. La delimitación de ambos subtipos y la variación de sus frecuencias individuales entre donantes confirmaron la preservación de las identidades fenotípicas madura e inmadura (@fig-3b,c).
+Al proyectar las 30 componentes principales de la matriz log-normalizada sin correcciones forzadas sobre un espacio UMAP bidimensional, se evidenció una estructuración espacial orientada predominantemente por el grupo etario y sus covariables técnicas asociadas (@fig-3a). Lejos de representar un obstáculo analítico, esta dispersión ratificó la necesidad de modelar explícitamente la plataforma de captura mediante formulaciones aditivas en *pseudobulk* (`~ assay + age_group`), protegiendo la varianza biológica genuina frente a cualquier homogeneización artificial. La delimitación de ambos subtipos y la variación de sus frecuencias individuales entre donantes confirmaron la preservación de las identidades fenotípicas madura e inmadura (@fig-3b y @fig-3c).
 
 ::: {#fig-3 layout-ncol=2}
 ![Pureza del linaje (Marcadores NK vs B/T)](figures_clean/fig3a.png){#fig-3a}
@@ -68,7 +68,7 @@ Esta regresión cuantificó una contracción relativa del 37.51% en la represent
 
 ## Expresión Diferencial de Alta Confianza (PyDESeq2) y Neutralización del Sesgo Tecnológico
 
-El análisis transcripcional de *pseudobulk* con *PyDESeq2* permitió delimitar las alteraciones génicas vinculadas a la inmunosenescencia tomando en cuenta los artefactos de captura tecnológica. La neutralización de las diferencias técnicas (donde tecnologías de secuenciación como 10x 5' v2 introducían distorsiones artificiales de hasta un 55%) nos llevó a generar una matriz de datosbalanceada de rango completo ($N = 187$ donantes: 152 adultos vs. 35 adultos mayores, abarcando 62,553 células). La posterior contracción bayesiana de los cambios de expresión mediante el algoritmo `apeGLM` estabilizó los estimadores de dispersión y suprimió el ruido asociado a transcritos de baja abundancia.
+El análisis transcripcional de *pseudobulk* con *PyDESeq2* permitió delimitar las alteraciones génicas vinculadas a la inmunosenescencia tomando en cuenta los artefactos de captura tecnológica. La neutralización de las diferencias técnicas (donde tecnologías de secuenciación como 10x 5' v2 introducían distorsiones artificiales de hasta un 55%) llevó a generar una matriz de datos balanceada de rango completo ($N = 187$ donantes: 152 adultos vs. 35 adultos mayores, abarcando 62,553 células). La posterior contracción bayesiana de los cambios de expresión mediante el algoritmo `apeGLM` estabilizó los estimadores de dispersión y suprimió el ruido asociado a transcritos de baja abundancia.
 
 Con un criterio de significancia estadística ajustado por tasa de falso descubrimiento ($padj < 0.05$), el análisis identificó una firma transcripcional conformada por 23 genes diferencialmente expresados (@fig-5 y @tbl-degs-23).
 
@@ -78,7 +78,7 @@ Con un criterio de significancia estadística ajustado por tasa de falso descubr
 | *IL7R* | -1.0416 | 0.0000 | 0.0003 | Receptor de supervivencia y homeostasis inmadura (*CD56bright*) |
 | *NKG7* | +0.8175 | 0.0001 | 0.0163 | Regulador de degranulación citotóxica efectora |
 | *KLRB1* | -0.9161 | 0.0001 | 0.0163 | Receptor CD161, coestimulador y coinhibidor madurativo |
-| *GZMA* | +0.9419 | 0.0003 | 0.0381 | Granzima A, serina proteasa citolítica pro-apoptótica |
+| *GZMA* | +0.9419 | 0.0003 | 0.0381 | Granzima A, serina proteasa citolítica proapoptótica |
 | *TRAC* | -1.1398 | 0.0004 | 0.0381 | Cadena constante del receptor T (marcador negativo de pureza) |
 | *GZMH* | +0.7063 | 0.0004 | 0.0381 | Granzima H, proteasa citotóxica lítica |
 | *HLA-DRB1* | -1.0776 | 0.0004 | 0.0381 | Molécula de histocompatibilidad MHC clase II |
@@ -92,13 +92,13 @@ Genes expresados diferencialmente de alta confianza (FDR < 0.05) representativos
 
 ![Mapa de calor (*heatmap*) de la expresión de los 23 genes regulados diferencialmente de alta confianza (*hits* colapsados), revelando los patrones de sobreexpresión y subexpresión en el envejecimiento.](figures_clean/fig5.png){#fig-5 width=95% fig-align="center"}
 
-Entre los hallazgos transcripcionales, se observó la represión coordinada del receptor de interleucina-7 (*IL7R*, $LFC = -1.0416$, $padj = 0.0003$) y de la lectina *KLRB1* ($LFC = -0.9161$, $padj = 0.0163$) en la subpoblación *CD56bright*. Asimismo, se evidenció una subexpresión significativa de las quimiocinas *XCL1* ($LFC = -1.0967$, $padj = 0.0401$) y *XCL2* ($LFC = -1.0827$, $padj = 0.0401$), moléculas responsables del reclutamiento de células dendríticas convencionales de tipo 1 (*cDC1*) (Böttcher et al., 2018). Adicionalmente, tras depurar el sesgo de lote, se confirmó la represión genuina de la alarmina *S100A9* ($LFC = -1.6169$, $padj = 0.0460$), descartando el artefacto previo de hiperinflamación global.
+Entre los resultados de expresión diferencial, se observó la represión coordinada del receptor de interleucina-7 (*IL7R*, $LFC = -1.0416$, $padj = 0.0003$) y de la lectina *KLRB1* ($LFC = -0.9161$, $padj = 0.0163$) en la subpoblación *CD56bright*. Asimismo, se evidenció una subexpresión significativa de las quimiocinas *XCL1* ($LFC = -1.0967$, $padj = 0.0401$) y *XCL2* ($LFC = -1.0827$, $padj = 0.0401$), moléculas responsables del reclutamiento de células dendríticas convencionales de tipo 1 (*cDC1*; Böttcher et al., 2018). Adicionalmente, tras depurar el sesgo de lote, se confirmó la represión genuina de la alarmina *S100A9* ($LFC = -1.6169$, $padj = 0.0460$), descartando el artefacto previo de hiperinflamación global.
 
 En sentido opuesto, el conjunto de células NK maduras (*CD56dim*) exhibió una acumulación sostenida de ARN mensajero correspondiente al aparato efector lítico. Se registraron incrementos de proteasas citotóxicas como *GZMA* ($LFC = +0.9419$, $padj = 0.0381$) y *GZMH* ($LFC = +0.7063$, $padj = 0.0381$), junto con el regulador *NKG7* ($LFC = +0.8175$, $padj = 0.0163$) y el marcador de diferenciación terminal *KLRG1* ($LFC = +0.7583$, $padj = 0.0381$), indicando una acumulación de estos transcritos efectores en las células *CD56dim*.
 
 ## Enriquecimiento de Vías Transcriptómicas y Modulación Fenotípica (GSEA / ORA)
 
-La exploración de redes biológicas y rutas moleculares mediante el análisis de enriquecimiento por conjuntos de genes (*GSEA Preranked*) empleando el estadístico de Wald del contraste en *pseudobulk* frente a las bases moleculares MSigDB Hallmark, KEGG, Reactome y GO Biological Process. Demostró marcadas diferencias funcionales entre los subtipos celulares (@fig-6, @fig-7 y @tbl-vias-gsea; tablas completas en Anexos).
+La exploración de redes biológicas y rutas moleculares mediante el análisis de enriquecimiento por conjuntos de genes (*GSEA Preranked*) empleando el estadístico de Wald del contraste en *pseudobulk* frente a las bases moleculares MSigDB Hallmark, KEGG, Reactome y GO Biological Process demostró marcadas diferencias funcionales entre los subtipos celulares (@fig-6, @fig-7 y @tbl-vias-gsea; tablas completas en Anexos).
 
 ::: {#tbl-vias-gsea tbl-colwidths="[14,14,24,9,9,10,20]"}
 | Subpoblación | Categoría | Colección y Vía Transcripcional | NES | $p$-valor | FDR ($q$) | Genes Clave de Núcleo (*Core Enrichment*) |
@@ -126,7 +126,7 @@ Ambos perfiles de enriquecimiento se ilustran gráficamente en el panel comparat
 
 ![Gráfico comparativo GSEA bajo umbral estricto (FDR < 0.05). Muestra las vías conservadas (inducción bilateral de UV Response Dn) y los comportamientos específicos de subtipo en el envejecimiento.](figures_clean/fig6.png){#fig-6 width=100% fig-align="center"}
 
-![Gráfico comparativo GSEA bajo umbral exploratorio (FDR < 0.25). Captura señales metabólicas (OXPHOS, transporte electrónico) y transcripcionales (Spliceosoma) compartidas y diferenciales.](figures_clean/fig7.png){#fig-7 width=100% fig-align="center"}
+![Gráfico comparativo GSEA bajo umbral exploratorio (FDR < 0.25). Captura señales metabólicas (OXPHOS, transporte electrónico) y transcripcionales (espliceosoma) compartidas y diferenciales.](figures_clean/fig7.png){#fig-7 width=100% fig-align="center"}
 
 Adicionalmente, se realizó una evaluación ortogonal para contrastar el perfil transcripcional NK contra firmas establecidas de Senescencia Secretora (SASP) y Agotamiento Inmune (@tbl-sasp-exhaustion).
 

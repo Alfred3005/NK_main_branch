@@ -35,7 +35,7 @@ Para validar la pureza de la población celular y garantizar la exclusión de do
 
 | Linaje Celular | Criterio de Selección | Marcador Génico | Nombre Canónico / Función Biológica |
 |:---|:---:|:---|:---|
-| **Natural Killer (NK)** | **Inclusión** | *NCAM1* | CD56; marcador de adhesión y estadío madurativo |
+| **Natural Killer (NK)** | **Inclusión** | *NCAM1* | CD56; marcador de adhesión y estadio madurativo |
 | | | *FCGR3A* | CD16; receptor de Fc$\gamma$ de baja afinidad (citotoxicidad ADCC) |
 | | | *NKG7* | Proteína de gránulos citotóxicos |
 | | | *GNLY* | Granulisina; péptido antimicrobiano y citolítico |
@@ -62,7 +62,7 @@ Para validar la pureza de la población celular y garantizar la exclusión de do
 
 ## A.2 Diagnóstico de Bimodalidad y Sesgos Técnicos por Ensayos
 
-Durante el procesamiento de control de calidad adaptativo (*ddqc*), se detectó una distribución marcadamente bimodal en el número de genes detectados por célula (`n_genes`). El análisis estratificado evidenció que dicha dispersión no obedecía a divergencias biológicas, sino a un sesgo tecnológico severo condicionado por la química de captura (tecnologías 10x Genomics 3' v2 frente a 10x 3' v3), donde los tránscritos ribosomales (*RPS*, *RPL*) y las inmunoglobulinas residuales actuaban como los principales inductores del artefacto.
+Durante el procesamiento de control de calidad adaptativo (*ddqc*), se detectó una distribución marcadamente bimodal en el número de genes detectados por célula (`n_genes`). El análisis estratificado evidenció que dicha dispersión no obedecía a divergencias biológicas, sino a un sesgo tecnológico severo condicionado por la química de captura (tecnologías 10x Genomics 3' v2 frente a 10x 3' v3), donde los transcritos ribosomales (*RPS*, *RPL*) y las inmunoglobulinas residuales actuaban como los principales inductores del artefacto.
 
 La documentación pormenorizada de este diagnóstico, incluyendo los gráficos de densidad, las particiones de varianza y la justificación del filtrado declarativo que depuró la matriz final, se encuentra consolidada en la **Sección 1.B** (*Control de Calidad, Bimodalidad y Sesgo Técnico*) del reporte metodológico maestro anexo:
 * `Reporte_Integrativo_Subtipos_Abundancia_V2.html` (disponible en el repositorio del proyecto).
@@ -73,7 +73,7 @@ La documentación pormenorizada de este diagnóstico, incluyendo los gráficos d
 
 La aplicación del algoritmo `scAR` (*Single Cell Ambient RNA removal*) constituyó el paso crítico que redefinió el marco conceptual del envejecimiento de las células NK. En las fases iniciales del proyecto, las muestras provenientes de individuos de edad avanzada exhibían una aparente sobrerrepresentación de mediadores proinflamatorios (*CXCL8*, *IL1B*, *SERPINA1*). La modelización probabilística del ARN ambiental libre en solución reveló que estas moléculas correspondían a ruido de fondo derivado de la lisis sistémica de linajes mieloides circundantes, y no a transcripción autónoma de las células NK.
 
-Los perfiles comparativos de expresión pre y post-scAR, la eliminación de firmas eritroides espurias (*HBA1*) y la cuantificación del ruido ambiental se detallan ampliamente en la **Sección 1.A** (*Corrección de RNA Ambiental scAR*) del documento:
+Los perfiles comparativos de expresión antes y después de scAR, la eliminación de firmas eritroides espurias (*HBA1*) y la cuantificación del ruido ambiental se detallan ampliamente en la **Sección 1.A** (*Corrección de RNA Ambiental scAR*) del documento:
 * `Reporte_Integrativo_Subtipos_Abundancia_V2.html`.
 
 ---
