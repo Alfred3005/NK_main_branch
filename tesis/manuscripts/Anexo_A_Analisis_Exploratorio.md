@@ -78,6 +78,7 @@ Los perfiles comparativos de expresión antes y después de scAR, la eliminació
 
 ---
 
-## A.4 Compendio de Tablas Funcionales de Enriquecimiento (GSEA/ORA)
+## A.4 Compendio de Tablas Funcionales de Enriquecimiento (GSEA / ORA)
 
-Las tablas completas con el desglose exhaustivo de los conjuntos génicos evaluados frente a las bases moleculares MSigDB Hallmark, KEGG, Reactome y GO Biological Process (incluyendo los tamaños de los conjuntos, los estadísticos de rango, los valores de enriquecimiento normalizado NES y los umbrales FDR ajustados para ambas subpoblaciones) se encuentran compiladas íntegramente en las secciones finales del *Reporte Integrativo V2*.
+Las tablas completas con el desglose exhaustivo de los conjuntos génicos evaluados mediante GSEA Preranked frente a las bases moleculares MSigDB Hallmark, KEGG, Reactome y GO Biological Process (incluyendo los tamaños de los conjuntos, los estadísticos de rango continuo de Wald, los valores de enriquecimiento normalizado NES y los umbrales FDR ajustados para ambas subpoblaciones), así como las matrices de contingencia del análisis de sobre-representación (*ORA*) ejecutado sobre la firma canónica de 23 DEGs (destacando las vías de quimiotaxis y migración leucocitaria de *XCL1*, *XCL2*, *S100A9*, *AGAP2*, *PTGDS* y *CST7*), se encuentran compiladas íntegramente en el repositorio analítico (`results/subtypes/gsea_ora_master_results.md`) y en las secciones finales del *Reporte Integrativo V2*.
+

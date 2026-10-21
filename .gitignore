@@ -41,3 +41,5 @@ __pycache__/
 *.odt
 *.html
 !Reporte_Integrativo_Subtipos_Abundancia_V2.html
+/.quarto/
+**/*.quarto_ipynb
