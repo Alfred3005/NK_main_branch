@@ -1,12 +1,12 @@
-# Anexo A: Análisis Exploratorio Inicial y Diagnóstico Metodológico {#sec-anexo-a}
+# Anexo A: Análisis exploratorio inicial y diagnóstico metodológico {#sec-anexo-a}
 
 El presente anexo compila los registros técnicos, las matrices metodológicas de control de calidad y las referencias analíticas que sustentan la depuración bioinformática y la delimitación fenotípica del atlas transcriptómico presentado en el cuerpo principal de la tesis.
 
 ---
 
-## A.1 Procedencia de Muestras y Validación de Linaje
+## Procedencia de muestras y validación de linaje
 
-### Catálogo de Estudios Primarios Integrados
+### Catálogo de estudios primarios integrados
 
 La construcción de la cohorte analítica se llevó a cabo a partir de la plataforma *CZ CELLxGENE Census* (`census_version="2023-12-15"`). A partir del universo de datos primarios en tejido sanguíneo periférico provenientes de individuos sanos, se identificaron 14 estudios independientes iniciales. Tras la aplicación de los criterios de inclusión etarios ($\ge 34$ años) y los filtros adaptativos de calidad celular, 13 estudios aportaron células a la cohorte depurada final de 143,991 células Natural Killer (@tbl-anexo-estudios).
 
@@ -29,14 +29,16 @@ La construcción de la cohorte analítica se llevó a cabo a partir de la plataf
 
 : Estudios independientes primarios integrados desde CZ CELLxGENE Discover. {#tbl-anexo-estudios}
 
-### Marcadores de Validación Fenotípica y Pureza de Linaje (ASCT+B)
+*Nota.* Fuente: CZ CELLxGENE Census (versión 2023-12-15).
 
-Para validar la pureza de la población celular y garantizar la exclusión de dobletes heterotípicos o contaminaciones procedentes de linajes vecinos (células T y células B), se aplicó una estrategia de evaluación basada en la tabla de referencia estandarizada **ASCT+B (Anatomical Structures, Cell Types, plus Biomarkers)** del *Human Reference Atlas* (Börner et al., 2021) (@tbl-anexo-marcadores).
+### Marcadores de validación fenotípica y pureza de linaje (ASCT+B)
+
+Para validar la pureza de la población celular y favorecer la exclusión de dobletes heterotípicos o contaminaciones procedentes de linajes vecinos (células T y células B), se aplicó una estrategia de evaluación basada en la tabla de referencia estandarizada **ASCT+B** del *Human Reference Atlas* (Börner et al., 2021) (@tbl-anexo-marcadores).
 
 | Linaje Celular | Criterio de Selección | Marcador Génico | Nombre Canónico / Función Biológica |
 |:---|:---:|:---|:---|
 | **Natural Killer (NK)** | **Inclusión** | *NCAM1* | CD56; marcador de adhesión y estadio madurativo |
-| | | *FCGR3A* | CD16; receptor de Fc$\gamma$ de baja afinidad (citotoxicidad ADCC) |
+| | | *FCGR3A* | CD16; receptor de Fc$\gamma$ de baja afinidad (ADCC) |
 | | | *NKG7* | Proteína de gránulos citotóxicos |
 | | | *GNLY* | Granulisina; péptido antimicrobiano y citolítico |
 | | | *PRF1* | Perforina 1; formación de poros de membrana |
@@ -58,9 +60,11 @@ Para validar la pureza de la población celular y garantizar la exclusión de do
 
 : Marcadores de validación de pureza de linaje celular basados en el estándar ASCT+B. {#tbl-anexo-marcadores}
 
+*Nota.* Basado en las tablas ASCT+B (Börner et al., 2021).
+
 ---
 
-## A.2 Diagnóstico de Bimodalidad y Sesgos Técnicos por Ensayos
+## Diagnóstico de bimodalidad y sesgos técnicos por ensayo
 
 Durante el procesamiento de control de calidad adaptativo (*ddqc*), se detectó una distribución marcadamente bimodal en el número de genes detectados por célula (`n_genes`). El análisis estratificado evidenció que dicha dispersión no obedecía a divergencias biológicas, sino a un sesgo tecnológico severo condicionado por la química de captura (tecnologías 10x Genomics 3' v2 frente a 10x 3' v3), donde los transcritos ribosomales (*RPS*, *RPL*) y las inmunoglobulinas residuales actuaban como los principales inductores del artefacto.
 
@@ -69,16 +73,16 @@ La documentación pormenorizada de este diagnóstico, incluyendo los gráficos d
 
 ---
 
-## A.3 Saneamiento Probabilístico del Microambiente (scAR)
+## Corrección probabilística del ARN ambiental (scAR)
 
-La aplicación del algoritmo `scAR` (*Single Cell Ambient RNA removal*) constituyó el paso crítico que redefinió el marco conceptual del envejecimiento de las células NK. En las fases iniciales del proyecto, las muestras provenientes de individuos de edad avanzada exhibían una aparente sobrerrepresentación de mediadores proinflamatorios (*CXCL8*, *IL1B*, *SERPINA1*). La modelización probabilística del ARN ambiental libre en solución reveló que estas moléculas correspondían a ruido de fondo derivado de la lisis sistémica de linajes mieloides circundantes, y no a transcripción autónoma de las células NK.
+La aplicación del algoritmo `scAR` modificó de forma sustancial la interpretación del envejecimiento de las células NK. En las fases iniciales del proyecto, las muestras provenientes de individuos de edad avanzada exhibían una aparente sobrerrepresentación de mediadores proinflamatorios (*CXCL8*, *IL1B*, *SERPINA1*). La modelización probabilística del ARN ambiental libre en solución reveló que estas moléculas correspondían a ruido de fondo derivado de la lisis sistémica de linajes mieloides circundantes, y no a transcripción autónoma de las células NK.
 
-Los perfiles comparativos de expresión antes y después de scAR, la eliminación de firmas eritroides espurias (*HBA1*) y la cuantificación del ruido ambiental se detallan ampliamente en la **Sección 1.A** (*Corrección de RNA Ambiental scAR*) del documento:
+Los perfiles comparativos de expresión antes y después de scAR, la eliminación de firmas eritroides espurias (*HBA1*) y la cuantificación del ruido ambiental se detallan ampliamente en la **Sección 1.A** (*Corrección de ARN ambiental scAR*) del documento:
 * `Reporte_Integrativo_Subtipos_Abundancia_V2.html`.
 
 ---
 
-## A.4 Compendio de Tablas Funcionales de Enriquecimiento (GSEA / ORA)
+## Tablas de enriquecimiento funcional (GSEA y ORA)
 
-Las tablas completas con el desglose exhaustivo de los conjuntos génicos evaluados mediante GSEA Preranked frente a las bases moleculares MSigDB Hallmark, KEGG, Reactome y GO Biological Process (incluyendo los tamaños de los conjuntos, los estadísticos de rango continuo de Wald, los valores de enriquecimiento normalizado NES y los umbrales FDR ajustados para ambas subpoblaciones), así como las matrices de contingencia del análisis de sobre-representación (*ORA*) ejecutado sobre la firma canónica de 23 DEGs (destacando las vías de quimiotaxis y migración leucocitaria de *XCL1*, *XCL2*, *S100A9*, *AGAP2*, *PTGDS* y *CST7*), se encuentran compiladas íntegramente en el repositorio analítico (`results/subtypes/gsea_ora_master_results.md`) y en las secciones finales del *Reporte Integrativo V2*.
+Las tablas completas con el desglose exhaustivo de los conjuntos génicos evaluados mediante GSEA Preranked frente a las bases moleculares MSigDB Hallmark, KEGG, Reactome y GO Biological Process (incluyendo los tamaños de los conjuntos, los estadísticos de rango continuo de Wald, los valores de enriquecimiento normalizado NES y los umbrales FDR ajustados para ambas subpoblaciones), así como las matrices de contingencia del análisis de sobrerrepresentación (ORA) ejecutado sobre la firma de 23 genes diferencialmente expresados (destacando las vías de quimiotaxis asociadas a *XCL1*, *XCL2* y *S100A9*), se encuentran compiladas íntegramente en el repositorio analítico (`results/subtypes/gsea_ora_master_results.md`) y en las secciones finales del *Reporte Integrativo V2*.
 

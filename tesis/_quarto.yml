@@ -10,6 +10,7 @@ book:
   language: es
   chapters:
     - index.md
+    - manuscripts/00_Abreviaturas.md
     - manuscripts/01_Introduccion.md
     - manuscripts/02_Marco_Teorico.md
     - manuscripts/03_Pregunta_Hipotesis_Objetivos.md
@@ -21,6 +22,9 @@ book:
   appendices:
     - manuscripts/Anexo_A_Analisis_Exploratorio.md
     - manuscripts/Anexo_B_Version_Preliminar.md
+fig-cap-location: top
+tbl-cap-location: top
+
 crossref:
   fig-title: "Figura"
   tbl-title: "Tabla"

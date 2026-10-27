@@ -1,18 +1,18 @@
-# Pregunta de Investigación y Objetivos
+# Pregunta de investigación y objetivos
 
-## Pregunta de Investigación
+## Pregunta de investigación
 
-¿Es posible identificar patrones de alteración en el transcriptoma de subpoblaciones de células asesinas naturales en el contexto de la inmunosenescencia mediante la integración de datos de secuenciación de RNA de célula única?
+¿Es posible identificar patrones de alteración en el transcriptoma de subpoblaciones de células asesinas naturales en el contexto de la inmunosenescencia mediante la integración de datos de secuenciación de ARN de célula única?
 
-## Hipótesis Principal
+## Hipótesis principal
 
-La integración de datos de secuenciación de RNA de célula única permitirá la identificación de patrones de alteración en el transcriptoma de subpoblaciones de células asesinas naturales en el contexto de la inmunosenescencia.
+La integración de datos de secuenciación de ARN de célula única permitirá la identificación de patrones de alteración en el transcriptoma de subpoblaciones de células asesinas naturales en el contexto de la inmunosenescencia.
 
-## Objetivo General
+## Objetivo general
 
-Realizar el análisis transcriptómico de células asesinas naturales en el contexto de la inmunosenescencia, mediante la integración de datos de secuenciación de RNA de célula única, para identificar patrones de alteración en el transcriptoma de subpoblaciones.
+Realizar el análisis transcriptómico de células asesinas naturales en el contexto de la inmunosenescencia, mediante la integración de datos de secuenciación de ARN de célula única, para identificar patrones de alteración en el transcriptoma de subpoblaciones.
 
-## Objetivos Específicos
+## Objetivos específicos
 
 * **Procesar e integrar** datos de múltiples estudios para construir un atlas transcriptómico representativo.
 * **Identificar** genes diferencialmente expresados en el contexto de la inmunosenescencia.
