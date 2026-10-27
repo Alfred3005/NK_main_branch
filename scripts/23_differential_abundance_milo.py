@@ -106,7 +106,8 @@ def run_cell_ratio_analysis(adata, output_dir):
         
         y_patsy, X = dmatrices(formula, data=df_model, return_type='dataframe')
         model = sm.GLM(y, X, family=sm.families.Binomial())
-        results = model.fit()
+        # Escala de Pearson (quasibinomial): corrige la sobredispersión entre donantes
+        results = model.fit(scale="X2")
         coeff_name = 'age_group[T.old]'
         if coeff_name in results.pvalues:
             glm_pval = results.pvalues[coeff_name]
@@ -204,7 +205,8 @@ def run_binomial_proportion_glm(df_ratios, output_dir):
         
         # Ajustar GLM Binomial
         model = sm.GLM(y, X, family=sm.families.Binomial())
-        results = model.fit()
+        # Escala de Pearson (quasibinomial): corrige la sobredispersión entre donantes
+        results = model.fit(scale="X2")
         
         # Imprimir resumen
         print(results.summary())

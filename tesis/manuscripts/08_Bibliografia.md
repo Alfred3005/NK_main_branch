@@ -19,8 +19,6 @@ Bernstein, N. J., Fong, N. L., Lam, I., Roy, M. A., Hendrickson, D. G., & Kelley
 
 Björklund, A. T., Carlsten, M., Sohlberg, E., Liu, L. L., Clancy, T., Karimi, M., Cooley, S., Miller, J. S., Klimkowska, M., Schaffer, M., Hafström, I., Malmberg, K.-J., & Ljungman, M. (2018). Complete remission with reduction of high-risk clones following haploidentical NK-cell therapy against MDS and AML. *Clinical Cancer Research*, *24*(8), 1834–1844. https://doi.org/10.1158/1078-0432.CCR-17-3196
 
-Björkström, N. K., Ljunggren, H.-G., & Michaëlsson, J. (2016). Emerging insights into natural killer cells in human peripheral tissues. *Nature Reviews Immunology*, *16*(5), 310–320. https://doi.org/10.1038/nri.2016.34
-
 Blank, C. U., Haining, W. N., Held, W., Hogan, P. G., Kallies, A., Lugli, E., Lynn, R. C., Philip, M., Rao, A., Restifo, N. P., Schietinger, A., Schumacher, T. N., Schwartzberg, P. L., Sharpe, A. H., Speiser, D. E., Wherry, E. J., Youngblood, B., & Zehn, D. (2019). Defining 'T cell exhaustion'. *Nature Reviews Immunology*, *19*(11), 665–674. https://doi.org/10.1038/s41577-019-0221-9
 
 Börner, K., Teichmann, S. A., Quardokus, E. M., Gee, J. C., Browne, K., Osumi-Sutherland, D., Herr, B. W., Bueckle, A., Paul, H., Haniffa, M., Tuveson, D., Bao, S., Hernandez, M., Lin, Y., Ding, D., Sharma, K., Stuart, T., de Bono, B., ... Weber, G. (2021). Anatomical structures, cell types and biomarkers of the Human Reference Atlas. *Nature Cell Biology*, *23*(11), 1117–1128. https://doi.org/10.1038/s41556-021-00788-6
@@ -28,8 +26,6 @@ Börner, K., Teichmann, S. A., Quardokus, E. M., Gee, J. C., Browne, K., Osumi-S
 Böttcher, J. P., Bonavita, E., Chakravarty, P., Blees, H., Cabeza-Cabrerizo, M., Sammicheli, S., Rogers, N. C., Sahai, E., Zelenay, S., & Reis e Sousa, C. (2018). NK cells stimulate recruitment of cDC1 into the tumor microenvironment promoting cancer immune control. *Cell*, *172*(5), 1022–1037.e14. https://doi.org/10.1016/j.cell.2018.01.004
 
 Brauning, A., Rae, M., Zhu, G., Fulton, E., Admasu, T. D., Stolzing, A., & Sharma, A. (2022). Aging of the immune system: Focus on natural killer cells phenotype and functions. *Cells*, *11*(6), 1017. https://doi.org/10.3390/cells11061017
-
-Broz, M. L., Binnewies, M., Boldajipour, B., Nelson, A. E., Pollock, J. L., Erle, D. J., Barczak, A., Rosenblum, M. D., Daud, A., Barber, D. L., Amigorena, S., van't Veer, L. J., Sperling, A. I., Wolf, D. M., & Krummel, M. F. (2014). Dissecting the tumor myeloid compartment reveals rare activating antigen-presenting cells critical for T cell immunity. *Cancer Cell*, *26*(5), 638–652. https://doi.org/10.1016/j.ccell.2014.09.007
 
 Camous, X., Pera, A., Solana, R., & Larbi, A. (2012). NK cells in healthy aging and age-associated diseases. *Journal of Biomedicine and Biotechnology*, *2012*, 195956. https://doi.org/10.1155/2012/195956
 
@@ -57,7 +53,7 @@ Coppé, J.-P., Desprez, P.-Y., Krtolica, A., & Campisi, J. (2010). The senescenc
 
 Crowell, H. L., Soneson, C., Germain, P.-L., Calini, D., Collin, L., Raposo, C., Malhotra, D., & Robinson, M. D. (2020). muscat detects subpopulation-specific state transitions from multi-sample multi-condition single-cell transcriptomics data. *Nature Communications*, *11*(1), 6077. https://doi.org/10.1038/s41467-020-19894-4
 
-CZI Cell Science Program, et al. (2025). CZ CELLxGENE Discover: A single-cell data platform for scalable exploration, analysis and modeling of aggregated data. *Nucleic Acids Research*, *53*(D1), D886–D900. https://doi.org/10.1093/nar/gkae1142
+CZI Cell Science Program. (2025). CZ CELLxGENE Discover: A single-cell data platform for scalable exploration, analysis and modeling of aggregated data. *Nucleic Acids Research*, *53*(D1), D886–D900. https://doi.org/10.1093/nar/gkae1142
 
 Del Bosque Plata, L. (2016). Envejecimiento y las enfermedades comunes en nuestra sociedad. En M. Konigsberg Fainstein (Ed.), *¿Por qué envejecemos? Y otras historias…* (pp. 43–58). Consejo Nacional de Ciencia y Tecnología (CONACYT).
 
@@ -66,6 +62,8 @@ Deng, X., & Terunuma, H. (2024). Adoptive NK cell therapy: A potential revolutio
 Deschênes, M., & Chabot, B. (2017). The emerging role of alternative splicing in senescence and aging. *Aging Cell*, *16*(5), 918–933. https://doi.org/10.1111/acel.12646
 
 Dorner, B. G., Dorner, M. B., Zhou, X., Opitz, C., Mora, A., Güttler, S., Hutloff, A., Mages, H. W., Ranke, K., Schaefer, M., Jack, R. S., Henn, V., & Kroczek, R. A. (2009). Selective expression of the chemokine receptor XCR1 on cross-presenting dendritic cells determines cooperation with CD8+ T cells. *Immunity*, *31*(5), 823–833. https://doi.org/10.1016/j.immuni.2009.08.027
+
+Fang, Z., Liu, X., & Peltz, G. (2023). GSEApy: A comprehensive package for performing gene set enrichment analysis in Python. *Bioinformatics*, *39*(1), btac757. https://doi.org/10.1093/bioinformatics/btac757
 
 Fali, T., Papagno, L., Bayard, C., Mouloud, Y., Boddaert, J., Sauce, D., & Appay, V. (2019). New insights into lymphocyte differentiation and aging from telomere length and telomerase activity measurements. *The Journal of Immunology*, *202*(7), 1962–1969. https://doi.org/10.4049/jimmunol.1801458
 
@@ -91,8 +89,6 @@ Hazeldine, J., Hampson, P., & Lord, J. M. (2012). Reduced release and binding of
 
 Hazeldine, J., & Lord, J. M. (2013). The impact of ageing on natural killer cell function and potential consequences for health in older adults. *Ageing Research Reviews*, *12*(4), 1069–1078. https://doi.org/10.1016/j.arr.2013.04.003
 
-Hildner, K., Edelson, B. T., Purtha, W. E., Diamond, M., Matsushita, H., Kohyama, M., Calderon, B., Schraml, B. U., Unanue, E. R., Diamond, M. S., Schreiber, R. D., & Murphy, K. M. (2008). Batf3 deficiency reveals a critical role for CD8alpha+ dendritic cells in cytotoxic T cell immunity. *Science*, *322*(5904), 1097–1100. https://doi.org/10.1126/science.1164206
-
 Hu, Y., Xu, Y., Mao, L., Lei, W., Xiang, J., Gao, L., ... & Chen, G. (2022). Gene expression analysis reveals age and ethnicity signatures between young and old adults in human PBMC. *Frontiers in Aging*, *2*, 797040. https://doi.org/10.3389/fragi.2021.797040
 
 Kale, A., Sharma, A., Stolzing, A., Desprez, P.-Y., & Campisi, J. (2020). Role of immune cells in the removal of deleterious senescent cells. *Immunity & Ageing*, *17*, 16. https://doi.org/10.1186/s12979-020-00187-9
@@ -103,11 +99,9 @@ Kehler, D. S. (2021). Minimising multimorbidity clustering across the lifespan. 
 
 Kimmel, J. C., Penland, L., Rubinstein, N. D., Hendrickson, D. G., Kelley, D. R., & Rosenthal, A. Z. (2019). Murine single-cell RNA-seq reveals cell-identity- and tissue-specific trajectories of aging. *Genome Research*, *29*(12), 2088–2103. https://doi.org/10.1101/gr.253880.119
 
-Kolberg, L., Raudvere, U., Kuzmin, I., Adler, P., Vilo, J., & Peterson, H. (2023). g:Profiler—interoperable web service for functional enrichment analysis and gene identifier mapping (2023 update). *Nucleic Acids Research*, *51*(W1), W207–W212. https://doi.org/10.1093/nar/gkad347
+Kuleshov, M. V., Jones, M. R., Rouillard, A. D., Fernandez, N. F., Duan, Q., Wang, Z., Koplev, S., Jenkins, S. L., Jagodnik, K. M., Lachmann, A., McDermott, M. G., Monteiro, C. D., Gundersen, G. W., & Ma'ayan, A. (2016). Enrichr: A comprehensive gene set enrichment analysis web server 2016 update. *Nucleic Acids Research*, *44*(W1), W90–W97. https://doi.org/10.1093/nar/gkw377
 
 Krizhanovsky, V., Yon, M., Dickins, R. A., Hearn, S., Simon, J., Janowitz, C., & Lowe, S. W. (2008). Senescence of activated stellate cells limits liver fibrosis. *Cell*, *134*(4), 657–667. https://doi.org/10.1016/j.cell.2008.06.049
-
-Latorre, E., Birar, V. C., Sheerin, A. N., Jeynes, J. C., Hooper, C., Dawe, H. R., Melzer, D., Cox, L. S., Faragher, R. G., Ostler, E. L., & Harries, L. W. (2017). Small molecule modulation of splicing factor expression is associated with rescue from cellular senescence. *BMC Cell Biology*, *18*(1), 31. https://doi.org/10.1186/s12860-017-0147-7
 
 Le Garff-Tavernier, M., Béziat, V., Decocq, J., Siguret, V., Gandjbakhch, F., Pautas, E., Debré, P., Merle-Béral, H., & Vieillard, V. (2010). Human NK cells display major phenotypic and functional changes over the life span. *Aging Cell*, *9*(4), 527–535. https://doi.org/10.1111/j.1474-9726.2010.00584.x
 
