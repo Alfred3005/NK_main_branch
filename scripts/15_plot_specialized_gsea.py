@@ -1,10 +1,13 @@
+from pathlib import Path
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 def plot_specialized_gsea():
-    results_dir = "results/subtypes/gsea_specialized"
+    results_dir = str(PROJECT_ROOT / "results" / "subtypes" / "gsea_specialized")
     
     subtypes = ["nk_cd56dim", "nk_cd56bright"]
     

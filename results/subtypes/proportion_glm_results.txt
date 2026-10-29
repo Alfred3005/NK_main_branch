@@ -1,5 +1,5 @@
-Ajuste de GLM Binomial (Cuasibinomial) para Proporciones CD56bright vs CD56dim
-===========================================================================
+Ajuste de GLM Binomial para Proporciones CD56bright vs CD56dim
+============================================================
 
                  Generalized Linear Model Regression Results                  
 ==============================================================================
@@ -9,7 +9,7 @@ Model Family:                Binomial   Df Model:                            3
 Link Function:                  Logit   Scale:                          6.7248
 Method:                          IRLS   Log-Likelihood:                -909.83
 Date:                Thu, 29 Oct 2026   Deviance:                       1196.4
-Time:                        11:49:59   Pearson chi2:                 1.23e+03
+Time:                        16:00:08   Pearson chi2:                 1.23e+03
 No. Iterations:                     7   Pseudo R-squ. (CS):             0.9912
 Covariance Type:            nonrobust                                         
 ======================================================================================
@@ -20,8 +20,3 @@ assay[T.10x 5' v1]    -0.9619      0.227     -4.241      0.000      -1.406      
 assay[T.10x 5' v2]    -2.1218      0.175    -12.152      0.000      -2.464      -1.780
 age_group[T.old]      -0.4702      0.196     -2.403      0.016      -0.854      -0.087
 ======================================================================================
-
-Detalles de sobredispersion:
-Parametro de dispersion de Pearson (phi): 6.7248
-age_group[T.old]: beta=-0.4702, SE=0.1957, z=-2.403, p=0.0163
-OR=0.6249, IC95%=[0.4258, 0.9170]

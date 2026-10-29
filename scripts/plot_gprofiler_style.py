@@ -8,16 +8,23 @@ from matplotlib.gridspec import GridSpec
 from matplotlib.colors import ListedColormap, BoundaryNorm
 import matplotlib.patches as patches
 
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--fdr_cutoff', type=float, default=0.25, help="FDR threshold for pathways")
 parser.add_argument('--max_pathways', type=int, default=25, help="Max pathways to plot")
-parser.add_argument('--output', type=str, required=True, help="Output path")
+parser.add_argument('--output', type=str, default="gprofiler_style_dotplot.png", help="Output path")
 args = parser.parse_args()
 
 # ==========================================
 # 1. Configuración de Rutas
 # ==========================================
-BASE_DIR = r"C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\experiment_collinearity"
+DEFAULT_RESULTS = PROJECT_ROOT / "results" / "subtypes"
+if not (DEFAULT_RESULTS / "gsea" / "cd56dim").exists():
+    DEFAULT_RESULTS = PROJECT_ROOT / "legacy" / "experiment_collinearity"
+
+BASE_DIR = str(DEFAULT_RESULTS)
 
 GSEA_DIR_DIM = os.path.join(BASE_DIR, "gsea", "cd56dim")
 GSEA_DIR_BRIGHT = os.path.join(BASE_DIR, "gsea", "cd56bright")
@@ -25,7 +32,7 @@ GSEA_DIR_BRIGHT = os.path.join(BASE_DIR, "gsea", "cd56bright")
 DEA_DIM = os.path.join(BASE_DIR, "deseq2_results_nk_cd56dim.csv")
 DEA_BRIGHT = os.path.join(BASE_DIR, "deseq2_results_nk_cd56bright.csv")
 
-OUTPUT_PATH = os.path.join(BASE_DIR, args.output)
+OUTPUT_PATH = os.path.join(BASE_DIR, args.output) if not os.path.isabs(args.output) else args.output
 
 # Bases de datos
 DB_NAMES = [

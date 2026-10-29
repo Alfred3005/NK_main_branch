@@ -411,10 +411,13 @@ def filter_valid_assays(adata):
     print(f"   Células después del filtrado de ensayos: {adata_filtered.n_obs}")
     return adata_filtered
 
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 def main():
     # Rutas relativas al proyecto
-    input_path = '../data/NK_dataset_qc_ready.h5ad'
-    output_dir = '../results/subtypes'
+    input_path = str(PROJECT_ROOT / 'data' / 'NK_dataset_qc_ready.h5ad')
+    output_dir = str(PROJECT_ROOT / 'results' / 'subtypes')
     os.makedirs(output_dir, exist_ok=True)
     
     print(f"⏳ Cargando Dataset Gold Standard: {input_path}")

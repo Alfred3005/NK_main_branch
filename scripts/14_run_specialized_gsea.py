@@ -1,15 +1,18 @@
+import os
+import sys
+from pathlib import Path
 import pandas as pd
 import gseapy as gp
-import os
-import glob
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 def run_specialized_gsea():
-    results_dir = "../results/subtypes"
+    results_dir = str(PROJECT_ROOT / "results" / "subtypes")
     out_dir = os.path.join(results_dir, "gsea_specialized")
     os.makedirs(out_dir, exist_ok=True)
     
     # Custom gene sets
-    gmt_path = "../data/gene_sets/custom_senescence_signatures.gmt"
+    gmt_path = str(PROJECT_ROOT / "data" / "gene_sets" / "custom_senescence_signatures.gmt")
     
     # We can also add standard libraries for comparison (e.g., Reactome)
     gene_sets = [gmt_path, "Reactome_2022"]

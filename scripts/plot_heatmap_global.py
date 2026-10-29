@@ -5,12 +5,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 # ==========================================
 # 1. Configuración de Rutas
 # ==========================================
-BASE_DIR = r"C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch"
-DATA_PATH = os.path.join(BASE_DIR, "data", "NK_dataset_qc_ready.h5ad")
-RESULTS_DIR = os.path.join(BASE_DIR, "results", "experiment_collinearity")
+DATA_PATH = str(PROJECT_ROOT / "data" / "NK_dataset_qc_ready.h5ad")
+RESULTS_DIR = str(PROJECT_ROOT / "results" / "subtypes")
 DEA_RESULTS = os.path.join(RESULTS_DIR, "deseq2_results_significant_nk_cell_general.csv")
 
 OUTPUT_SC = os.path.join(RESULTS_DIR, "heatmap_23_hits_single_cell.png")

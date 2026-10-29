@@ -30,7 +30,6 @@
 | Collection           | Term                                                          | NES                                      | NOM p-val   | FDR q-val   |
 |:---------------------|:--------------------------------------------------------------|:-----------------------------------------|:------------|:------------|
 | MSigDB_Hallmark_2020 | **<span style="color:red">UV Response Dn</span>**             | **<span style="color:red">1.781</span>** | **0.0010**  | **0.0087**  |
-| Specialized          | <span style="color:red">REACTOME_SASP</span>                  | <span style="color:red">1.513</span>     | 0.0196      | 0.0743      |
 | KEGG_2021_Human      | <span style="color:blue">Amyotrophic lateral sclerosis</span> | <span style="color:blue">-1.469</span>   | 0.0010      | 0.1702      |
 
 ### Ciclo Celular y Genética
@@ -92,8 +91,7 @@
 | Collection           | Term                                                                    | NES                                      | NOM p-val   | FDR q-val   |
 |:---------------------|:------------------------------------------------------------------------|:-----------------------------------------|:------------|:------------|
 | MSigDB_Hallmark_2020 | **<span style="color:red">UV Response Dn</span>**                       | **<span style="color:red">1.834</span>** | **0.0010**  | **0.0116**  |
-| Specialized          | <span style="color:red">GSE9650_EXHAUSTED_VS_MEMORY_CD8_TCELL_DN</span> | <span style="color:red">1.331</span>     | 0.0310      | 0.2455      |
-| Specialized          | <span style="color:red">REACTOME_SASP</span>                            | <span style="color:red">1.281</span>     | 0.1844      | 0.1836      |
+| Specialized          | <span style="color:red">GSE9650_EXHAUSTED_VS_MEMORY_CD8_TCELL_DN</span> | <span style="color:red">1.330</span>     | 0.0285      | 0.1438      |
 
 ### Ciclo Celular y Genética
 
@@ -221,17 +219,17 @@
 | Reactome_2022              | <span style="color:blue">Immunoregulatory Interactions Between A Lymphoid And A non-Lymphoid Cell R-HSA-198933</span> | <span style="color:blue">-1.961</span>     | 0.0010      | 0.2092      |
 
 ## Archivos CSV Fuente (Versiones Finales)
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\cd56bright\GO_Biological_Process_2023\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\cd56bright\KEGG_2021_Human\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\cd56bright\MSigDB_Hallmark_2020\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\cd56bright\Reactome_2022\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\cd56dim\GO_Biological_Process_2023\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\cd56dim\KEGG_2021_Human\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\cd56dim\MSigDB_Hallmark_2020\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\cd56dim\Reactome_2022\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\global\GO_Biological_Process_2023\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\global\KEGG_2021_Human\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\global\MSigDB_Hallmark_2020\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea\global\Reactome_2022\wald_stat\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea_specialized\nk_cd56bright\gseapy.gene_set.prerank.report.csv`
-- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\NK_pipeline_RNA_ambient_Main_Branch\results\subtypes\gsea_specialized\nk_cd56dim\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\cd56bright\GO_Biological_Process_2023\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\cd56bright\KEGG_2021_Human\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\cd56bright\MSigDB_Hallmark_2020\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\cd56bright\Reactome_2022\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\cd56dim\GO_Biological_Process_2023\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\cd56dim\KEGG_2021_Human\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\cd56dim\MSigDB_Hallmark_2020\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\cd56dim\Reactome_2022\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\global\GO_Biological_Process_2023\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\global\KEGG_2021_Human\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\global\MSigDB_Hallmark_2020\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea\global\Reactome_2022\wald_stat\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea_specialized\nk_cd56bright\gseapy.gene_set.prerank.report.csv`
+- `C:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2\results\subtypes\gsea_specialized\nk_cd56dim\gseapy.gene_set.prerank.report.csv`

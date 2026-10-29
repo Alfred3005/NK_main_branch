@@ -64,8 +64,11 @@ def run_ora(significant_file, output_dir, prefix):
         except Exception as e:
             print(f"    Error in enrichr: {e}")
 
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 if __name__ == '__main__':
-    base_dir = "../results/subtypes"
+    base_dir = str(PROJECT_ROOT / "results" / "subtypes")
     out_base = f"{base_dir}/ora"
     
     # Run for CD56dim

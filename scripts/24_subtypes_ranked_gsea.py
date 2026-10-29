@@ -31,16 +31,19 @@ import seaborn as sns
 import warnings
 warnings.filterwarnings("ignore")
 
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIGURACIÓN GLOBAL
 # ─────────────────────────────────────────────────────────────────────────────
-BASE_RESULTS = 'C:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient_Main_Branch/results/subtypes'
+BASE_RESULTS = str(PROJECT_ROOT / 'results' / 'subtypes')
 GSEA_DIR     = os.path.join(BASE_RESULTS, 'gsea')
 os.makedirs(GSEA_DIR, exist_ok=True)
 
 # Tres análisis: (clave_archivo, nombre_display, subdirectorio_output, ruta_absoluta_opcional)
 # Para el análisis Global se usa el dataset completo V4-clean (todos los NK, sin split por subtipo)
-GLOBAL_DESEQ_PATH = 'C:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient_Main_Branch/results/subtypes/deseq2_results_nk_cell_general.csv'
+GLOBAL_DESEQ_PATH = os.path.join(BASE_RESULTS, 'deseq2_results_nk_cell_general.csv')
 
 ANALYSES = [
     ('global',       'NK Global (Todos los NK · V4-Clean)', 'global',     GLOBAL_DESEQ_PATH),

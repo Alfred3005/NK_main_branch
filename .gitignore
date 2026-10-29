@@ -1,5 +1,6 @@
 # Datos y entorno del pipeline
-data/
+data/*
+!data/gene_sets/
 *.h5ad
 venv/
 .venv/
