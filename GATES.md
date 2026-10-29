@@ -95,6 +95,26 @@
 - [x] E5. Compilación Quarto dual (PDF y HTML)
   - CHECK: quarto render --to pdf && quarto render --to html
   - EVIDENCE: Código de salida 0 en compilación LuaLaTeX PDF (_book/Análisis-transcriptómico-de-células-asesinas-naturales-en-el-contexto-de-la-inmunosenescencia.pdf) y Quarto HTML (_book/index.html) sin errores.
+## Fase F: Comparación Forense y Auditoría del PR #3 (Dra. Yalbi) frente a main
 
+- [x] F1. Comparación exhaustiva de 04_Metodologia.md (main vs pr-3-yalbi)
+  - CHECK: git diff main..pr-3-yalbi -- tesis/manuscripts/04_Metodologia.md
+  - EXPECT: Identificación línea por línea de cambios conceptuales, metodológicos, de cohortes y parámetros.
+  - EVIDENCE: 21 adiciones, 19 eliminaciones. Estandarización de títulos a tipo oración, subíndices/superíndices CD56^bright^/CD56^dim^. Precisiones empíricas: especificación de SOLO en scVI v1.1.5 (umbral > 0.5); inclusión de prueba U de Mann-Whitney sobre ratios; aclaración de cohortes de pseudobulk (descarte de ensayos sin representación balanceada, filtro >= 10 cuentas en >= 3 donantes, padj < 0.05 sin corte de LFC); sustitución de g:Profiler por Enrichr (gseapy); especificación de 1,000 permutaciones, semilla 42 y límites de genes (15-500 en general, 5-1000 en firmas especializadas) en GSEA.
+- [x] F2. Comparación exhaustiva de 05_Resultados.md (main vs pr-3-yalbi)
+  - CHECK: git diff main..pr-3-yalbi -- tesis/manuscripts/05_Resultados.md
+  - EXPECT: Identificación línea por línea de tablas, cifras numéricas, líderes GSEA, ORA y consistencia con datos primarios.
+  - EVIDENCE: 78 adiciones, 56 eliminaciones. Desglose explícito de cohortes de PyDESeq2: 23 genes provienen del análisis global (420 donantes, 140,930 células de 5 ensayos); CD56dim (187 donantes, 62,553 células) y CD56bright (354 donantes, 2,814 células) no arrojaron genes con FDR < 0.05. Reemplazo de firma SASP en Tabla 4 por Reactome R-HSA-2559582 (NES = +0.877 en bright, NES = -0.913 en dim, ambos FDR > 0.25). Aclaración de que GSE9650 es conjunto DN (genes reprimidos en agotados vs memoria, indicando similitud con memoria). Sincronización de universos de genes GSEA (10,057 global, 9,644 dim, 1,872 bright), genes líderes en Tabla 3 y sustitución de "probabilidad de captura" por "momios". Incorporación de notas APA en todas las figuras y tablas.
+- [x] F3. Comparación exhaustiva de 06_Discusion.md (main vs pr-3-yalbi)
+  - CHECK: git diff main..pr-3-yalbi -- tesis/manuscripts/06_Discusion.md
+  - EXPECT: Identificación línea por línea de matizaciones de tono, hipótesis vs afirmaciones absolutas y apego a la Verdad Biológica.
+  - EVIDENCE: 25 adiciones, 25 eliminaciones. Modulación epistémica de afirmaciones absolutas hacia hipótesis comprobables: aclaración de que la ineficacia de terapias anti-PD-1 y el colapso del eje NK-cDC1 son hipótesis derivadas de la transcriptómica que requieren validación funcional directa; eliminación de metáforas ("faros de alarma"); precisión de que en el modelo enriquecido de MYC-telomerasa, TERT no se detectó y MYC no cambió; sincronización con la no significancia de gránulos líticos en CD56dim.
+- [x] F4. Comparación exhaustiva de 08_Bibliografia.md (main vs pr-3-yalbi)
+  - CHECK: git diff main..pr-3-yalbi -- tesis/manuscripts/08_Bibliografia.md
+  - EXPECT: Identificación de referencias modificadas, retiradas (ej. Cheng et al. 2020), reconstrucción de autores y correspondencia de citas.
+  - EVIDENCE: 28 adiciones, 36 eliminaciones. Purgado de 4 referencias huérfanas no citadas en texto: Broz et al. (2014), Hildner et al. (2008), Kolberg et al. (2023, g:Profiler reemplazado por Kuleshov 2016 Enrichr) y Latorre et al. (2017). Eliminación de la cita espuria Cheng et al. (2020). Reconstrucción y completado de listas de coautores en 19 obras conforme a norma APA 7 (incluyendo CZI 2025, Rebuffet 2024, Villeda 2011, Börner 2021, Fuentealba 2025). Corrección de DOIs en Fali et al. (2019) y Deng & Terunuma (2024), y URL institucional de la Comisión Europea (2024).
+- [x] F5. Mapeo y análisis de correspondencia integral de los 23 puntos del correo de la Dra. Yalbi
+  - CHECK: Matriz analítica de 23 puntos elaborada contrastando PR #3 frente a pipeline local.
+  - EVIDENCE: 23 puntos categorizados con estatus, impacto, viabilidad y estrategia de resolución (diferenciando la opción mínima de texto/documentación de la opción de recómputo/scripts).
 
 

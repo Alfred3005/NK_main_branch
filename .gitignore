@@ -20,10 +20,12 @@ tesis/site_libs/
 *.lot
 *.lof
 *.tex
+!tesis/manuscripts/include_preliminares.tex
 
 # Temporary work and screenshots
 scratch/
 .agents/
+.rooignore
 .obsidian_vault/
 page_*.png
 new_page_*.png

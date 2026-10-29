@@ -49,11 +49,13 @@ Cooper, M. A., Fehniger, T. A., Turner, S. C., Chen, K. S., Ghaheri, B. A., Ghay
 
 Coppé, J.-P., Desprez, P.-Y., Krtolica, A., & Campisi, J. (2010). The senescence-associated secretory phenotype: The dark side of tumor suppression. *Annual Review of Pathology: Mechanisms of Disease*, *5*(1), 99–118. https://doi.org/10.1146/annurev-pathol-121808-102144
 
+Comisión Europea. (2024). *Living guidelines on the responsible use of generative AI in research*. Dirección General de Investigación e Innovación. https://data.europa.eu/doi/10.2777/005697
+
 Crowell, H. L., Soneson, C., Germain, P.-L., Calini, D., Collin, L., Raposo, C., Malhotra, D., & Robinson, M. D. (2020). muscat detects subpopulation-specific state transitions from multi-sample multi-condition single-cell transcriptomics data. *Nature Communications*, *11*(1), 6077. https://doi.org/10.1038/s41467-020-19894-4
 
 CZI Cell Science Program, Abdulla, S., Aevermann, B., Assis, P., Badajoz, S., Bell, S. M., Bezzi, E., Cakir, B., Chaffer, J., Chambers, S., Cherry, J. M., Chi, T., Chien, J., Dorman, L., Garcia-Nieto, P., Gloria, N., Hastie, M., Hegeman, D., Hilton, J., . . . Carr, A. (2025). CZ CELLxGENE Discover: A single-cell data platform for scalable exploration, analysis and modeling of aggregated data. *Nucleic Acids Research*, *53*(D1), D886–D900. https://doi.org/10.1093/nar/gkae1142
 
-Del Bosque Plata, L. (2016). Envejecimiento y las enfermedades comunes en nuestra sociedad. En M. Konigsberg Fainstein (Ed.), *¿Por qué envejecemos? Y otras historias…* (pp. 43–58). Consejo Nacional de Ciencia y Tecnología (CONACYT).
+Del Bosque Plata, L. (2016). Envejecimiento y las enfermedades comunes en nuestra sociedad. En M. Konigsberg Fainstein (Coord.), *¿Por qué envejecemos? Y otras historias…* (pp. 43–58). Universidad Autónoma Metropolitana, Unidad Iztapalapa / Instituto Nacional de Geriatría / Consejo Nacional de Ciencia y Tecnología (CONACYT). ISBN: 978-607-460-536-5.
 
 Deng, X., & Terunuma, H. (2024). Adoptive NK cell therapy: A potential revolutionary approach in longevity therapeutics. *Immunity & Ageing*, *21*(1), 43. https://doi.org/10.1186/s12979-024-00451-2
 
@@ -153,7 +155,7 @@ Rebuffet, L., Melsen, J. E., Escalière, B., Basurto-Lozada, D., Bhandoola, A., 
 
 Sagiv, A., Burton, D. G. A., Moshayev, Z., Vadai, E., Wensveen, F., Ben-Dor, S., Golani, O., Polic, B., & Krizhanovsky, V. (2016). NKG2D ligands mediate immunosurveillance of senescent cells. *Aging*, *8*(2), 328–344. https://doi.org/10.18632/aging.100897
 
-Sanbomics. (2022). *Single cell RNA-seq analysis tutorials* [Código fuente]. GitHub. https://github.com/sanbomics/scRNA-seq
+Sanbomics. (2022). *Single cell RNA-seq analysis tutorials* [Código fuente]. GitHub. https://github.com/mousepixels/sanbomics_scripts
 
 Sheng, C., Lopes, R., Li, G., Schuierer, S., Waldt, A., Cuttat, R., Dimitrieva, S., Kauffmann, A., Durand, E., Galli, G. G., Roma, G., & de Weck, A. (2022). Probabilistic machine learning ensures accurate ambient denoising in droplet-based single-cell omics [Preprint]. *bioRxiv*. https://doi.org/10.1101/2022.01.14.476312
 
