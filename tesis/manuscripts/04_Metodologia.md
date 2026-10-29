@@ -2,7 +2,7 @@
 
 ## Recolección y preprocesamiento de datos
 
-El análisis se realizó con datos de tipo scRNA-seq obtenidos del repositorio *CellxGene* Census (CZI Cell Science Program et al., 2025), restringiendo la búsqueda a muestras de tejido sanguíneo humano provenientes de donantes sanos. Para el procesamiento y análisis computacional se emplearon rutinas desarrolladas en Python (versión 3.12.3).
+El análisis se realizó con datos de tipo scRNA-seq obtenidos del repositorio *CellxGene* Census (versión LTS `2023-12-15`; CZI Cell Science Program et al., 2025), restringiendo la búsqueda a muestras de tejido sanguíneo humano provenientes de donantes sanos. Para el procesamiento y análisis computacional se emplearon rutinas desarrolladas en Python (versión 3.12.3).
 
 La selección de las muestras se rigió por criterios de inclusión y exclusión diseñados para garantizar la calidad y la relevancia biológica del estudio. Se incluyeron únicamente datos primarios de donantes sanos con edades iguales o superiores a 34 años, cuyas células estuvieran anotadas específicamente como células NK o sus subtipos, y que contaran con metadatos completos referentes a edad y sexo. Por contraparte, se excluyeron aquellos datos provenientes de tejidos distintos a la sangre periférica, de muestras de individuos sometidos a tratamientos farmacológicos, de donantes menores de 34 años, así como cualquier célula que careciera de una anotación clara o perteneciera a linajes celulares distintos.
 

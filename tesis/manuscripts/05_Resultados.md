@@ -72,9 +72,9 @@ La dinámica demográfica de las subpoblaciones reveló una contracción pronunc
 
 Esta regresión cuantificó una reducción del 37.51% en los momios de que una célula NK fuera CD56^bright^, asociada a una OR de 0.6249 con un intervalo de confianza al 95% de $[0.4258, 0.9170]$ (@fig-4). Considerando que este subconjunto constituye el productor fisiológico primordial de factores inmunomoduladores e inmunoatrayentes, particularmente IFN-$\gamma$ y las quimiocinas *XCL1* y *XCL2* (Cooper et al., 2001; Poli et al., 2009), el declive numérico observado es compatible con una involución preferencial del brazo secretor frente a la preservación cuantitativa del compartimento citotóxico maduro.
 
-![Proporción de células NK CD56^bright^ y abundancia diferencial entre adultos y adultos mayores: cociente CD56^bright^/CD56^dim^ por donante (diagramas de caja), composición media y conteos medios por grupo.](figures_clean/fig4.png){#fig-4 width=85% fig-align="center"}
+![Proporción de células NK CD56^bright^ y abundancia diferencial entre adultos y adultos mayores: cociente CD56^bright^/CD56^dim^ por donante (diagramas de caja y dispersión individual), composición relativa media y recuentos celulares absolutos medios por grupo de edad.](figures_clean/fig4.png){#fig-4 width=85% fig-align="center"}
 
-*Nota.* El valor de *p* anotado en el primer panel corresponde al GLM sin corrección por sobredispersión; con la corrección, *p* = 0.0163 (véase el texto). Modelo con 187 donantes (152 adultos y 35 adultos mayores).
+*Nota.* El valor de *p* anotado en el primer panel resume el contraste no paramétrico de rangos de Mann-Whitney ($p = 0.1674$) y el modelo lineal generalizado cuasibinomial ajustado por plataforma de secuenciación con corrección empírica de Pearson ($p = 0.0163$; $\text{OR} = 0.6249$). Modelo evaluado sobre la cohorte balanceada de 187 donantes (152 adultos y 35 adultos mayores).
 
 ## Expresión diferencial (PyDESeq2) y control del sesgo tecnológico
 

@@ -1,0 +1,42 @@
+graph TD
+    %% Estilos de Nodos y Clases
+    classDef procurement fill:#e0f2fe,stroke:#0284c7,stroke-width:1.5px,color:#0f172a,font-size:13px;
+    classDef preprocessing fill:#f0fdf4,stroke:#16a34a,stroke-width:1.5px,color:#0f172a,font-size:13px;
+    classDef pseudobulk fill:#fef3c7,stroke:#d97706,stroke-width:1.5px,color:#0f172a,font-size:13px;
+    classDef abundance fill:#fae8ff,stroke:#a855f7,stroke-width:1.5px,color:#0f172a,font-size:13px;
+    classDef functional fill:#fee2e2,stroke:#dc2626,stroke-width:1.5px,color:#0f172a,font-size:13px;
+    classDef decision fill:#ffffff,stroke:#475569,stroke-width:1.5px,stroke-dasharray: 4 4,color:#0f172a,font-size:13px;
+
+    subgraph SEC1 ["1. Procuración y Selección de Datos (CZ CELLxGENE Census LTS 2023-12-15)"]
+        A["Datos primarios scRNA-seq<br><b>Sangre periférica humana</b>"]:::procurement --> B{"Criterios de inclusión<br>y exclusión"}:::decision
+        B -->|"Filtros clínicos y metadatos"| C["• Tejido: sangre periférica (PBMC)<br>• Condición: controles sanos<br>• Edad ≥ 34 años con sexo reportado<br>• Linaje anotado: células NK"]:::procurement
+        C --> D["<b>Cohorte Inicial de Referencia</b><br>423 donantes | 143,991 células NK"]:::procurement
+    end
+
+    subgraph SEC2 ["2. Depuración Ambiental y Control de Calidad Híbrido"]
+        D --> E["<b>scAR</b> (Single-cell Ambient RNA removal)<br>Inferencia probabilística bayesiana de ruido ambiental"]:::preprocessing
+        E --> F["Detección de dobletes heterotípicos con <b>SOLO</b><br>y filtrado adaptativo multivariado por <b>MAD</b>"]:::preprocessing
+        F --> G["Remoción declarativa de sesgo tecnológico bimodal<br><b>Exclusión de genes ribosomales (RPS/RPL) e inmunoglobulinas (IG)</b>"]:::preprocessing
+        G --> H["<b>Dataset Depurado de Alta Confianza (V4-Clean)</b><br>Masa crítica ≥ 200 células por donante"]:::preprocessing
+    end
+
+    subgraph SEC3 ["3. Estratificación por Subpoblaciones Canónicas"]
+        H --> I["Compartimento Maduro Citotóxico<br><b>NK CD56dim (98.0%)</b><br>141,172 células | 420 donantes"]:::abundance
+        H --> J["Compartimento Inmaduro Regulador<br><b>NK CD56bright (2.0%)</b><br>2,819 células | 354 donantes"]:::abundance
+    end
+
+    subgraph SEC4 ["4. Modelado Estadístico y Expresión Diferencial"]
+        I & J --> K["<b>Modelado de Abundancia Celular (GLM Cuasibinomial)</b><br>Diseño aditivo por lote (~ assay + age_group)<br>Ponderación por tamaño de biblioteca celular"]:::abundance
+        K --> K1["<b>Contracción Homeostática Significativa</b><br>OR = 0.6249 | p = 0.0163 (Pearson φ = 6.7248)<br>Reducción del 37.51% en momios de CD56bright"]:::abundance
+
+        I & J --> L["<b>Agregación Pseudobulk por Donante</b><br>PyDESeq2 con regularización de Cauchy (apeGLM)<br>Control de lote: ~ assay + age_group"]:::pseudobulk
+        L --> M["<b>Análisis Global (420 donantes)</b><br>23 DEGs de alta confianza (padj < 0.05)<br>Represión de quimiocinas (XCL1, XCL2, MAP3K8)<br>Inducción de estrés génico (S100A9, RNF169)"]:::pseudobulk
+        L --> N["<b>Subpoblación CD56dim (187 donantes)</b><br>0 DEGs significativos (padj < 0.05)"]:::pseudobulk
+        L --> O["<b>Subpoblación CD56bright (354 donantes)</b><br>0 DEGs significativos (padj < 0.05)"]:::pseudobulk
+    end
+
+    subgraph SEC5 ["5. Análisis de Enriquecimiento Funcional Multidimensional"]
+        M --> P["<b>Análisis ORA (Enrichr)</b><br>Sobrerrepresentación de los 23 DEGs<br>en Hallmark, Reactome y GO:BP"]:::functional
+        M & N & O --> Q["<b>GSEA Preordenado (Preranked Wald Stat)</b><br>Clasificación continua de transcriptomas completos<br>Hallmark 2020, KEGG 2021, Reactome 2022, GO:BP 2023"]:::functional
+        Q --> R["<b>Firmas Especializadas (SASP, Senescencia, Agotamiento)</b><br>• Reloj universal: Estrés transcripcional UV Response Dn (FDR < 0.05)<br>• Divergencia metabólica: Apagón OXPHOS (bright) vs Parálisis anérgica (dim)<br>• Ausencia de fenotipo clásico de agotamiento T (GSE9650)"]:::functional
+    end
