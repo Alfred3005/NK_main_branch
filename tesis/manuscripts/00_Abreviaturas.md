@@ -22,6 +22,7 @@
 | ITIM | Motivo inhibidor del inmunorreceptor basado en tirosina (del inglés *immunoreceptor tyrosine-based inhibitory motif*) |
 | KEGG | Enciclopedia de Genes y Genomas de Kioto (del inglés *Kyoto Encyclopedia of Genes and Genomes*) |
 | KIR | Receptores de tipo inmunoglobulina de células asesinas (del inglés *killer-cell immunoglobulin-like receptors*) |
+| LFC | Cambio logarítmico de expresión en base 2 (véase log2FC) |
 | log2FC | Logaritmo en base 2 del cambio de expresión (del inglés *log2 fold change*) |
 | MAD | Desviación absoluta de la mediana (del inglés *median absolute deviation*) |
 | MHC-I | Complejo principal de histocompatibilidad de clase I (del inglés *major histocompatibility complex*) |
@@ -44,8 +45,9 @@
 | TCR | Receptor de linfocitos T (del inglés *T-cell receptor*) |
 | TERT | Transcriptasa inversa de la telomerasa |
 | Th1, Th17 | Linfocitos T cooperadores de tipo 1 y de tipo 17 |
-| TIM-3 | Del inglés *T-cell immunoglobulin and mucin-domain containing-3* |
+| TIM-3 | Proteína con dominio de inmunoglobulina y mucina de linfocitos T 3 (del inglés *T-cell immunoglobulin and mucin-domain containing-3*) |
 | TLR | Receptores de tipo Toll (del inglés *Toll-like receptors*) |
 | TNF-α | Factor de necrosis tumoral alfa |
 | UMAP | Aproximación y proyección uniforme de variedades (del inglés *uniform manifold approximation and projection*) |
 | UMI | Identificadores moleculares únicos (del inglés *unique molecular identifiers*) |
+| UV | Radiación ultravioleta |

@@ -100,7 +100,7 @@ Con un criterio de significancia estadística ajustado por tasa de falso descubr
 | *FAM169A* | 9.58 | +0.0084 | 0.0273 | 0.0423 | Proteína nuclear de función homeostática |
 | *ABCB8* | 5.81 | +0.0074 | 0.1230 | 0.0412 | Transportador ABC mitocondrial, homeostasis de hierro y estrés redox |
 | *ZNF672* | 3.97 | +0.0072 | 0.0284 | 0.0175 | Factor transcripcional nuclear de dedos de zinc |
-| *HIRA* | 7.14 | +0.0056 | 0.0297 | 0.0399 | Chaperona de histonas H3.3, ensamblaje de focos de heterocromatina asociados a la senescencia (SAHF) |
+| *HIRA* | 7.14 | +0.0056 | 0.0297 | 0.0399 | Chaperona de histonas H3.3, ensamblaje de focos de heterocromatina asociados a la senescencia (SAHF, del inglés *senescence-associated heterochromatin foci*) |
 | *ATL1* | 3.36 | +0.0047 | 0.0305 | 0.0441 | Atlastina 1, GTPasa de fusión de membrana del retículo endoplásmico |
 | *PLEKHO1* | 1.43 | -0.0043 | 0.0366 | 0.0486 | Pleckstrina con dominio de homología, regulación de cascadas AKT |
 | *XCL2* | 108.03 | -0.3446 | 0.0996 | 0.0497 | Quimiocina paráloga reclutadora de células dendríticas cDC1 |

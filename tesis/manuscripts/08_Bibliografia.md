@@ -41,15 +41,13 @@ Chen, X., Kang, R., Kroemer, G., & Tang, D. (2021). Ferroptosis in infection, in
 
 Childs, B. G., Durik, M., Baker, D. J., & van Deursen, J. M. (2015). Cellular senescence in aging and age-related disease: From mechanisms to therapy. *Nature Medicine*, *21*(12), 1424–1435. https://doi.org/10.1038/nm.4000
 
-Comisión Europea. (2024). *Living guidelines on the responsible use of generative AI in research*. Dirección General de Investigación e Innovación, ERA Forum. Oficina de Publicaciones de la Unión Europea. https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/guidelines-responsible-use-generative-ai-research-developed-european-research-area-forum-2024-03-20_en
+Comisión Europea. (2024). *Living guidelines on the responsible use of generative AI in research*. Dirección General de Investigación e Innovación, ERA Forum. Oficina de Publicaciones de la Unión Europea. https://data.europa.eu/doi/10.2777/005697
 
 Conboy, I. M., Conboy, M. J., Wagers, A. J., Girma, E. R., Weissman, I. L., & Rando, T. A. (2005). Rejuvenation of aged progenitor cells by exposure to a young systemic environment. *Nature*, *433*(7027), 760–764. https://doi.org/10.1038/nature03260
 
 Cooper, M. A., Fehniger, T. A., Turner, S. C., Chen, K. S., Ghaheri, B. A., Ghayur, T., Carson, W. E., & Caligiuri, M. A. (2001). Human natural killer cells: A unique innate immunoregulatory role for the CD56bright subset. *Blood*, *97*(10), 3146–3151. https://doi.org/10.1182/blood.V97.10.3146
 
 Coppé, J.-P., Desprez, P.-Y., Krtolica, A., & Campisi, J. (2010). The senescence-associated secretory phenotype: The dark side of tumor suppression. *Annual Review of Pathology: Mechanisms of Disease*, *5*(1), 99–118. https://doi.org/10.1146/annurev-pathol-121808-102144
-
-Comisión Europea. (2024). *Living guidelines on the responsible use of generative AI in research*. Dirección General de Investigación e Innovación. https://data.europa.eu/doi/10.2777/005697
 
 Crowell, H. L., Soneson, C., Germain, P.-L., Calini, D., Collin, L., Raposo, C., Malhotra, D., & Robinson, M. D. (2020). muscat detects subpopulation-specific state transitions from multi-sample multi-condition single-cell transcriptomics data. *Nature Communications*, *11*(1), 6077. https://doi.org/10.1038/s41467-020-19894-4
 
