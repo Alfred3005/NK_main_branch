@@ -1,3 +1,5 @@
+# Entorno de las etapas posteriores al control de calidad (run_reproducible_pipeline.py).
+# scAR y SOLO usan environment-qc.yml: scvi-tools 1.1.5 requiere numpy<2.
 name: tesis_nk_v4
 channels:
   - conda-forge

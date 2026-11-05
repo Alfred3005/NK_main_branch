@@ -72,9 +72,9 @@ La dinámica demográfica de las subpoblaciones reveló una contracción pronunc
 
 Esta regresión cuantificó una reducción del 37.51% en los momios de que una célula NK fuera CD56^bright^, asociada a una OR de 0.6249 con un intervalo de confianza al 95% de $[0.4258, 0.9170]$ (@fig-4). Considerando que este subconjunto constituye el productor fisiológico primordial de factores inmunomoduladores e inmunoatrayentes, particularmente IFN-$\gamma$ y las quimiocinas *XCL1* y *XCL2* (Cooper et al., 2001; Poli et al., 2009), el declive numérico observado es compatible con una involución preferencial del brazo secretor frente a la preservación cuantitativa del compartimento citotóxico maduro.
 
-![Proporción de células NK CD56^bright^ y abundancia diferencial entre adultos y adultos mayores: cociente CD56^bright^/CD56^dim^ por donante (diagramas de caja y dispersión individual), composición relativa media y recuentos celulares absolutos medios por grupo de edad.](figures_clean/fig4.png){#fig-4 width=85% fig-align="center"}
+![Proporción de células NK CD56^bright^ y abundancia diferencial entre adultos y adultos mayores: cociente CD56^bright^/CD56^dim^ por donante (diagramas de caja y dispersión individual), composición relativa media y recuentos celulares absolutos medios por grupo de edad.](figures_clean/fig4.png){#fig-4 width=100% fig-align="center"}
 
-*Nota.* El valor de *p* anotado en el primer panel resume el contraste no paramétrico de rangos de Mann-Whitney ($p = 0.1674$) y el modelo lineal generalizado cuasibinomial ajustado por plataforma de secuenciación con corrección empírica de Pearson ($p = 0.0163$; $\text{OR} = 0.6249$). Modelo evaluado sobre la cohorte balanceada de 187 donantes (152 adultos y 35 adultos mayores).
+*Nota.* (A) Cociente por donante; (B) composición promedio; (C) recuentos medios por donante. El valor de *p* anotado en el panel A resume el contraste no paramétrico de rangos de Mann-Whitney ($p = 0.1674$) y el modelo lineal generalizado cuasibinomial ajustado por plataforma de secuenciación con corrección empírica de Pearson ($p = 0.0163$; $\text{OR} = 0.6249$). Modelo evaluado sobre la cohorte balanceada de 187 donantes (152 adultos y 35 adultos mayores).
 
 ## Expresión diferencial (PyDESeq2) y control del sesgo tecnológico
 
@@ -165,14 +165,14 @@ Adicionalmente, se realizó una evaluación ortogonal para contrastar el perfil 
 ::: {#tbl-sasp-exhaustion tbl-colwidths="[14,22,9,10,10,18,17]"}
 | Subpoblación | Firma Especializada | NES | Valor de $p$ | FDR ($q$) | Genes Relevantes (*Core Enrichment*) | Estado de Significancia |
 |:---|:---|:---:|:---:|:---:|:---|:---|
-| *CD56^bright^* | SASP (Reactome, R-HSA-2559582) | +0.877 | 0.6651 | 1.0000 | *CDKN1B*, *UBA52*, *MAPK1*, *ANAPC16*, *EHMT1* | No significativo ($FDR > 0.25$) |
-| *CD56^dim^* | SASP (Reactome, R-HSA-2559582) | -0.913 | 0.5954 | 0.9098 | *H2AJ*, *ANAPC15*, *H2AX*, *CDKN2D*, *ANAPC11*, *H3-3B* | No significativo ($FDR > 0.25$) |
-| *CD56^dim^* | Exhausted vs Memory CD8+ T Cell, DN (GSE9650) | +1.331 | 0.0310 | 0.2455 | *XRCC5*, *ETS1*, *PIK3CD*, *TOB1*, *KLRC1*, *ARL6IP5* | Tendencia ($FDR = 0.2455$) |
+| *CD56^bright^* | SASP (Reactome, R-HSA-2559582) | +0.877 | 0.6651 | 0.7061 | *CDKN1B*, *UBA52*, *MAPK1*, *ANAPC16*, *EHMT1* | No significativo ($FDR > 0.25$) |
+| *CD56^dim^* | SASP (Reactome, R-HSA-2559582) | -0.913 | 0.5954 | 0.6677 | *H2AJ*, *ANAPC15*, *H2AX*, *CDKN2D*, *ANAPC11*, *H3-3B* | No significativo ($FDR > 0.25$) |
+| *CD56^dim^* | Exhausted vs Memory CD8+ T Cell, DN (GSE9650) | +1.330 | 0.0285 | 0.1438 | *XRCC5*, *ETS1*, *PIK3CD*, *TOB1*, *KLRC1*, *ARL6IP5* | Enriquecido ($FDR < 0.25$), hacia el perfil de memoria |
 
 Evaluación de firmas ortogonales especializadas de SASP y agotamiento inmune por subpoblación NK.
 :::
 
-*Nota.* SASP: firma R-HSA-2559582 de Reactome 2022. GSE9650 DN: genes con menor expresión en linfocitos T CD8+ agotados que en los de memoria.
+*Nota.* SASP: vía R-HSA-2559582 de Reactome 2022, con la lista de 60 genes de `13_build_custom_gmt.py`; tras el filtrado se evaluaron 56 genes en CD56^dim^ y 21 en CD56^bright^. FDR calculado dentro de la biblioteca de cinco firmas especializadas; junto con las vías de Reactome, el FDR de SASP es de 0.9098 en CD56^dim^ y de 1.0000 en CD56^bright^, con el mismo NES. GSE9650 DN: genes con menor expresión en linfocitos T CD8+ agotados que en los de memoria.
 
 Como análisis complementario sobre la firma de 23 genes diferencialmente expresados (@tbl-degs-23), el ORA frente a la ontología de procesos biológicos (*GO Biological Process 2023*) reveló una concentración estadísticamente significativa en programas de quimiotaxis y migración leucocitaria. Destacaron las rutas *Neutrophil Chemotaxis* ($padj = 0.0045$, traslape 3/70), *Granulocyte Chemotaxis* ($padj = 0.0045$, traslape 3/73) y *Positive Regulation of T Cell Chemotaxis* ($padj = 0.0045$, traslape 2/12), impulsadas por la disminución de las quimiocinas *XCL1* y *XCL2*, junto con la alarmina *S100A9* en las dos primeras (Anexo A, sección A.4). Esta convergencia sugiere que las alteraciones detectadas en el envejecimiento NK se concentran en las señales quimiotácticas de enlace intercelular, junto con programas compensatorios frente al estrés.
 

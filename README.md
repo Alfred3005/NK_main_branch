@@ -27,7 +27,7 @@ El repositorio está diseñado para ser lineal, limpio, reproducible y portable:
   - `plot_heatmap_global.py`: Heatmap de la firma de 23 genes alterados.
   - `compile_gsea_table.py`: Compilador de tablas unificadas.
   - `generate_report_v2.py`: Ensamblaje autónomo del reporte interactivo HTML.
-  - `run_final_pipeline.py`: Automatizador de la suite completa.
+  - `run_reproducible_pipeline.py`: Automatizador de las etapas posteriores al control de calidad, a partir de `data/NK_dataset_qc_ready.h5ad`.
 - `results/`:
   - `Reporte_Integrativo_Subtipos_Abundancia_V2.html`: Entregable maestro.
   - `subtypes/`: Tablas maestras.

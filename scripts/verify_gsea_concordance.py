@@ -11,7 +11,7 @@ import sys
 import re
 import pandas as pd
 
-WORKSPACE = r"c:\Users\PREDATOR\Documents\Antigravity_workspaces\TESIS_NK_2"
+WORKSPACE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS_DIR = os.path.join(WORKSPACE, "results", "subtypes")
 MANUSCRIPTS_DIR = os.path.join(WORKSPACE, "tesis", "manuscripts")
 

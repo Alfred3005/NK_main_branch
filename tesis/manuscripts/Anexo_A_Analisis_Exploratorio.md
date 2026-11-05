@@ -35,32 +35,31 @@ La construcción de la cohorte analítica se llevó a cabo a partir de la plataf
 
 Para validar la pureza de la población celular y favorecer la exclusión de dobletes heterotípicos o contaminaciones procedentes de linajes vecinos (células T y células B), se aplicó una estrategia de evaluación basada en la tabla de referencia estandarizada **ASCT+B** del *Human Reference Atlas* (Börner et al., 2021) (@tbl-anexo-marcadores).
 
-| Linaje Celular | Criterio de Selección | Marcador Génico | Nombre Canónico / Función Biológica |
-|:---|:---:|:---|:---|
-| **Natural Killer (NK)** | **Inclusión** | *NCAM1* | CD56; marcador de adhesión y estadio madurativo |
-| | | *FCGR3A* | CD16; receptor de Fc$\gamma$ de baja afinidad (ADCC) |
-| | | *NKG7* | Proteína de gránulos citotóxicos |
-| | | *GNLY* | Granulisina; péptido antimicrobiano y citolítico |
-| | | *PRF1* | Perforina 1; formación de poros de membrana |
-| | | *GZMA* | Granzima A; serina proteasa citotóxica |
-| | | *GZMB* | Granzima B; inductor de apoptosis |
-| | | *CST7* | Cistatina F; regulador de catepsinas y gránulos líticos |
-| | | *KLRB1* | CD161; receptor tipo lectina C |
-| | | *KLRD1* | CD94; subunidad de heterodímero HLA-E |
-| | | *KLRF1* | NKp80; receptor activador de citotoxicidad |
-| **Linfocitos T** | **Exclusión** | *CD3D* | Complejo CD3 (cadena $\delta$ del receptor TCR) |
-| | | *CD3E* | Complejo CD3 (cadena $\epsilon$ del receptor TCR) |
-| | | *CD3G* | Complejo CD3 (cadena $\gamma$ del receptor TCR) |
-| | | *TRAC* | Región constante de la cadena alfa del TCR |
-| | | *TRBC1* | Región constante 1 de la cadena beta del TCR |
-| **Linfocitos B** | **Exclusión** | *CD19* | Correceptor canónico pan-linaje B |
-| | | *MS4A1* | CD20; diferenciación de células B maduras |
-| | | *CD79A* | Ig-alfa; subunidad de transducción del receptor BCR |
-| | | *MZB1* | Proteína de zona marginal y diferenciación plasmática |
+| Linaje Celular | Marcador Génico | Nombre Canónico / Función Biológica | En el puntaje de linaje | En la Figura de pureza |
+|:---|:---|:---|:---:|:---:|
+| **Natural Killer (NK)** | *NCAM1* | CD56; marcador de adhesión y estadio madurativo | Sí | No |
+|  | *FCGR3A* | CD16; receptor de Fc$\gamma$ de baja afinidad (ADCC) | Sí | No |
+|  | *NKG7* | Proteína de gránulos citotóxicos | Sí | Sí |
+|  | *GNLY* | Granulisina; péptido antimicrobiano y citolítico | Sí | Sí |
+|  | *PRF1* | Perforina 1; formación de poros de membrana | Sí | Sí |
+|  | *KLRB1* | CD161; receptor tipo lectina C | Sí | No |
+|  | *GZMA* | Granzima A; serina proteasa citotóxica | No | Sí |
+|  | *CST7* | Cistatina F; regulador de catepsinas y gránulos líticos | No | Sí |
+|  | *KLRD1* | CD94; subunidad de heterodímero HLA-E | No | Sí |
+|  | *KLRF1* | NKp80; receptor activador de citotoxicidad | No | Sí |
+| **Linfocitos T** | *CD3E* | Complejo CD3 (cadena $\epsilon$ del receptor TCR) | Sí | Sí |
+|  | *TRAC* | Región constante de la cadena alfa del TCR | Sí | Sí |
+|  | *TRBC1* | Región constante 1 de la cadena beta del TCR | Sí | No |
+|  | *CD3D* | Complejo CD3 (cadena $\delta$ del receptor TCR) | No | Sí |
+|  | *CD3G* | Complejo CD3 (cadena $\gamma$ del receptor TCR) | No | Sí |
+| **Linfocitos B** | *CD19* | Correceptor canónico pan-linaje B | Sí | Sí |
+|  | *MS4A1* | CD20; diferenciación de células B maduras | Sí | Sí |
+|  | *MZB1* | Proteína de zona marginal y diferenciación plasmática | Sí | No |
+|  | *CD79A* | Ig-alfa; subunidad de transducción del receptor BCR | No | Sí |
 
-: Marcadores de validación de pureza de linaje celular basados en el estándar ASCT+B. {#tbl-anexo-marcadores}
+: Marcadores de validación de pureza de linaje celular basados en el estándar ASCT+B. {#tbl-anexo-marcadores tbl-colwidths="[18,13,41,14,14]"}
 
-*Nota.* Basado en las tablas ASCT+B (Börner et al., 2021).
+*Nota.* Basado en las tablas ASCT+B (Börner et al., 2021). Puntaje de linaje: firmas NK, T y B calculadas con `score_genes` en `04-purify-qc-lineage.py`, que evalúan la pureza y no eliminan células por sí mismas. Figura de pureza: marcadores de @fig-3a.
 
 ---
 

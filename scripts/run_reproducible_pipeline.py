@@ -4,7 +4,10 @@
 ===============================================================================
 ORQUESTADOR MAESTRO REPRODUCIBLE: PIPELINE V4-CLEAN (TESIS NK)
 ===============================================================================
-Este script automatiza la ejecución secuencial completa del pipeline bioinformático:
+Este script automatiza las etapas posteriores al control de calidad, a partir de
+data/NK_dataset_qc_ready.h5ad. No incluye la extracción del Census, scAR, SOLO ni el
+control de calidad, que dieron origen a ese archivo y usan otro entorno
+(environment-qc.yml). Etapas:
   1. Construcción de firmas moleculares especializadas (CellAge, Reactome SASP, GSE9650).
   2. Modelado de abundancia diferencial y proporciones de subtipos (GLM Cuasibinomial).
   3. Expresión diferencial pseudobulk por subtipo (PyDESeq2 + contracción apeGLM).
@@ -86,21 +89,24 @@ def main():
     # 1. Verificación de prerrequisitos de datos
     data_h5ad = PROJECT_ROOT / "data" / "NK_dataset_qc_ready.h5ad"
     if not data_h5ad.exists():
-        print(f"\n[ADVERTENCIA] No se detectó el dataset base en: {data_h5ad}")
-        print("Asegúrate de colocar o vincular el archivo H5AD en la carpeta 'data/'.")
+        print(f"\n[ERROR] No se detectó el dataset base en: {data_h5ad}")
+        print("Coloca o vincula el archivo H5AD en la carpeta 'data/' y vuelve a correr.")
+        sys.exit(1)
 
     # 2. Definición del flujo de etapas
     pipeline_stages = [
         ("scripts/13_build_custom_gmt.py", "1. Construcción de Firmas Especializadas GMT"),
-        ("scripts/23_differential_abundance_milo.py", "2. Modelado de Abundancia GLM y Ratio de Subtipos"),
-        ("scripts/plot_heatmap_global.py", "3. Visualización de Heatmaps (23 DEGs Canónicos)"),
-        ("scripts/14_run_specialized_gsea.py", "4. GSEA de Firmas Especializadas (SASP R-HSA-2559582)"),
-        ("scripts/15_plot_specialized_gsea.py", "5. Generación de Dotplot de Senescencia Especializada"),
-        ("scripts/24_subtypes_ranked_gsea.py", "6. GSEA Multibase por Subtipos (Hallmark, KEGG, Reactome)"),
-        ("scripts/25_subtypes_ora.py", "7. Análisis de Sobre-representación (ORA)"),
-        ("scripts/plot_gprofiler_style.py", "8. Dotplot Estilo g:Profiler"),
-        ("scripts/compile_gsea_table.py", "9. Compilación de Tablas Maestras Unificadas GSEA"),
-        ("scripts/generate_report_v2.py", "10. Generación del Reporte Integrativo HTML V2"),
+        ("scripts/22_pseudobulk_subtypes_pydeseq2.py", "2. Expresión Diferencial Pseudobulk por Subtipo (PyDESeq2)"),
+        ("scripts/23_differential_abundance_milo.py", "3. Modelado de Abundancia GLM y Ratio de Subtipos"),
+        ("scripts/29_figura4_abundancia.py", "4. Figura 4 de la Tesis (Abundancia de Subtipos)"),
+        ("scripts/plot_heatmap_global.py", "5. Visualización de Heatmaps (23 DEGs Canónicos)"),
+        ("scripts/14_run_specialized_gsea.py", "6. GSEA de Firmas Especializadas (SASP R-HSA-2559582)"),
+        ("scripts/15_plot_specialized_gsea.py", "7. Generación de Dotplot de Senescencia Especializada"),
+        ("scripts/24_subtypes_ranked_gsea.py", "8. GSEA Multibase por Subtipos (Hallmark, KEGG, Reactome)"),
+        ("scripts/25_subtypes_ora.py", "9. Análisis de Sobre-representación (ORA)"),
+        ("scripts/plot_gprofiler_style.py", "10. Dotplot Estilo g:Profiler"),
+        ("scripts/compile_gsea_table.py", "11. Compilación de Tablas Maestras Unificadas GSEA"),
+        ("scripts/generate_report_v2.py", "12. Generación del Reporte Integrativo HTML V2"),
     ]
 
     total_start = time.time()

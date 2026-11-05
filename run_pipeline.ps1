@@ -4,7 +4,7 @@
 Write-Host "Iniciando Pipeline de Inmunosenescencia NK (Main Branch Canónico)..." -ForegroundColor Cyan
 
 $env:PYTHONIOENCODING="utf-8"
-python scripts\run_final_pipeline.py
+python scripts\run_reproducible_pipeline.py
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ Error detectado en la ejecución del pipeline." -ForegroundColor Red

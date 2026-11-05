@@ -66,6 +66,8 @@ def run_final_cleaning():
     del adata_hvg
     gc.collect()
     
+    # Semilla para corridas futuras; la corrida reportada en la tesis no la fijó.
+    scvi.settings.seed = 42
     scvi.model.SCVI.setup_anndata(adata, batch_key='donor_id')
     vae = scvi.model.SCVI(adata, n_layers=2, n_latent=30, gene_likelihood="nb")
     vae.train(max_epochs=None, accelerator='gpu' if device == 'cuda' else 'cpu', devices=1)

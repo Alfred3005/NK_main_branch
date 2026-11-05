@@ -40,6 +40,8 @@ def main():
     # 3. Configurar AnnData para scVI
     # Usamos la capa de conteos crudos y registramos el lote (assay) y donante (donor_id)
     print("⚙️ Configurando AnnData para scVI...")
+    # Semilla para corridas futuras; la corrida previa no la fijó.
+    scvi.settings.seed = 42
     scvi.model.SCVI.setup_anndata(
         adata,
         layer="counts",

@@ -1,0 +1,19 @@
+# Entorno de las etapas de corrección ambiental y dobletes (scAR y SOLO).
+# Reconstruido a partir de las versiones que declara la tesis; falta confirmar que
+# corresponde al entorno de la corrida original.
+# scAR se instala desde GitHub: el paquete «scar» de PyPI es otro programa.
+# La etiqueta v0.7.0 declara version = "0.6.0" en su pyproject.toml, así que pip
+# reporta scar-0.6.0 aunque el código instalado sea el de v0.7.0.
+name: tesis_nk_qc
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - git
+  - pip:
+      - "numpy<2"
+      - scvi-tools==1.1.5
+      - scanpy
+      - git+https://github.com/Novartis/scar.git@v0.7.0
