@@ -19,6 +19,7 @@ dependencies:
       - scipy==1.17.1
       - matplotlib==3.11.0
       - seaborn==0.13.2
+      - tabulate==0.10.0
       - torch>=2.1.0
       - scvi-tools>=1.1.5
       - cellxgene-census>=1.10.0

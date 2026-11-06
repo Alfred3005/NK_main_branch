@@ -22,6 +22,7 @@ Referencia metodológica:
 """
 
 import os
+import sys
 import numpy as np
 import pandas as pd
 import gseapy as gp
@@ -32,6 +33,9 @@ import warnings
 warnings.filterwarnings("ignore")
 
 from pathlib import Path
+
+# Por defecto recalcula el GSEA; con --reusar carga los CSV de una corrida anterior.
+REUSAR = '--reusar' in sys.argv
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -171,7 +175,7 @@ def gsea_for_analysis(ranked_dict: dict, analysis_key: str, display_name: str):
     for gs in GENE_SETS_GSEA:
         # ── Ruta del CSV de resultados ya consolidado ──────────────────────────
         merged_csv = os.path.join(out_base, f'gsea_{gs}.csv')
-        if os.path.exists(merged_csv):
+        if REUSAR and os.path.exists(merged_csv):
             print(f"    ♻️  Cargando resultados previos: {gs}")
             merged = pd.read_csv(merged_csv)
             # Asegurar columna Term como string Serie
