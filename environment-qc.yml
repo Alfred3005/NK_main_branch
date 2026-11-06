@@ -14,6 +14,17 @@ dependencies:
   - git
   - pip:
       - "numpy<2"
+      - "setuptools<81"  # lightning 2.1 usa pkg_resources
+      # Versiones de 2024, compatibles con scvi-tools 1.1.5
+      - jax==0.4.27
+      - jaxlib==0.4.27
+      - flax==0.8.4
+      - optax==0.2.2
+      - numpyro==0.15.0
+      - orbax-checkpoint==0.5.16
+      - torch==2.3.1
+      - torchvision==0.18.1
       - scvi-tools==1.1.5
       - scanpy
-      - git+https://github.com/Novartis/scar.git@v0.7.0
+      # Commit de la etiqueta v0.7.0 de scAR
+      - git+https://github.com/Novartis/scar.git@cc09dd34cac93fafa549d3df1e763768b4368d7c
