@@ -2,7 +2,7 @@
 
 ## Integración de la cohorte y purificación del microambiente
 
-La extracción a partir de la plataforma *CellxGene Census* (`census_version="2023-12-15"`) permitió delimitar, sobre un universo inicial de aproximadamente 45 millones de células únicas, un subconjunto de 8.8 millones correspondientes a tejido sanguíneo periférico. La aplicación sistemática de los criterios de selección en donantes sanos primarios procedentes de 13 estudios independientes (@tbl-anexo-estudios), en conjunto con la eliminación del ARN ambiental mediante scAR y la depuración del sesgo transcripcional ribosomal y de inmunoglobulinas, consolidó la cohorte analítica (@fig-1). 
+La extracción a partir de la plataforma *CellxGene Census* (`census_version="2024-07-01"`) permitió delimitar, sobre un universo inicial de aproximadamente 45 millones de células únicas, un subconjunto de 8.8 millones correspondientes a tejido sanguíneo periférico. La aplicación sistemática de los criterios de selección en donantes sanos primarios procedentes de 13 estudios independientes (@tbl-anexo-estudios), en conjunto con la eliminación del ARN ambiental mediante scAR y la depuración del sesgo transcripcional ribosomal y de inmunoglobulinas, consolidó la cohorte analítica (@fig-1). 
 
 ::: {#fig-1 layout-ncol=2}
 ![Distribución de células por edad y estudio](figures_clean/fig1a.png){#fig-1a}
@@ -12,7 +12,7 @@ La extracción a partir de la plataforma *CellxGene Census* (`census_version="20
 Consolidación de la cohorte y purificación del microambiente NK.
 :::
 
-*Nota.* Datos de CZ CELLxGENE Census (versión 2023-12-15). (a) Células por grupo de edad y estudio. (b) Conteo medio por célula de marcadores de ARN ambiental antes y después de la corrección con scAR.
+*Nota.* Datos de CZ CELLxGENE Census (versión 2024-07-01). (a) Células por grupo de edad y estudio. (b) Conteo medio por célula de marcadores de ARN ambiental antes y después de la corrección con scAR.
 
 Este filtrado riguroso resultó en una cohorte final integrada por 143,991 células NK distribuidas en 423 donantes adultos únicos de 35 años o más (@fig-1a). La eficacia del saneamiento ambiental quedó de manifiesto mediante la reducción de la expresión media de firmas espurias ajenas a la estirpe linfoide innata, destacando el silenciamiento de transcritos eritroides e inmunoglobulínicos de fondo como *HBA1* e *IGKC* (@fig-1b; Anexo A, sección A.3).
 
@@ -30,7 +30,7 @@ La estratificación por grupos de edad definió dos conjuntos biológicos contra
 Caracterización demográfica y distribución técnica de la cohorte.
 :::
 
-*Nota.* Cohorte completa: 197 adultos y 226 adultos mayores. Datos de CZ CELLxGENE Census (versión 2023-12-15).
+*Nota.* Cohorte completa: 197 adultos y 226 adultos mayores. Datos de CZ CELLxGENE Census (versión 2024-07-01).
 
 Para evaluar la influencia de efectos de lote (*batch effects*) provenientes de las plataformas de secuenciación, se examinó la distribución de las tecnologías entre grupos de edad (@fig-2c). La distribución mostró un fuerte desbalance: 10x 5' v2 predominó en los adultos (143 de 197 donantes) y 10x 3' v2 en los adultos mayores (182 de 226); por ello, el ensayo se incluyó como covariable en los modelos. Las métricas de control de calidad transcripcional (número de genes detectados, identificadores moleculares únicos (UMI, del inglés *unique molecular identifiers*) y porcentaje de transcritos mitocondriales), obtenidas tras aplicar el filtrado adaptativo descrito en la metodología, difirieron entre grupos, en concordancia con la tecnología de captura (@tbl-demografia); las visualizaciones y los desgloses de estas métricas técnicas se detallan en el Anexo A.
 
@@ -44,7 +44,7 @@ Para evaluar la influencia de efectos de lote (*batch effects*) provenientes de 
 Resumen demográfico y de control de calidad transcriptómico de la cohorte.
 :::
 
-*Nota.* DE: desviación estándar; UMI: identificadores moleculares únicos; MT: porcentaje de transcritos mitocondriales; med.: mediana. Datos de CZ CELLxGENE Census (versión 2023-12-15).
+*Nota.* DE: desviación estándar; UMI: identificadores moleculares únicos; MT: porcentaje de transcritos mitocondriales; med.: mediana. Datos de CZ CELLxGENE Census (versión 2024-07-01).
 
 ## Pureza del linaje NK y distribución de subtipos
 
@@ -188,3 +188,25 @@ Evaluación de firmas ortogonales especializadas de SASP y agotamiento inmune po
 
 Como análisis complementario sobre la firma de 23 genes diferencialmente expresados (@tbl-degs-23), el ORA frente a la ontología de procesos biológicos (*GO Biological Process 2023*) reveló una concentración estadísticamente significativa en programas de quimiotaxis y migración leucocitaria. Destacaron las rutas *Neutrophil Chemotaxis* ($padj = 0.0045$, traslape 3/70), *Granulocyte Chemotaxis* ($padj = 0.0045$, traslape 3/73) y *Positive Regulation of T Cell Chemotaxis* ($padj = 0.0045$, traslape 2/12), impulsadas por la disminución de las quimiocinas *XCL1* y *XCL2*, junto con la alarmina *S100A9* en las dos primeras (Anexo A, sección A.4). Esta convergencia sugiere que las alteraciones detectadas en el envejecimiento NK se concentran en las señales quimiotácticas de enlace intercelular, junto con programas compensatorios frente al estrés.
 
+## Sensibilidad de los resultados a la corrección de ARN ambiental
+
+Para evaluar cuánto dependen los resultados de la corrección con scAR, la expresión diferencial y el GSEA se repitieron con los conteos originales de las mismas células, sin ningún otro cambio. El análisis global pasó de 23 a 247 genes con $padj < 0.05$. De los 23 genes, 12 conservaron la significancia: 11 con la misma dirección (entre ellos *XCL1*, *XCL2*, *KIR3DL2*, *MAP3K8* y *PTGDS*) y *S100A9* con la dirección contraria ($LFC = -0.654$, $padj = 0.0029$). Los análisis por subpoblación no identificaron genes significativos en ninguna de las dos condiciones. El modelo de abundancia (@fig-4) no depende de esta corrección, porque se basa en conteos de células.
+
+Las vías también difirieron (@tbl-sensibilidad). `TNF-alpha Signaling via NF-kB`, el espliceosoma y la fosforilación oxidativa conservaron su dirección con ambos tipos de conteos. En cambio, `UV Response Dn` y la vía de la telomerasa perdieron el enriquecimiento sin la corrección, y `Myc Targets V1` invirtió su dirección. Este contraste indica qué resultados dependen de la corrección, pero no cuál de las dos versiones es la correcta, porque los conteos originales conservan la contaminación ambiental.
+
+::: {#tbl-sensibilidad tbl-colwidths="[16,44,10,10,10,10]"}
+| Subpoblación | Vía | NES con scAR | FDR con scAR | NES sin scAR | FDR sin scAR |
+|:---|:---|:---:|:---:|:---:|:---:|
+| CD56^bright^ | UV Response Dn (Hallmark) | +1.781 | 0.0148 | +0.897 | 1.0000 |
+| CD56^dim^ | UV Response Dn (Hallmark) | +1.833 | 0.0134 | +1.010 | 0.7391 |
+| CD56^dim^ | Myc Targets V1 (Hallmark) | +1.619 | 0.0392 | -1.998 | 0.0011 |
+| CD56^dim^ | Positive Reg. of Telomere Maintenance via Telomerase (GO:BP) | +1.930 | 0.2341 | +0.680 | 1.0000 |
+| CD56^dim^ | TNF-alpha Signaling via NF-kB (Hallmark) | -1.777 | 0.0276 | -1.947 | 0.0010 |
+| CD56^dim^ | Regulation of mRNA Splicing via Spliceosome (GO:BP) | -1.875 | 0.1890 | -2.166 | 0.0177 |
+| CD56^bright^ | Oxidative Phosphorylation (KEGG) | -1.606 | 0.1116 | -1.762 | 0.0439 |
+| CD56^dim^ | Oxidative Phosphorylation (KEGG) | -1.698 | 0.1174 | -1.565 | 0.1118 |
+
+Sensibilidad del enriquecimiento de vías a la corrección de ARN ambiental.
+:::
+
+*Nota.* Ambas columnas provienen de una misma corrida de verificación, por lo que los valores «con scAR» pueden diferir ligeramente de las tablas anteriores. Cifras en `sensibilidad_scar_vias.tsv` y `sensibilidad_scar_deg.tsv`, generadas con `31_sensibilidad_scar.py`.

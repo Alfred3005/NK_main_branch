@@ -1,0 +1,9 @@
+poblacion	biblioteca	via	nes_con_scar	fdr_con_scar	nes_sin_scar	fdr_sin_scar
+cd56bright	MSigDB_Hallmark_2020	UV Response Dn	1.781	0.0148	0.897	1.0
+cd56dim	MSigDB_Hallmark_2020	UV Response Dn	1.833	0.0134	1.01	0.7391
+cd56dim	MSigDB_Hallmark_2020	Myc Targets V1	1.619	0.0392	-1.998	0.0011
+cd56dim	GO_Biological_Process_2023	Positive Regulation Of Telomere Maintenance Via Telomerase	1.93	0.2341	0.68	1.0
+cd56dim	MSigDB_Hallmark_2020	TNF-alpha Signaling via NF-kB	-1.777	0.0276	-1.947	0.001
+cd56dim	GO_Biological_Process_2023	Regulation Of mRNA Splicing, Via Spliceosome	-1.875	0.189	-2.166	0.0177
+cd56bright	KEGG_2021_Human	Oxidative phosphorylation	-1.606	0.1116	-1.762	0.0439
+cd56dim	KEGG_2021_Human	Oxidative phosphorylation	-1.698	0.1174	-1.565	0.1118
