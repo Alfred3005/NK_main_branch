@@ -168,13 +168,17 @@ sns.heatmap(
     vmin=-max_val,
     vmax=max_val,
     annot=False,
-    cbar_kws={'label': 'Z-Score Mediano'},
+    cbar_kws={'label': 'Puntaje Z mediano'},
     linewidths=1,
     linecolor='black'
 )
-plt.title("Z-Score Mediano de Pseudobulk (23 Hits Globales)", weight='bold', pad=15)
-plt.yticks(rotation=0, weight='bold', size=12)
-plt.xticks(rotation=45, ha='right', size=10)
+plt.title("Puntaje Z mediano del pseudobulk (23 genes del análisis global)", weight='bold', pad=15)
+etiquetas = {'adult': 'Adultos', 'old': 'Adultos\nmayores'}
+plt.yticks(ticks=plt.gca().get_yticks(), labels=[etiquetas.get(str(g), str(g)) for g in pb_zscore_median.index],
+           rotation=0, weight='bold', size=12)
+plt.xticks(rotation=45, ha='right', size=10, style='italic')
+plt.xlabel('')
+plt.ylabel('')
 plt.tight_layout()
 plt.savefig(OUTPUT_COLLAPSED, dpi=300)
 plt.close()

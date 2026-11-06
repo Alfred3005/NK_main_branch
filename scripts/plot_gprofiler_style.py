@@ -220,8 +220,9 @@ ax_lfc = fig.add_subplot(gs[0, 3])
 sns.heatmap(lfc_matrix, cmap="RdBu_r", center=0, vmin=-3, vmax=3, 
             cbar=False, ax=ax_lfc, xticklabels=False, yticklabels=['LFC CD56dim', 'LFC CD56bright'],
             linewidths=0.5, linecolor='white')
+ax_lfc.yaxis.tick_right()
 ax_lfc.tick_params(axis='y', rotation=0, labelsize=10)
-ax_lfc.set_title(f"Anotación de Expresión Génica (LogFoldChange) - Corte FDR < {args.fdr_cutoff}", pad=15, fontsize=14, fontweight='bold')
+ax_lfc.set_title(f"Cambio de expresión génica (log2FC) - Corte FDR < {args.fdr_cutoff}", pad=15, fontsize=14, fontweight='bold')
 
 # PANEL MATRIZ
 ax_mat = fig.add_subplot(gs[2, 3])
@@ -245,7 +246,8 @@ ax_bar.barh(y_pos + height/2, nes_bright, height, color='#ffc107', label='CD56br
 
 ax_bar.set_yticks(y_pos)
 ax_bar.set_yticklabels([])
-ax_bar.invert_yaxis()
+# Mismos límites que la matriz, para que cada vía quede alineada con su fila.
+ax_bar.set_ylim(len(ordered_pathways) - 0.5, -0.5)
 ax_bar.axvline(0, color='black', linewidth=1)
 ax_bar.set_xlabel("NES")
 ax_bar.legend(loc='upper left', bbox_to_anchor=(0, 1.15), frameon=False)
@@ -285,7 +287,7 @@ legend_patches = [
     patches.Patch(color='#ffc107', label='Gen Líder CD56bright'),
     patches.Patch(color='#28a745', label='Gen Líder Ambos')
 ]
-fig.legend(handles=legend_patches, loc='upper center', ncol=3, bbox_to_anchor=(0.5, 0.05), frameon=False)
+fig.legend(handles=legend_patches, loc='upper center', ncol=3, bbox_to_anchor=(0.5, 0.0), frameon=False)
 
 plt.savefig(OUTPUT_PATH, dpi=300, bbox_inches='tight', pad_inches=0.5)
 print(f"Gráfico guardado en: {OUTPUT_PATH}")

@@ -8,7 +8,7 @@ El presente anexo compila los registros técnicos, las matrices metodológicas d
 
 ### Catálogo de estudios primarios integrados
 
-La construcción de la cohorte analítica se llevó a cabo a partir de la plataforma *CZ CELLxGENE Census* (`census_version="2023-12-15"`). A partir del universo de datos primarios en tejido sanguíneo periférico provenientes de individuos sanos, se identificaron 14 estudios independientes iniciales. Tras la aplicación de los criterios de inclusión etarios ($\ge 34$ años) y los filtros adaptativos de calidad celular, 13 estudios aportaron células a la cohorte depurada final de 143,991 células Natural Killer (@tbl-anexo-estudios).
+La construcción de la cohorte analítica se llevó a cabo a partir de la plataforma *CZ CELLxGENE Census* (`census_version="2023-12-15"`). A partir del universo de datos primarios en tejido sanguíneo periférico provenientes de individuos sanos, se identificaron 14 estudios independientes iniciales. Tras la aplicación de los criterios de inclusión etarios (mayores de 34 años) y los filtros adaptativos de calidad celular, 13 estudios aportaron células a la cohorte depurada final de 143,991 células Natural Killer (@tbl-anexo-estudios).
 
 | No. | Primer Autor / Consorcio | Año | Revista | Título del Estudio / Colección | DOI | Células NK Aportadas |
 |:---:|:---|:---:|:---|:---|:---|:---:|
@@ -20,7 +20,7 @@ La construcción de la cohorte analítica se llevó a cabo a partir de la plataf
 | 6 | Stephenson et al. | 2021 | *Nat Med* | Single-cell multi-omics analysis of the immune response in COVID-19 | [10.1038/s41591-021-01329-2](https://doi.org/10.1038/s41591-021-01329-2) | 2,354 |
 | 7 | Ren et al. | 2021 | *Cell* | COVID-19 immune features revealed by a large-scale single-cell transcriptome atlas | [10.1016/j.cell.2021.01.053](https://doi.org/10.1016/j.cell.2021.01.053) | 2,299 |
 | 8 | The Tabula Sapiens Consortium | 2022 | *Science* | The Tabula Sapiens: A multiple-organ, single-cell transcriptomic atlas of humans | [10.1126/science.abl4896](https://doi.org/10.1126/science.abl4896) | 1,457 |
-| 9 | Heimlich et al. | 2023 | *Blood Adv* | Multiomic Profiling of Human Clonal Hematopoiesis Reveals Genotype and Cell-Specific Inflammatory Pathway Activation | [10.1182/bloodadvances.2023011445](https://doi.org/10.1182/bloodadvances.2023011445) | 1,327 |
+| 9 | Heimlich et al. | 2024 | *Blood Adv* | Multiomic Profiling of Human Clonal Hematopoiesis Reveals Genotype and Cell-Specific Inflammatory Pathway Activation | [10.1182/bloodadvances.2023011445](https://doi.org/10.1182/bloodadvances.2023011445) | 1,327 |
 | 10 | Lee et al. | 2020 | *Sci Immunol* | Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19 | [10.1126/sciimmunol.abd1554](https://doi.org/10.1126/sciimmunol.abd1554) | 1,311 |
 | 11 | Rodríguez-Ubreva et al. | 2022 | *Nat Commun* | Single-cell Atlas of common variable immunodeficiency shows germinal center-associated epigenetic dysregulation in B-cell responses | [10.1038/s41467-022-29450-x](https://doi.org/10.1038/s41467-022-29450-x) | 1,135 |
 | 12 | Jin et al. | 2021 | *iScience* | A Web Portal and Workbench for Biological Dissection of Single Cell COVID-19 Host Responses | [10.1016/j.isci.2021.103115](https://doi.org/10.1016/j.isci.2021.103115) | 622 |

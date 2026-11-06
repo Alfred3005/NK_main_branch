@@ -99,6 +99,7 @@ def main():
         ("scripts/22_pseudobulk_subtypes_pydeseq2.py", "2. Expresión Diferencial Pseudobulk por Subtipo (PyDESeq2)"),
         ("scripts/23_differential_abundance_milo.py", "3. Modelado de Abundancia GLM y Ratio de Subtipos"),
         ("scripts/29_figura4_abundancia.py", "4. Figura 4 de la Tesis (Abundancia de Subtipos)"),
+        ("scripts/30_figuras_cohorte.py", "4b. Figuras y Tablas de la Cohorte (Figuras 1a a 3b)"),
         ("scripts/plot_heatmap_global.py", "5. Visualización de Heatmaps (23 DEGs Canónicos)"),
         ("scripts/14_run_specialized_gsea.py", "6. GSEA de Firmas Especializadas (SASP R-HSA-2559582)"),
         ("scripts/15_plot_specialized_gsea.py", "7. Generación de Dotplot de Senescencia Especializada"),

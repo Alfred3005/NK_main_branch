@@ -14,11 +14,11 @@ Consolidación de la cohorte y purificación del microambiente NK.
 
 *Nota.* Datos de CZ CELLxGENE Census (versión 2023-12-15). (a) Células por grupo de edad y estudio. (b) Conteo medio por célula de marcadores de ARN ambiental antes y después de la corrección con scAR.
 
-Este filtrado riguroso resultó en una cohorte final integrada por 143,991 células NK distribuidas en 423 donantes adultos únicos con edades iguales o superiores a 34 años (@fig-1a). La eficacia del saneamiento ambiental quedó de manifiesto mediante la reducción de la expresión media de firmas espurias ajenas a la estirpe linfoide innata, destacando el silenciamiento de transcritos eritroides e inmunoglobulínicos de fondo como *HBA1* e *IGKC* (@fig-1b; Anexo A, sección A.3).
+Este filtrado riguroso resultó en una cohorte final integrada por 143,991 células NK distribuidas en 423 donantes adultos únicos de 35 años o más (@fig-1a). La eficacia del saneamiento ambiental quedó de manifiesto mediante la reducción de la expresión media de firmas espurias ajenas a la estirpe linfoide innata, destacando el silenciamiento de transcritos eritroides e inmunoglobulínicos de fondo como *HBA1* e *IGKC* (@fig-1b; Anexo A, sección A.3).
 
 ## Caracterización demográfica y distribución técnica
 
-La estratificación por grupos de edad definió dos conjuntos biológicos contrastantes: adultos (34 a 59 años; $n = 197$ donantes, 73,434 células) y adultos mayores ($\geq 60$ años; $n = 226$ donantes, 70,557 células). Esta partición mantuvo una distribución equilibrada entre sexos, con 213 donantes de sexo femenino y 210 de sexo masculino (@tbl-demografia; @fig-2b). La distribución continua de la variable edad abarcó de forma continua el intervalo de edades evaluado (@fig-2a).
+La estratificación por grupos de edad definió dos conjuntos biológicos contrastantes: adultos (35 a 59 años; $n = 197$ donantes, 73,434 células) y adultos mayores ($\geq 60$ años; $n = 226$ donantes, 70,557 células). Esta partición mantuvo una distribución equilibrada entre sexos, con 213 donantes de sexo femenino y 210 de sexo masculino (@tbl-demografia; @fig-2b). La distribución continua de la variable edad abarcó de forma continua el intervalo de edades evaluado (@fig-2a).
 
 ::: {#fig-2 layout-ncol=2 layout-nrow=2}
 ![Histograma de edades](figures_clean/fig2a.png){#fig-2a}
@@ -34,21 +34,33 @@ Caracterización demográfica y distribución técnica de la cohorte.
 
 Para evaluar la influencia de efectos de lote (*batch effects*) provenientes de las plataformas de secuenciación, se examinó la distribución de las tecnologías entre grupos de edad (@fig-2c). La distribución mostró un fuerte desbalance: 10x 5' v2 predominó en los adultos (143 de 197 donantes) y 10x 3' v2 en los adultos mayores (182 de 226); por ello, el ensayo se incluyó como covariable en los modelos. Las métricas de control de calidad transcripcional (número de genes detectados, identificadores moleculares únicos (UMI, del inglés *unique molecular identifiers*) y porcentaje de transcritos mitocondriales), obtenidas tras aplicar el filtrado adaptativo descrito en la metodología, difirieron entre grupos, en concordancia con la tecnología de captura (@tbl-demografia); las visualizaciones y los desgloses de estas métricas técnicas se detallan en el Anexo A.
 
-::: {#tbl-demografia tbl-colwidths="[12,9,9,14,11,9,9,9,9,9]"}
-| Grupo de Edad | Donantes | Células | Edad ± DE (años) | Sexo (F / M) | UMIs (med.) | Genes (med.) | MT (%) | NK CD56^dim^ | NK CD56^bright^ |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Adultos** | 197 | 73,434 | 46.4 ± 7.3 | 102 / 95 | 1,961 | 1,268 | 3.83 | 71,683 (97.6%) | 1,751 (2.4%) |
-| **Adultos Mayores** | 226 | 70,557 | 73.5 ± 8.8 | 111 / 115 | 759 | 500 | 3.77 | 69,489 (98.5%) | 1,068 (1.5%) |
-| **Total Cohorte** | **423** | **143,991** | — | **213 / 210** | — | — | — | **141,172 (98.0%)** | **2,819 (2.0%)** |
+::: {#tbl-demografia tbl-colwidths="[20,11,11,16,12,10,10,10]"}
+| Grupo de Edad | Donantes | Células | Edad ± DE (años) | Sexo (F / M) | UMIs (med.) | Genes (med.) | MT (%) |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Adultos** | 197 | 73,434 | 46.4 ± 7.3 | 102 / 95 | 1,961 | 1,268 | 3.83 |
+| **Adultos Mayores** | 226 | 70,557 | 73.5 ± 8.8 | 111 / 115 | 759 | 500 | 3.77 |
+| **Total Cohorte** | **423** | **143,991** | — | **213 / 210** | — | — | — |
 
 Resumen demográfico y de control de calidad transcriptómico de la cohorte.
 :::
 
-*Nota.* DE: desviación estándar; UMI: identificadores moleculares únicos; MT: porcentaje de transcritos mitocondriales; med.: mediana. La columna NK CD56^dim^ incluye también las células NK sin subtipo anotado y las células NKT. Datos de CZ CELLxGENE Census (versión 2023-12-15).
+*Nota.* DE: desviación estándar; UMI: identificadores moleculares únicos; MT: porcentaje de transcritos mitocondriales; med.: mediana. Datos de CZ CELLxGENE Census (versión 2023-12-15).
 
 ## Pureza del linaje NK y distribución de subtipos
 
-Los análisis de subconjuntos celulares se delimitaron al estudio de las dos subpoblaciones canónicas del linaje: el compartimento efector maduro CD56^dim^, que concentró el 98.0% de la cohorte (141,172 células), y el nicho regulador e inmaduro CD56^bright^, que constituyó el 2.0% restante (2,819 células) (@tbl-demografia). Los demás subtipos linfoides, tales como las células T asesinas naturales (NKT), quedaron limitados al análisis exploratorio global sin ser incorporados como subconjuntos independientes.
+Los análisis de subconjuntos celulares se delimitaron a las dos subpoblaciones anotadas en el Census: CD56^dim^ (62,575 células; 43.5% de la cohorte) y CD56^bright^ (2,819 células; 2.0%). Las demás células corresponden a células NK sin subtipo anotado (77,097; 53.5%) y a células T asesinas naturales (NKT; 1,500; 1.0%), que solo entraron al análisis global (@tbl-subtipos). La proporción de células anotadas como CD56^dim^ difirió entre grupos (70.0% en adultos y 15.8% en adultos mayores), y el 89.3% de ellas provino de un solo estudio (Kock et al., 2025).
+
+::: {#tbl-subtipos tbl-colwidths="[24,19,19,19,19]"}
+| Grupo de Edad | CD56^dim^ anotada | CD56^bright^ | NK sin subtipo | NKT |
+|:---|:---:|:---:|:---:|:---:|
+| **Adultos** | 51,408 (70.0%) | 1,751 (2.4%) | 20,234 (27.6%) | 41 (0.1%) |
+| **Adultos Mayores** | 11,167 (15.8%) | 1,068 (1.5%) | 56,863 (80.6%) | 1,459 (2.1%) |
+| **Total Cohorte** | **62,575 (43.5%)** | **2,819 (2.0%)** | **77,097 (53.5%)** | **1,500 (1.0%)** |
+
+Composición de la cohorte por subtipo celular y grupo de edad.
+:::
+
+*Nota.* Subtipos según la anotación de `cell_type` del Census. Porcentajes respecto al total de células de cada grupo. Cifras en `tabla_demografica_subtipos.tsv`.
 
 Con el objetivo de corroborar la identidad celular y depurar posibles contaminaciones de otros linajes linfoides, se evaluó la expresión de genes marcadores canónicos derivados de las tablas de estructuras anatómicas, tipos celulares y biomarcadores (ASCT+B, del inglés *Anatomical Structures, Cell Types plus Biomarkers*) del Atlas de Referencia Humana (Börner et al., 2021): *NKG7*, *GNLY*, *CST7*, *GZMA*, *PRF1*, *KLRD1* y *KLRF1* para el linaje NK, frente a *CD3D*, *CD3E*, *CD3G* y *TRAC* (linfocitos T) y *CD79A*, *MS4A1* y *CD19* (linfocitos B) (@fig-3a). La lista completa de genes marcadores empleada para esta validación fenotípica se presenta en la @tbl-anexo-marcadores del Anexo A.
 
