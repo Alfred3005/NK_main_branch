@@ -59,7 +59,7 @@ Para validar la pureza de la población celular y favorecer la exclusión de dob
 
 : Marcadores de validación de pureza de linaje celular basados en el estándar ASCT+B. {#tbl-anexo-marcadores tbl-colwidths="[18,13,41,14,14]"}
 
-*Nota.* Basado en las tablas ASCT+B (Börner et al., 2021). Puntaje de linaje: firmas NK, T y B calculadas con `score_genes` en `04-purify-qc-lineage.py`, que evalúan la pureza y no eliminan células por sí mismas. Figura de pureza: marcadores de @fig-3a.
+*Nota.* Basado en las tablas ASCT+B (Börner et al., 2021). Puntaje de linaje: firmas NK, T y B calculadas con `score_genes` en `04-purify-qc-lineage.py`; se conservaron las células con puntaje B menor que 0.1 y puntaje NK mayor que el puntaje T. Figura de pureza: marcadores de @fig-3a.
 
 ---
 
