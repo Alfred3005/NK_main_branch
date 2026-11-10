@@ -71,6 +71,8 @@ Franceschi, C., & Campisi, J. (2014). Chronic inflammation (inflammaging) and it
 
 Franceschi, C., Garagnani, P., Parini, P., Giuliani, C., & Santoro, A. (2018). Inflammaging: A new immune–metabolic viewpoint for age-related diseases. *Nature Reviews Endocrinology*, *14*(10), 576–590. https://doi.org/10.1038/s41574-018-0059-4
 
+Frasca, D., Diaz, A., Romero, M., & Blomberg, B. B. (2020). Human peripheral late/exhausted memory B cells express a senescent-associated secretory phenotype and preferentially utilize metabolic signaling pathways. *Experimental Gerontology*, *137*, 110972. https://doi.org/10.1016/j.exger.2020.110972
+
 Fuentealba, M., Kiprov, D., Schneider, K., Mu, W.-C., Kumaar, P. A., Kasler, H., Burton, J. B., Watson, M., Halaweh, H., King, C. D., Yüksel, Z. S., Roska-Pamaong, C., Schilling, B., Verdin, E., & Furman, D. (2025). Multi-omics analysis reveals biomarkers that contribute to biological age rejuvenation in response to single-blinded randomized placebo-controlled therapeutic plasma exchange. *Aging Cell*, *24*(8), e70103. https://doi.org/10.1111/acel.70103
 
 Fulop, T., Larbi, A., Dupuis, G., Le Page, A., Frost, E. H., Cohen, A. A., Witkowski, J. M., & Franceschi, C. (2018). Immunosenescence and inflamm-aging as two sides of the same coin: Friends or foes? *Frontiers in Immunology*, *8*, 1960. https://doi.org/10.3389/fimmu.2017.01960
@@ -78,6 +80,8 @@ Fulop, T., Larbi, A., Dupuis, G., Le Page, A., Frost, E. H., Cohen, A. A., Witko
 Furman, D., Campisi, J., Verdin, E., Carrera-Bastos, P., Targ, S., Franceschi, C., Ferrucci, L., Gilroy, D. W., Fasano, A., Miller, G. W., Miller, A. H., Mantovani, A., Weyand, C. M., Barzilai, N., Goronzy, J. J., Rando, T. A., Effros, R. B., Lucia, A., Kleinstreuer, N., & Slavich, G. M. (2019). Chronic inflammation in the etiology of disease across the life span. *Nature Medicine*, *25*(12), 1822–1832. https://doi.org/10.1038/s41591-019-0675-0
 
 Gateva, G., Tojkander, S., Koho, S., Carpén, O., & Lappalainen, P. (2014). Palladin promotes assembly of non-contractile dorsal stress fibers through VASP recruitment. *Journal of Cell Science*, *127*(9), 1887–1898. https://doi.org/10.1242/jcs.135780
+
+Gibson, K. L., Wu, Y.-C., Barnett, Y., Duggan, O., Vaughan, R., Kondeatis, E., Nilsson, B.-O., Wikby, A., Kipling, D., & Dunn-Walters, D. K. (2009). B-cell diversity decreases in old age and is correlated with poor health status. *Aging Cell*, *8*(1), 18–25. https://doi.org/10.1111/j.1474-9726.2008.00443.x
 
 Haghverdi, L., Lun, A. T. L., Morgan, M. D., & Marioni, J. C. (2018). Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors. *Nature Biotechnology*, *36*(5), 421–427. https://doi.org/10.1038/nbt.4091
 
@@ -91,7 +95,7 @@ Hu, Y., Xu, Y., Mao, L., Lei, W., Xiang, J., Gao, L., Jiang, J., Huang, L., Luo,
 
 Kale, A., Sharma, A., Stolzing, A., Desprez, P.-Y., & Campisi, J. (2020). Role of immune cells in the removal of deleterious senescent cells. *Immunity & Ageing*, *17*, 16. https://doi.org/10.1186/s12979-020-00187-9
 
-Keating, S. E., Zaiatz-Bittencourt, V., Loftus, R. M., Keane, C., Brennan, K., Finlay, D. K., & Gardiner, C. M. (2016). Metabolic reprogramming supports IFN-γ production by CD56bright NK cells. *The Journal of Immunology*, *196*(6), 2552–2560. https://doi.org/10.4049/jimmunol.1501783
+Keating, S. E., Zaiatz-Bittencourt, V., Loftus, R. M., Keane, C., Brennan, K., Finlay, D. K., & Gardiner, C. M. (2016). Metabolic reprogramming supports IFN-$\gamma$ production by CD56bright NK cells. *The Journal of Immunology*, *196*(6), 2552–2560. https://doi.org/10.4049/jimmunol.1501783
 
 Kehler, D. S. (2021). Minimising multimorbidity clustering across the lifespan. *The Lancet Regional Health – Europe*, *3*, 100064. https://doi.org/10.1016/j.lanepe.2021.100064
 
@@ -100,6 +104,8 @@ Kimmel, J. C., Penland, L., Rubinstein, N. D., Hendrickson, D. G., Kelley, D. R.
 Krizhanovsky, V., Yon, M., Dickins, R. A., Hearn, S., Simon, J., Miething, C., Yee, H., Zender, L., & Lowe, S. W. (2008). Senescence of activated stellate cells limits liver fibrosis. *Cell*, *134*(4), 657–667. https://doi.org/10.1016/j.cell.2008.06.049
 
 Kuleshov, M. V., Jones, M. R., Rouillard, A. D., Fernandez, N. F., Duan, Q., Wang, Z., Koplev, S., Jenkins, S. L., Jagodnik, K. M., Lachmann, A., McDermott, M. G., Monteiro, C. D., Gundersen, G. W., & Ma'ayan, A. (2016). Enrichr: A comprehensive gene set enrichment analysis web server 2016 update. *Nucleic Acids Research*, *44*(W1), W90–W97. https://doi.org/10.1093/nar/gkw377
+
+Lans, H., Hoeijmakers, J. H. J., Vermeulen, W., & Marteijn, J. A. (2019). The DNA damage response to transcription stress. *Nature Reviews Molecular Cell Biology*, *20*(12), 766–784. https://doi.org/10.1038/s41580-019-0169-4
 
 Le Garff-Tavernier, M., Béziat, V., Decocq, J., Siguret, V., Gandjbakhch, F., Pautas, E., Debré, P., Merle-Béral, H., & Vieillard, V. (2010). Human NK cells display major phenotypic and functional changes over the life span. *Aging Cell*, *9*(4), 527–535. https://doi.org/10.1111/j.1474-9726.2010.00584.x
 
@@ -151,9 +157,13 @@ Pundlik, S. S., Barik, A., Venkateshvaran, A., Sahoo, S. S., Jaysingh, M. A., Ma
 
 Rebuffet, L., Melsen, J. E., Escalière, B., Basurto-Lozada, D., Bhandoola, A., Björkström, N. K., Bryceson, Y. T., Castriconi, R., Cichocki, F., Colonna, M., Davis, D. M., Diefenbach, A., Ding, Y., Haniffa, M., Horowitz, A., Lanier, L. L., Malmberg, K.-J., Miller, J. S., Moretta, L., . . . Vivier, E. (2024). High-dimensional single-cell analysis of human natural killer cell heterogeneity. *Nature Immunology*, *25*(8), 1474–1488. https://doi.org/10.1038/s41590-024-01883-0
 
+Rydyznski, C., Daniels, K. A., Karmele, E. P., Brooks, T. R., Mahl, S. E., Moran, M. T., Li, C., Sutiwisesak, R., Welsh, R. M., & Waggoner, S. N. (2015). Generation of cellular immune memory and B-cell immunity is impaired by natural killer cells. *Nature Communications*, *6*, 6375. https://doi.org/10.1038/ncomms7375
+
 Sagiv, A., Burton, D. G. A., Moshayev, Z., Vadai, E., Wensveen, F., Ben-Dor, S., Golani, O., Polic, B., & Krizhanovsky, V. (2016). NKG2D ligands mediate immunosurveillance of senescent cells. *Aging*, *8*(2), 328–344. https://doi.org/10.18632/aging.100897
 
 Sanbomics. (2022). *Single cell RNA-seq analysis tutorials* [Código fuente]. GitHub. https://github.com/mousepixels/sanbomics_scripts
+
+Schwartz, R. H. (2003). T cell anergy. *Annual Review of Immunology*, *21*(1), 305–334. https://doi.org/10.1146/annurev.immunol.21.120601.141110
 
 Sheng, C., Lopes, R., Li, G., Schuierer, S., Waldt, A., Cuttat, R., Dimitrieva, S., Kauffmann, A., Durand, E., Galli, G. G., Roma, G., & de Weck, A. (2022). Probabilistic machine learning ensures accurate ambient denoising in droplet-based single-cell omics [Preprint]. *bioRxiv*. https://doi.org/10.1101/2022.01.14.476312
 

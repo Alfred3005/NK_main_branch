@@ -2,12 +2,16 @@ project:
   type: book
   output-dir: _book
 
+lang: es
+language:
+  section-title-appendices: "Anexos"
+  crossref-apx-prefix: "Anexo"
+
 book:
   title: "Análisis transcriptómico de células asesinas naturales en el contexto de la inmunosenescencia"
   subtitle: "Tesis que para optar por el grado de Maestro en Ciencias Biológicas"
   author: "Alfredo Morales Salazar"
   date: "Abril de 2026"
-  language: es
   chapters:
     - index.md
     - manuscripts/00_Abreviaturas.md

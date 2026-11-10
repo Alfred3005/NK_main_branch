@@ -2,7 +2,6 @@
 
 | Abreviatura | Significado |
 |:---|:---|
-| ADCC | Citotoxicidad celular dependiente de anticuerpos (del inglés *antibody-dependent cellular cytotoxicity*) |
 | ADN | Ácido desoxirribonucleico |
 | ARN | Ácido ribonucleico |
 | ASCT+B | Estructuras anatómicas, tipos celulares y biomarcadores (del inglés *Anatomical Structures, Cell Types plus Biomarkers*) |
@@ -16,7 +15,7 @@
 | GSEA | Análisis de enriquecimiento de conjuntos de genes (del inglés *gene set enrichment analysis*) |
 | HGNC | Comité de Nomenclatura Genética de HUGO (del inglés *HUGO Gene Nomenclature Committee*) |
 | HLA | Antígeno leucocitario humano (del inglés *human leukocyte antigen*) |
-| IFN-γ | Interferón gamma |
+| IFN-$\gamma$ | Interferón gamma |
 | IL | Interleucina |
 | ILC1 | Células linfoides innatas del grupo 1 |
 | ITIM | Motivo inhibidor del inmunorreceptor basado en tirosina (del inglés *immunoreceptor tyrosine-based inhibitory motif*) |
@@ -29,7 +28,7 @@
 | MSigDB | Base de datos de firmas moleculares (del inglés *Molecular Signatures Database*) |
 | MT | Porcentaje de transcritos mitocondriales |
 | NES | Puntuación de enriquecimiento normalizada (del inglés *normalized enrichment score*) |
-| NF-κB | Factor nuclear κB |
+| NF-$\kappa$B | Factor nuclear $\kappa$B |
 | NK | Células asesinas naturales (del inglés *natural killer*) |
 | NKT | Células T asesinas naturales |
 | OMS | Organización Mundial de la Salud |
@@ -47,7 +46,7 @@
 | Th1, Th17 | Linfocitos T cooperadores de tipo 1 y de tipo 17 |
 | TIM-3 | Proteína con dominio de inmunoglobulina y mucina de linfocitos T 3 (del inglés *T-cell immunoglobulin and mucin-domain containing-3*) |
 | TLR | Receptores de tipo Toll (del inglés *Toll-like receptors*) |
-| TNF-α | Factor de necrosis tumoral alfa |
+| TNF-$\alpha$ | Factor de necrosis tumoral alfa |
 | UMAP | Aproximación y proyección uniforme de variedades (del inglés *uniform manifold approximation and projection*) |
 | UMI | Identificadores moleculares únicos (del inglés *unique molecular identifiers*) |
 | UV | Radiación ultravioleta |

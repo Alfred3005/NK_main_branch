@@ -117,4 +117,80 @@
   - CHECK: Matriz analítica de 23 puntos elaborada contrastando PR #3 frente a pipeline local.
   - EVIDENCE: 23 puntos categorizados con estatus, impacto, viabilidad y estrategia de resolución (diferenciando la opción mínima de texto/documentación de la opción de recómputo/scripts).
 
+## Fase G: Resolución Exhaustiva de Observaciones del PDF (21 Notas) y Ajuste de Figura 4.1 (/unlazy)
+
+- [x] G1. Correcciones en index.md (Notas 1, 2, 3: eliminar 'profundamente', sustituir 'no apoya la asunción...' por 'aporta evidencia de que...', eliminar adjetivo 'asimétrico' de la conclusión)
+  - CHECK: python -c "text=open('tesis/index.md', encoding='utf-8').read(); assert 'profundamente' not in text; assert 'aporta evidencia de que las células NK no perpetúan el secretoma senescente periférico' in text; assert 'marco conceptual asimétrico' not in text; print('G1 OK')"
+  - EXPECT: G1 OK
+  - EVIDENCE: G1 OK verificado por comando; modificado en texto en español e inglés.
+- [x] G2. Erradicación absoluta de la palabra prohibida 'mecanística/o' en todo el manuscrito (Nota 4: 01_Introduccion.md y 07_Conclusiones.md)
+  - CHECK: python -c "import glob; matches = [f for f in glob.glob('tesis/manuscripts/*.md') if 'mecanístic' in open(f, encoding='utf-8').read().lower()]; assert len(matches) == 0, f'Found in: {matches}'; print('G2 OK')"
+  - EXPECT: G2 OK
+  - EVIDENCE: G2 OK; 0 coincidencias en todos los manuscritos activos (sustituido por bases biológicas e hipótesis funcionales).
+- [x] G3. Ajuste de terminología en 01_Introduccion.md (Nota 5: 'la asimetría metabólica' -> 'las diferencias metabólicas')
+  - CHECK: python -c "text=open('tesis/manuscripts/01_Introduccion.md', encoding='utf-8').read(); assert 'las diferencias metabólicas' in text; assert 'la asimetría metabólica' not in text; print('G3 OK')"
+  - EXPECT: G3 OK
+  - EVIDENCE: G3 OK verificado por comando; línea 15 de 01_Introduccion.md actualizada.
+- [x] G4. Inicio directo con la definición de la OMS en 02_Marco_Teorico.md (Nota 6: eliminar 'Desde una perspectiva gerontológica,')
+  - CHECK: python -c "text=open('tesis/manuscripts/02_Marco_Teorico.md', encoding='utf-8').read(); assert 'Desde una perspectiva gerontológica,' not in text; assert 'La OMS define el envejecimiento' in text; print('G4 OK')"
+  - EXPECT: G4 OK
+  - EVIDENCE: G4 OK verificado por comando; línea 7 de 02_Marco_Teorico.md inicia directamente con 'La OMS define...'.
+- [x] G5. Disclosure normativo de generación con IA en pie de figura 2.1 (@fig-hallmarks-aging) en 02_Marco_Teorico.md (Nota 7)
+  - CHECK: python -c "text=open('tesis/manuscripts/02_Marco_Teorico.md', encoding='utf-8').read(); assert 'asistencia de herramientas de inteligencia artificial' in text; print('G5 OK')"
+  - EXPECT: G5 OK
+  - EVIDENCE: G5 OK verificado por comando; integrado en pie de figura y nota APA conforme a lineamientos de la Comisión Europea (2024).
+- [x] G6. Depuración estilística en 02_Marco_Teorico.md (Notas 8, 9, 10, 11, 12: omitir 'tónica', 'hipersecreción' -> 'secreción', 'macrófagos añosos' -> 'macrófagos senescentes', eliminar 'autoperpetuado' e 'integral')
+  - CHECK: python -c "text=open('tesis/manuscripts/02_Marco_Teorico.md', encoding='utf-8').read(); assert 'activación prolongada que conduce' in text or 'activación tónica' not in text; assert 'hipersecreción' not in text; assert 'macrófagos añosos' not in text; assert 'autoperpetuado' not in text; assert 'inmunosenescencia integral' not in text; print('G6 OK')"
+  - EXPECT: G6 OK
+  - EVIDENCE: G6 OK verificado por comando; líneas 47 y 61 depuradas.
+- [x] G7. Localización al español y desambiguación en 02_Marco_Teorico.md (Notas 13, 14, 15: 'naive' -> 'vírgenes', 'añoso' -> 'envejecido', 'dianas' -> 'objetivos')
+  - CHECK: python -c "text=open('tesis/manuscripts/02_Marco_Teorico.md', encoding='utf-8').read(); assert 'repertorios vírgenes' in text; assert 'inmunitario envejecido' in text; assert 'frente a sus objetivos naturales' in text; print('G7 OK')"
+  - EXPECT: G7 OK
+  - EVIDENCE: G7 OK verificado por comando; líneas 69 y 99 de 02_Marco_Teorico.md actualizadas.
+- [x] G8. Supresión de sigla innecesaria ADCC y simplificación en 02_Marco_Teorico.md y 00_Abreviaturas.md (Notas 16, 17, 18, 19: eliminar ADCC, 'suprafisiológicos' -> 'elevados', 'estas dianas' -> 'estos objetivos celulares', 'vencer' -> 'superar')
+  - CHECK: python -c "t1=open('tesis/manuscripts/02_Marco_Teorico.md', encoding='utf-8').read(); t2=open('tesis/manuscripts/00_Abreviaturas.md', encoding='utf-8').read(); assert 'ADCC' not in t1; assert 'ADCC' not in t2; assert 'niveles elevados de moléculas de estrés' in t1; assert 'etiqueta molecularmente a estos objetivos celulares' in t1; assert 'Al superar los umbrales de inhibición' in t1; print('G8 OK')"
+  - EXPECT: G8 OK
+  - EVIDENCE: G8 OK verificado por comando; ADCC purgado de texto y catálogo de abreviaturas; simplificaciones aplicadas en líneas 79 y 85.
+- [x] G9. Precisión epistemológica en 02_Marco_Teorico.md (Notas 20, 21: 'De forma concomitante,' -> 'En paralelo,'; apertura de filtros para mitigación de ARN ambiental omitiendo 'probabilísticos')
+  - CHECK: python -c "text=open('tesis/manuscripts/02_Marco_Teorico.md', encoding='utf-8').read(); assert 'En paralelo, la ausencia de filtros para la depuración' in text; assert 'filtros probabilísticos' not in text; print('G9 OK')"
+  - EXPECT: G9 OK
+  - EVIDENCE: G9 OK verificado por comando; línea 119 de 02_Marco_Teorico.md actualizada.
+- [x] G10. Corrección geométrica y de espaciado en la Figura 4.1 (figura2_flujo_metodologico.png): reducción de la flecha entre Fase 1 y Fase 2 de 750 px a ~190 px sincronizada en tesis/figures/ y tesis/manuscripts/figures/
+  - CHECK: python -c "from PIL import Image; import numpy as np; im=Image.open('tesis/figures/figura2_flujo_metodologico.png'); arr=np.array(im.convert('L')); assert im.height < 4000; print('G10 OK: New height =', im.height)"
+  - EXPECT: G10 OK
+  - EVIDENCE: G10 OK; altura reducida de 4455 px a 3890 px con unión de flecha continua a 6 px de ancho; sincronizada en ambas carpetas.
+- [x] G11. Compilación Quarto dual (PDF y HTML) exitosa y sincronización de Tesis_Final_NK.pdf
+  - CHECK: quarto render --to pdf && quarto render --to html
+  - EXPECT: Código de salida 0 en ambos renders.
+  - EVIDENCE: Código 0 en quarto render --to pdf (Tesis_Final_NK.pdf, 5.29 MB, 105 páginas) y código 0 en quarto render --to html (_book/index.html).
+
+## Fase H: Resolución de las 12 Notas del PDF 2, Símbolos Griegos LaTeX e Implementación de Aportaciones 2, 3 y 4 (/unlazy)
+
+- [x] H1. Correcciones en 04_Metodologia.md (Notas 1 a 6: 'en este estudio', eliminar 'Nota. Elaboración propia.', quitar 'empírica', quitar 'basales', estadístico $\chi^2$ de Pearson en modo matemático LaTeX, y 'mostró una tendencia a inflar los falsos descubrimientos')
+  - CHECK: python -c "t=open('tesis/manuscripts/04_Metodologia.md', encoding='utf-8').read(); assert 'edad mínima en este estudio' in t; assert 'Elaboración propia' not in t; assert 'dispersión sustancialmente mayor' in t; assert 'diferencias individuales al efecto de la edad' in t; assert '$\\chi^2$ de Pearson' in t; assert 'mostró una tendencia a inflar los falsos descubrimientos' in t; print('H1 OK')"
+  - EXPECT: H1 OK
+  - EVIDENCE: H1 OK verificado por comando; líneas 9, 21, 34 y 40 de 04_Metodologia.md actualizadas.
+- [x] H2. Correcciones en 05_Resultados.md (Notas 7 a 12: 'grupo de edad', quitar 'pronunciada', 'conjunto de células NK CD56^bright^', 'alineado con', 'podría estar vinculado', 'compatible con la hipótesis de estrés')
+  - CHECK: python -c "t=open('tesis/manuscripts/05_Resultados.md', encoding='utf-8').read(); assert 'orientada predominantemente por el grupo de edad' in t; assert 'reveló una contracción del conjunto de células NK CD56^bright^' in t; assert 'alineado con los modelos teóricos' in t; assert 'podría estar vinculado con susceptibilidad a ferroptosis' in t; assert 'compatible con la hipótesis de estrés por daño genómico' in t; print('H2 OK')"
+  - EXPECT: H2 OK
+  - EVIDENCE: H2 OK verificado por comando; líneas 67, 83 y 135 de 05_Resultados.md actualizadas.
+- [x] H3. Conversión integral de caracteres griegos Unicode crudos (α, β, γ, κ, χ²) a notación matemática LaTeX ($\alpha$, $\beta$, $\gamma$, $\kappa$, $\chi^2$) en todo el manuscrito para evitar glifos faltantes en LuaLaTeX
+  - CHECK: python -c "import glob, re; files=['tesis/index.md']+glob.glob('tesis/manuscripts/*.md'); pat=re.compile(r'[α-ωΑ-Ω²]'); bad=[f for f in files if pat.search(open(f, encoding='utf-8').read())]; assert len(bad)==0, f'Found raw greek in: {bad}'; print('H3 OK')"
+  - EXPECT: H3 OK
+  - EVIDENCE: H3 OK; 0 caracteres griegos Unicode crudos en todo el manuscrito (convertidos a modo matemático LaTeX en index.md, 00_Abreviaturas.md, 01_Introduccion.md, 02_Marco_Teorico.md, 04_Metodologia.md, 05_Resultados.md y 08_Bibliografia.md).
+- [x] H4. Implementación de Puntos 2 y 3 en 06_Discusion.md (Párrafo de apertura con doble aportación metodológica/biológica al estado del arte y delimitación explícita del núcleo invariante frente a señales dependientes de scAR)
+  - CHECK: python -c "t=open('tesis/manuscripts/06_Discusion.md', encoding='utf-8').read(); assert 'doble aportación al estado del arte' in t; assert '247 genes aparentes a una firma endógena de 23 genes' in t; assert 'núcleo invariante' in t; print('H4 OK')"
+  - EXPECT: H4 OK
+  - EVIDENCE: H4 OK verificado por comando; líneas 3 y 32 de 06_Discusion.md actualizadas.
+- [x] H5. Implementación del Punto 4 en 07_Conclusiones.md (Precisión cuantitativa del análisis de sensibilidad 247 a 23 genes y distinción del núcleo invariante en la Conclusión Específica 1)
+  - CHECK: python -c "t=open('tesis/manuscripts/07_Conclusiones.md', encoding='utf-8').read(); assert '247' in t and '23' in t and 'invariante' in t; print('H5 OK')"
+  - EXPECT: H5 OK
+  - EVIDENCE: H5 OK verificado por comando; línea 12 de 07_Conclusiones.md actualizada.
+- [x] H6. Compilación Quarto dual (PDF y HTML) libre de errores y sincronización de Tesis_Final_NK.pdf
+  - CHECK: quarto render --to pdf && quarto render --to html
+  - EXPECT: Código de salida 0 en ambos renders.
+  - EVIDENCE: Renders HTML (_book/index.html) y PDF (_book/Análisis-transcriptómico-de-células-asesinas-naturales-en-el-contexto-de-la-inmunosenescencia.pdf -> Tesis_Final_NK.pdf, 5.29 MB) completados sin errores.
+
+
+
 

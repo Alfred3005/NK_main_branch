@@ -1,4 +1,4 @@
-# Anexo A: Análisis exploratorio inicial y diagnóstico metodológico {#sec-anexo-a}
+# Análisis exploratorio inicial y diagnóstico metodológico {#sec-anexo-a}
 
 El presente anexo compila los registros técnicos, las matrices metodológicas de control de calidad y las referencias analíticas que sustentan la depuración bioinformática y la delimitación fenotípica del atlas transcriptómico presentado en el cuerpo principal de la tesis.
 
